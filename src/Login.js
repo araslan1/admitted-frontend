@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState(''); 
-    const history = useHistory();
 
 
 
@@ -12,7 +11,8 @@ const Login = () => {
         e.preventDefault(); 
         console.log(email);
         console.log(pass);
-        history.push('/')
+        console.log("helo"); 
+
     };
 
     return (  
