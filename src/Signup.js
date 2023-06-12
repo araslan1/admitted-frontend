@@ -1,18 +1,40 @@
 import { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 const Signup = () => {
 
-    const [name, setName] = useState(""); 
+    const [fullname, setName] = useState(""); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");   
-    const History = useNavigate(); 
+    const [register, setRegister] = useState(false); 
+
 
     const handleSubmit = e =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
-        History.push('/'); 
+
+        const configuration = {
+            method: "post",
+            url: "https://dream-catcher-araslan21.onrender.com/register",
+            data: {
+              fullname,
+              email,
+              password,
+            },
+          };
+         
+
+          axios(configuration)
+            .then((result) => {
+                console.log(result); 
+                setRegister(true); 
+            })
+            .catch((error) => {
+                console.log("FAILED"); 
+                console.log(error); 
+            });
+          
     };
 
     return ( 
@@ -23,7 +45,7 @@ const Signup = () => {
                 <input
                     type="text"
                     required
-                    value={name}
+                    value={fullname}
                     onChange = {(e)=>{
                         setName(e.target.value); 
                     }}
@@ -53,6 +75,11 @@ const Signup = () => {
                     <option>be an essay reviewer who has attended or does attend a target university</option>
                 </select>
                 <button>Create Account</button>
+                {register ? (
+                    <p className="text-success">You Are Registered Successfully</p>
+                ) : (
+                    <p className="text-danger">You Are Not Registered</p>
+                )}
             </form>
         </div>
      );

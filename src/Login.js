@@ -1,18 +1,32 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState(''); 
-    const history = useHistory();
-
+    const [password, setPass] = useState(''); 
+    const [login, setLogin] = useState(false); 
 
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        console.log(email);
-        console.log(pass);
-        history.push('/')
+
+        const configuration = {
+            method: "post",
+            url: "https://dream-catcher-araslan21.onrender.com/login",
+            data: {
+                email,
+                password,
+            },
+        };
+
+        axios(configuration)
+        .then((result) => {
+            setLogin(true);
+        })
+        .catch((error) => {
+            error = new Error();
+        });
     };
 
     return (  
@@ -36,12 +50,17 @@ const Login = () => {
                     id="password"
                     required
                     placeholder="*********"
-                    value={pass}
+                    value={password}
                     onChange = {(e) => {
                         setPass(e.target.value); 
                     }}
                 />
                 <button>Log in</button>
+                {login ? (
+                <p className="text-success">You Are Logged in Successfully</p>
+                ) : (
+                <p className="text-danger">You Are Not Logged in</p>
+                )}
             </form>
 
             <Link to="/signup">Don't have an account? Register here.</Link>
