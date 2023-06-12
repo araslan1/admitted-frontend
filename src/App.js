@@ -1,4 +1,3 @@
-import Navbar from './Navbar'; 
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Signup from './Signup';
 import Login from './Login';

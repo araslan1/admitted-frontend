@@ -10,10 +10,10 @@ const Dashboard = () => {
             <div className="hero">
                 <p id='let-me-cook'>Start a new application</p>
                 <div className="icons">
-                    <img src={testImg} className="hero-img" />
-                    <img src={testImg2} className="hero-img" />
-                    <img src={testImg2} className="hero-img" />
-                    <img src={testImg2} className="hero-img" />
+                    <img alt = "failed to load" src={testImg} className="hero-img" />
+                    <img alt = "failed to load" src={testImg2} className="hero-img" />
+                    <img alt = "failed to load" src={testImg2} className="hero-img" />
+                    <img alt = "failed to load"src={testImg2} className="hero-img" />
                 </div>
             </div>
             <div className="recent-activity">
