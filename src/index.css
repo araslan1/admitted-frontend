@@ -26,6 +26,8 @@ body {
   font-size: 30px;
   font-weight: 500;
   outline: black dashed 5px;
+  background-color: rgb(243, 241, 241); 
+  box-shadow: black; 
   /* background-color: lightgray; 
   outline: rgb(255, 224, 27) dashed 5px; */
   
@@ -272,7 +274,8 @@ body {
   position: relative;
   top: 0px; 
 	/* Color & Background */
-	background-color: #fc8eac;
+	/* background-color: #fc8eac; */
+  background-color: #ffe01b;
 	color: rgb(36, 28, 21);
 
 	/* Box */
@@ -345,5 +348,8 @@ body {
 .navbar .regularbutton:hover {
 
 }
+
+
+
 
 

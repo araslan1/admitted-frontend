@@ -3,6 +3,7 @@ import Signup from './Signup';
 import Login from './Login';
 import Home from './Home';
 import Dashboard from './Dashboard';
+import Editingtool from './Editingtool';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/login" element ={<Login />}/>
           <Route path="/signup" element={<Signup />}/>
           <Route path='/dashboard' element={<Dashboard />}/>
+          <Route path="/editingtool" element={<Editingtool />} />
         </Routes>
       </div>
     </Router>
