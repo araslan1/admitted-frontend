@@ -29,6 +29,7 @@ body {
     margin-top:100px; 
     /* box-shadow: 0 0 5px 0 rgba(0,0,0, 0.5);  */
     background-color: white; 
+    z-index: 0; 
 }
 
 .ql-container.ql-snow {
@@ -36,10 +37,13 @@ body {
 }
 
 .container .ql-toolbar.ql-snow {
+    margin-top: 2px; 
     border: none; 
     position: fixed; 
     bottom: 5px; 
     margin-left:80px; 
+    z-index: 1;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 

@@ -274,8 +274,8 @@ body {
   position: relative;
   top: 0px; 
 	/* Color & Background */
-	/* background-color: #fc8eac; */
-  background-color: #ffe01b;
+	background-color: #fc8eac;
+  /* background-color: #ffe01b; */
 	color: rgb(36, 28, 21);
 
 	/* Box */
