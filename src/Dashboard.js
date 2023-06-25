@@ -1,21 +1,15 @@
-import testImg from './images/placeholder.png';
-import testImg2 from './images/placeholder2.png';
 import SideNav from './SideNav';
+import './Dashboard.css';
+import ImportantDates from './ImportantDates';
 
 const Dashboard = () => {
     return (
         <>
         <SideNav />
+        <ImportantDates />
+        <div className="dashboard-border">
+        </div>
         <div className="dashboard">
-            <div className="hero">
-                <p id='let-me-cook'>Start a new application</p>
-                <div className="icons">
-                    <img alt = "failed to load" src={testImg} className="hero-img" />
-                    <img alt = "failed to load" src={testImg2} className="hero-img" />
-                    <img alt = "failed to load" src={testImg2} className="hero-img" />
-                    <img alt = "failed to load"src={testImg2} className="hero-img" />
-                </div>
-            </div>
             <div className="recent-activity">
                 <p>Recent activity </p>
             </div>

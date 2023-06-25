@@ -1,0 +1,35 @@
+.contact-us-header {
+    text-align: center;
+}
+.contact-us-text-box {
+    width: 690px;
+    margin: 20px auto;
+    font-size: 24px;
+    line-height: 32px;
+}
+.contact-us-email {
+    text-align: center;
+    font-size: 24px;
+    color: blue;
+    text-decoration: underline;
+}
+.faq-header {
+    text-align: center;
+    margin-top: 60px;
+}
+.all-faqs {
+    display: flex;
+    justify-content: space-evenly;
+}
+.faq-col {
+    display: flex;
+    flex-direction: column;
+}
+.faq-question{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.faq-answer {
+    font-weight: 200;
+    margin-top: 0;
+}

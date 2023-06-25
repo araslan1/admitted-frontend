@@ -31,6 +31,7 @@ const Login = () => {
     };
 
     return (  
+        <div id="loginbody">
         <div className="login">
                 <h3>Log in to the WriteWay Dashboard</h3>
                 <form onSubmit={handleSubmit}>
@@ -64,6 +65,7 @@ const Login = () => {
                     )}
                 </form>
                 <Link to="/signup">Don't have an account? Register here.</Link>
+        </div>
         </div>
     );
 }

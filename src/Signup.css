@@ -1,0 +1,105 @@
+#signup-body {
+    background-color: #f6f6f9;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.signup {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: SofiaPro,helvetica neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background: white;  
+    color: rgb(63, 68, 80);
+    padding-bottom: 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-around; 
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px;
+    border-radius: 10px;
+
+}
+.signup label {
+    font-family: SofiaPro,helvetica neue,Helvetica,Arial,sans-serif;
+    display: block;
+    font-size: 14px;
+    color: #717684;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 auto 5px auto;
+    text-align: left;
+    width: 352px;
+  }
+  .signup h2 {
+    padding-top: 25px; 
+    /* Font & Text */
+    font-family: "Means Web", Georgia, Times, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(63, 68, 80);
+    display: block;
+}
+.signup button {
+    margin-left: 10px; 
+    background: #fc8eac;
+    /* background: #ffe01b; */
+    color: black;
+    border: 0;
+    height: 40px; 
+    width: 350px; 
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+} 
+.signup button:hover {
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+      box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+      transform: translateY(-3px); 
+    }
+
+    .signup input {
+    
+        /* Font & Text */
+        font-family: SofiaPro, "helvetica neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 100;
+        background-color: white;
+        width: 352px; 
+        background: right -10px center #fff;
+        background-size: 20px;
+        border: 1px solid #c9cbd4;
+        border-radius: 6px;
+        color: #3f4450;
+        padding: 9px 8px 7px;
+        margin: 0 auto 20px auto;
+        display: block;
+        cursor: text;
+        position: relative;
+        height: 40px;
+        box-sizing: border-box;
+}
+
+    .signup select {
+        margin: 0 auto 20px auto;
+        height: 40px;
+        border: 1px solid #c9cbd4;
+        border-radius: 6px;
+        padding: 9px 8px 7px;
+        width: 352px;
+    }
+
+    .signup option {
+        font-family: SofiaPro, "helvetica neue", Helvetica, Arial, sans-serif;
+    }

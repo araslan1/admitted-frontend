@@ -1,0 +1,59 @@
+.inspiration {
+    text-align: center;
+}
+#insp-header {
+    text-align: center;
+}
+.insp-sec {
+    position: relative;
+    margin: 50px;
+}
+.insp-img-wrapper {
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+}
+#insp-img-wrapper2 {
+    margin-left: auto;
+}
+.insp-photo {
+    width: 100%;
+    vertical-align: middle;;
+    border-radius: 20px;
+}
+.insp-photo-text {
+    max-width: 300px;
+    background-color: #FEE6ED;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 29px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+}
+.insp-button {
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 19.5px;
+	text-align: center;
+    text-decoration: none;
+	background-color: #fc8eac;
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 91px;
+	padding: 12px 24px;
+	min-width: 91px;
+	cursor: pointer;
+	transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+	border-radius: 26px; 
+}
+#insp-register-button:hover {
+    transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+}

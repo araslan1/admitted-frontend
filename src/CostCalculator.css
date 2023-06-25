@@ -1,0 +1,131 @@
+.cost-header {
+    text-align: center;
+}
+.cost-header-underline {
+    border-bottom: 8px solid #fc8eac;
+}
+.cost-main-text {
+    max-width: 50%;
+    margin: 10px auto;
+    text-align: center;
+}
+.calc-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 8px solid #fc8eac;
+}
+.calc-questions-all {
+    max-width: 90%;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 20px;
+    background-color: #f6f6f9;
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+}
+.calc-answer-button {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-align: center;
+    position: relative;
+    top: 0px; 
+	background-color: #fc8eac;
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 138.305px;
+	padding: 12px 24px;
+	cursor: pointer;
+	box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 26px; 
+    margin-left: 10px;
+}
+.calc-answer-button:hover, .calc-answer-button-2:hover, .calc-answer-button-3:hover, .calc-price-button:hover {
+    transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+    top: -3.05008px;
+}
+.calc-questions-ind {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.calc-answers-2 {
+    display: flex;
+    flex-direction: column;
+}
+.calc-answers-row {
+    display: flex;
+}
+.calc-answer-button-2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-align: center;
+    position: relative;
+    top: 0px; 
+	background-color: #fc8eac;
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 100px;
+	cursor: pointer;
+    border: 1px solid black;
+    border-radius: 26px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.calc-answer-button-3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-align: center;
+    position: relative;
+    top: 0px; 
+	background-color: #fc8eac;
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 138.305px;
+	padding: 12px 24px;
+	cursor: pointer;
+	box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 26px; 
+    margin-left: 10px;
+}
+.calc-price {
+    text-align: center;
+}
+.calc-price-button {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-align: center;
+    position: relative;
+    top: 0px; 
+	background-color: #fc8eac;
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 138.305px;
+	padding: 12px 24px;
+	cursor: pointer;
+	box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 26px; 
+    margin-left: 10px;
+}
+.calc-price-num {
+    width: 100px;
+    padding: 8px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px auto;
+}

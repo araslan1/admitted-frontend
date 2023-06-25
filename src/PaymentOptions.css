@@ -1,0 +1,37 @@
+.payment-options {
+    position: relative;
+    margin-top: 250px;
+    margin-bottom: 50px;
+  }
+  .pay-options-all-boxes {
+    display: flex;
+  }
+  .payment-options h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+	font-weight: 400;
+	letter-spacing: -1px;
+	line-height: 48px;
+    text-align: center;
+  }
+  .pay-options-box {
+    max-width: 320px;
+  }
+  .individual-box {
+    width: 100%;
+    border: 1px solid #BCBAB8;
+    text-align: center;
+  }
+  .individual-box:hover {
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+  }
+  .pay-options-price-num {
+    font-weight: bold;
+  }
+  .pay-options-features {
+    line-height: 50px;
+  }
+  .pay-options-features-line {
+    padding: 15px;
+    border-bottom: 1px solid #DBD9D2;
+  }

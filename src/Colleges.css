@@ -1,0 +1,36 @@
+.colleges {
+    text-align: center;
+}
+.all-colleges {
+    display: flex;
+    flex-direction: column;
+}
+.college-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+.college-ind {
+    display: flex;
+    flex-direction: column;
+}
+.college-ind-img-wrapper {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 0 auto;
+}
+.college-ind-img {
+    height: 100%;
+    width: 100%;
+}
+.college-ind-text {
+    margin-top: 5px;
+}
+.college-unlisted {
+    max-width: 460px;
+    margin: 50px auto;
+}
+.colleges-email {
+    color: blue;
+    text-decoration: underline;
+    font-size: 24px;
+}

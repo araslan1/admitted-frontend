@@ -1,0 +1,77 @@
+@import url("https://use.typekit.net/dfv6fxb.css");
+
+.important-dates p {
+  text-align: center;
+}
+#imp-dates {
+  padding: 20px 0 0px 0;
+  font-size: 20px;
+}
+.imp-dates-icons {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  overflow-x: scroll;
+  width: 50%;
+}
+#icon-1 {
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  background-color: #fc8eac;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 10px #fc8eac;
+  margin: 0 10px;
+}
+#icon-2 {
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  background-color: #FC8DF5;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 10px #FC8DF5;
+  margin: 0 10px;
+}
+#icon-3 {
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  background-color: #FCB98D;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 10px #FCB98D;
+  margin: 0 10px;
+}
+#icon-1:hover {
+	transform: matrix(1, 0, 0, 1, 0, -5);
+	transition: transform 0.3s ease 0s;
+  box-shadow: 0 5px 10px #fc8eac;
+}
+#icon-2:hover {
+	transform: matrix(1, 0, 0, 1, 0, -5);
+	transition: transform 0.3s ease 0s;
+  box-shadow: 0 5px 10px #FC8DF5;
+}
+#icon-3:hover {
+	transform: matrix(1, 0, 0, 1, 0, -5);
+	transition: transform 0.3s ease 0s;
+  box-shadow: 0 5px 10px #FCB98D;
+}
+.imp-date-ind-icon-month {
+  margin-bottom: 0;
+  font-size: 10px;
+}
+.imp-date-ind-icon-date {
+  margin: 0 0 0 0;
+  font-size: 40px;
+  font-family: 'source-sans-pro';
+  font-weight: 200;
+}
+.imp-date-ind-icon-info {
+  margin-top: 0;
+  font-size: 10px;
+  font-family: 'source-sans-pro';
+}
