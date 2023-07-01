@@ -9,11 +9,13 @@ import Editingtool from './Editingtool';
 import ContactUs from './ContactUs';
 import Inspiration from './Inspiration';
 import Colleges from './Colleges';
-
 import ReviewPolicy from './ReviewPolicy';
 import CostCalculator from './CostCalculator';
 import Testeditingtool from "./Testeditingtool"; 
 import Examplefile from "./Examplefile";
+import Checkout from "./Checkout"
+import Cancel from "./Cancel"
+import Success from "./Success"
 import { v4 as uuidV4 } from 'uuid';
 import WhyAdmitted from './WhyAdmitted';
 
@@ -40,6 +42,9 @@ function App() {
           <Route path='/why-admitted'><WhyAdmitted /></Route>
           <Route path='/review-policy'><ReviewPolicy /></Route>
           <Route path='/cost-calculator'><CostCalculator /></Route>
+          <Route path='/cancel'><Cancel /></Route>
+          <Route path='/success'><Success /></Route>
+          <Route path='/checkout'><Checkout /></Route>
         </Switch>
       </div>
     </Router>

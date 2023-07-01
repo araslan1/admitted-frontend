@@ -1,6 +1,90 @@
-.dashboard-border {
-    width: 60%;
-    border-bottom: 1px solid #DBD9D2;
-    height: 1px;
-    margin: 40px auto;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.maindashboard {
+    
+    background-color: #252A41;
+
+}
+
+.userdashboard {
+    position: fixed; 
+    margin: 0;
+    top: 0; 
+    background-color: #252A41;
+    width: 100%; 
+    height: 100%; 
+    display:flex; 
+    flex-direction: column;  
+    justify-content: center; 
+}
+
+.userdashboard #left-side {
+    height: 450px;
+    position: fixed; 
+    left: 125px; 
+    
+}
+
+.userdashboard #left-side h1{
+    font-family: 'Inter';
+    color: white; 
+}
+
+.userdashboard #left-side h3{
+    margin-top: 70px; 
+    font-family: 'Inter';
+    color: white; 
+}
+
+.userdashboard #left-side p{
+    color: #686A7B; 
+}
+
+.userdashboard #projectscontainer{
+    display:flex; 
+    justify-content:space-around; 
+    
+}
+
+
+#right-side {
+    position: fixed; 
+    right: 10px; 
+    height: 97%; 
+    width: 50%;
+    background-color: white; 
+    border-radius: 25px; 
+}
+
+
+#right-side #essays{   
+    height: 400px; 
+    width: 500px; 
+    display: flex; 
+    align-items: flex-start; 
+}
+
+#right-side #essays #upload {
+    background-color: white; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    height: 172px;
+	width: 140px;
+    margin-left: 30px; 
+    margin-top: 20px; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer; 
+}
+
+#right-side #essays #upload img{
+    width: 50px; 
+    height: 50px; 
+    margin-top: 30px; 
+    margin-right: 5px; 
+}
+
+#right-side #essays #upload h2 {
+    display: block; 
+    font-family: 'Lato', sans-serif;
+}

@@ -23,6 +23,42 @@
     background-color: #f6f6f9;
     box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
 }
+.calc-popout {
+    position: relative;
+}
+.calc-question {
+    background: none;
+    border: none;
+    border-bottom: 1px dashed black;
+    padding: 10px 0 0 0;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+.calc-popout-info {
+    position: absolute;
+    left: calc(100% + .50rem);
+    top: -50%;
+    max-width: 250px;
+    min-width: 250px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.calc-popout > .calc-question:focus, .calc-question:hover {
+    border-bottom: 1px dashed rgba(140, 140, 140, 0.75);
+}
+.calc-popout > .calc-question:focus + .calc-popout-info {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
 .calc-answer-button {
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	font-size: 13px;
@@ -32,7 +68,6 @@
 	text-align: center;
     position: relative;
     top: 0px; 
-	background-color: #fc8eac;
 	color: rgb(36, 28, 21);
 	height: 43.5px;
 	width: 138.305px;
@@ -42,6 +77,18 @@
     border: 1px solid black;
     border-radius: 26px; 
     margin-left: 10px;
+}
+.button-color-1 {
+    background-color: #fc8eac;
+    color: black;
+}
+.button-color-2 {
+    background-color: #C98DFC;
+    color: black;
+}
+.button-color-3 {
+    background-color: #FCF58D;
+    color: black;
 }
 .calc-answer-button:hover, .calc-answer-button-2:hover, .calc-answer-button-3:hover, .calc-price-button:hover {
     transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
@@ -69,7 +116,6 @@
 	text-align: center;
     position: relative;
     top: 0px; 
-	background-color: #fc8eac;
 	color: rgb(36, 28, 21);
 	height: 43.5px;
 	width: 100px;
@@ -88,7 +134,6 @@
 	text-align: center;
     position: relative;
     top: 0px; 
-	background-color: #fc8eac;
 	color: rgb(36, 28, 21);
 	height: 43.5px;
 	width: 138.305px;

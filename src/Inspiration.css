@@ -24,13 +24,26 @@
 .insp-photo-text {
     max-width: 300px;
     background-color: #FEE6ED;
-    padding: 3px 8px;
+    padding: 1rem;
     border-radius: 10px;
     font-size: 16px;
     line-height: 29px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+}
+.insp-photo-text-2 {
+    max-width: 300px;
+    background-color: #FEE6ED;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 29px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
     transform: translate(-50%, -50%);
     box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
 }
@@ -48,12 +61,15 @@
 	padding: 12px 24px;
 	min-width: 91px;
 	cursor: pointer;
-	transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
 	box-sizing: border-box;
-	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    border: 1px solid black;
 	border-radius: 26px; 
 }
-#insp-register-button:hover {
+#insp-next-button:hover {
     transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
     box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+    top: -3.05008px;
+}
+.insp-photo-text-body {
+    text-align: left;
 }

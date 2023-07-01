@@ -3,7 +3,8 @@ import "quill/dist/quill.snow.css"
 import { useState, useCallback, useEffect, useRef } from "react";
 import "./Editingtool.css"; 
 import { useParams } from "react-router-dom"; 
-import { io } from 'socket.io-client'
+import { io } from 'socket.io-client';
+import axios from 'axios';
 import stick_figure from "./images/sleeping.png";
 import clouds_figure from "./images/clouds.png"; 
 import checkmark from "./images/checkmark.png"; 
@@ -21,6 +22,58 @@ const Editingtool = () => {
     let span_tracker = null;
     let span_tracker_key = null; 
     let span_tracker_comment = null;
+
+    const fetchComments = async () => {
+        try {
+            const configuration = {
+                method: "get",
+                url: `http://localhost:7459/comments/${documentId}`,
+            };
+            
+            const response = await axios(configuration);
+            setComments(response.data);
+            console.log("Comments have been grabbed!")
+        }
+        catch (error) {
+            console.log("Could not get comments");
+        }
+    }
+
+    const loadComments =  () => {
+        console.log("load comments called")
+        let spans = document.querySelectorAll("div.ql-editor span");
+        console.log(spans);
+        spans.forEach((myspan, index) => {
+            myspan.setAttribute("data-key", index);
+            myspan.style.borderBottom = '2px solid #EA1537';
+            myspan.style.paddingTop = "3.2px";
+            myspan.style.paddingBottom = "3.2px";
+            let find_comment_ref = () => {
+                const comment = commentsRef.current.querySelector(`[data-key="${index}"]`);
+                if (span_tracker){
+                    span_tracker_comment.style.transform = 'none';
+                    span_tracker = myspan;
+                    span_tracker_key = index;
+                    span_tracker_comment = comment;
+                }else{
+                    span_tracker = myspan;
+                    span_tracker_key = index;
+                    span_tracker_comment = comment;
+                }
+                console.log("CLICKED!");
+                const textarea = comment.querySelector('.mycomments')
+                if (textarea.style.display === "none"){
+                    textarea.style.display ="initial"
+                }
+            
+                comment.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                comment.style.transform = 'translateX(-15px) translateY(-8px)';
+            }
+            myspan.addEventListener('click', find_comment_ref);
+        })
+        
+    }
+    
 
     useEffect(() => {
         if (socket == null || quill == null) return; 
@@ -52,6 +105,7 @@ const Editingtool = () => {
                 
                 quill.setContents(document);
                 quill.enable(); //this is to enable text editor until document has loaded
+                loadComments(); 
             })
 
             socket.emit('get-document', documentId); 
@@ -125,8 +179,9 @@ const Editingtool = () => {
         }); 
         q.disable();
         q.setText("Loading..."); 
-
+ 
         setQuill(q); 
+    
     }, [])
 
 
@@ -170,7 +225,6 @@ const Editingtool = () => {
             if (span == null){
                 span = selRange.startContainer.nextSibling;
                 console.log('Span Found!');
-                
             }
             span.setAttribute("data-key", comments.length);
             let spans = document.querySelectorAll("div.ql-editor span");
@@ -184,7 +238,6 @@ const Editingtool = () => {
                 if (data_key.toString() === comments.length.toString()){
                     console.log(data_key)
                     console.log(comments.length)
-                    console.log("HELLLLOOOO");
                     my_index = index;
                 }else{
                     var new_element = myspan.cloneNode(true);
@@ -222,9 +275,6 @@ const Editingtool = () => {
 
                
 
-
-
-
                 const commentDiv = commentsRef.current.querySelector(`[data-key="${my_index}"]`);
                 console.log(commentDiv);
                 const textarea = commentDiv.querySelector(".mycomments");
@@ -245,8 +295,43 @@ const Editingtool = () => {
         quill.removeFormat(0, length)
     }
 
- 
+    const save_comments = () => {
+        try {
+            const comments_config = {
+                method: "post",
+                url: "http://localhost:7459/comments",
+                data: {
+                    _id: documentId,
+                    comments: comments,
+                }
+            }
 
+            axios(comments_config)
+                .then(() => {
+                    console.log("comments were saved!");
+                })
+                .catch((error) => {
+                    console.log("comments failed to save!");
+                });
+        }
+        catch (error) {
+            console.log("Could not save comment")
+        }  
+    }
+
+    
+    
+    
+
+
+    useEffect( () => {
+        fetchComments();
+    }, [])
+ 
+    const print_spans =() => {
+        let spans = document.querySelector("div.ql-editor span");
+        console.log(spans);
+    }
 
     return (
         <>
@@ -314,6 +399,8 @@ const Editingtool = () => {
             <div id ="sidenav">
                 <button className="button-30" style = {{marginTop: "40px"}} onClick={clear_formatting}>Clear formatting</button>
                 <button className="button-30" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</button>
+                <button className="button-30" style = {{marginTop: "40px"}} onClick={save_comments}>completed</button>
+                <button className="button-30" style = {{marginTop: "40px"}} onClick={print_spans}>Log Spans</button>
             </div> 
         </div>
         </>

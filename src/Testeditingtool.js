@@ -3,6 +3,7 @@ import "quill/dist/quill.snow.css"
 import { useState, useCallback, useRef, useEffect } from "react";
 import "./Editingtool.css"; 
 import checkmark from "./images/checkmark.png"; 
+
 // import stick_figure from "./images/sleeping.png";
 // import clouds_figure from "./images/newclouds.png"; 
 
@@ -16,6 +17,7 @@ const Editingtool = () => {
     const [wordCount, setWordCount] = useState(0);
     const commentsRef = useRef(); 
     const [comments, setComments] = useState([]); 
+    const [commentText, setCommentText] = useState([]);
     const [quill, setQuill] = useState(); 
     const [userActive, setUserActive] = useState(false); 
     const [reviewerActive, setReviewerActive] = useState(false); 
@@ -174,7 +176,15 @@ const Editingtool = () => {
         quill.removeFormat(0, length)
     }
 
- 
+    
+
+    const tag_complete = () => {
+        console.log(comments);
+    }
+
+    
+
+  
 
 
     return (
@@ -226,7 +236,8 @@ const Editingtool = () => {
                             onChange={(e) => {
                                 const new_comments = [...comments]; 
                                 new_comments[index] = e.target.value;
-                                setComments(new_comments);        
+                                setComments(new_comments);  
+                                  
                             }}
                             className="mycomments"
                         ></textarea>
@@ -243,6 +254,7 @@ const Editingtool = () => {
             <div id ="sidenav">
                 <button className="button-30" style = {{marginTop: "40px"}} onClick={clear_formatting}>Clear formatting</button>
                 <button className="button-30" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</button>
+                <button className="button-30" style = {{marginTop: "40px"}} onClick={tag_complete}>completed</button>
             </div> 
         </div>
         </>
