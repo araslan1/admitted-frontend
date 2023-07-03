@@ -14,7 +14,7 @@ const Login = () => {
 
         const configuration = {
             method: "post",
-            url: "https://dream-catcher-araslan21.onrender.com/login",
+            url: "http://localhost:7470/login",
             data: {
                 email,
                 password,

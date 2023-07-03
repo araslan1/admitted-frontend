@@ -16,7 +16,7 @@ const Signup = () => {
 
         const configuration = {
             method: "post",
-            url: "https://dream-catcher-araslan21.onrender.com/register",
+            url: "http://localhost:7470/register",
             data: {
               fullname,
               email,

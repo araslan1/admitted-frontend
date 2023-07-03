@@ -24,7 +24,7 @@ const Checkout = () => {
     const handleClick = () => {
         testFun()
 
-        fetch('http://localhost:7459/create-checkout-session', {
+        fetch('http://localhost:7470/create-checkout-session', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

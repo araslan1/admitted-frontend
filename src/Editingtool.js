@@ -27,7 +27,7 @@ const Editingtool = () => {
         try {
             const configuration = {
                 method: "get",
-                url: `http://localhost:7459/comments/${documentId}`,
+                url: `http://localhost:7470/comments/${documentId}`,
             };
             
             const response = await axios(configuration);
