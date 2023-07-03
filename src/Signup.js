@@ -10,26 +10,23 @@ const Signup = () => {
     const [password, setPassword] = useState("");   
     const [register, setRegister] = useState(false); 
 
-    //"https://dream-catcher-araslan21.onrender.com/register",
 
     const handleSubmit = e =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
-        console.log("Entered")
+
         const configuration = {
             method: "post",
-            url: "http://localhost:7459/register",
+            url: "https://dream-catcher-araslan21.onrender.com/register",
             data: {
               fullname,
               email,
               password,
             },
           };
-          console.log("Defined Configuration")
          
 
           axios(configuration)
             .then((result) => {
-                console.log("Success?")
                 console.log(result); 
                 setRegister(true); 
             })
@@ -37,7 +34,6 @@ const Signup = () => {
                 console.log("FAILED"); 
                 console.log(error); 
             });
-            console.log("Configured")
           
     };
 
