@@ -3,12 +3,14 @@ import "./UserSideNav.css"
 import documenticon from "./images/document_icon.png"
 import React from 'react';
 import Typed from 'typed.js';
+import axios from 'axios';
 import { useState, useRef, useEffect } from "react"
 
 
 const Dashboard = () => {
     const [UserName, setUserName] = useState("")
     const [documentIds, setDocumentIds] = useState([])
+    const [services, setServices] = useState([])
     const el = useRef(null);
     const openNav = () => {
         document.querySelector("#mySidenav").style.width = "280px";
@@ -16,6 +18,15 @@ const Dashboard = () => {
     const closeNav = () => {
         document.querySelector("#mySidenav").style.width = "0";
     }
+
+
+
+    useEffect(() => {
+        const configuration = {
+            method: "get",
+            url: http://localhost:7459/
+        }
+    })
 
     useEffect(() => {
 
@@ -79,6 +90,9 @@ const Dashboard = () => {
 
                             </div>
                         </div>
+                        <a href={`/editingtool/${randomId}`}>
+                            Click here to go to the editing tool
+                        </a>
                     </div>
                 </div>
             </div>
