@@ -21,12 +21,12 @@ const Dashboard = () => {
 
 
 
-    useEffect(() => {
-        const configuration = {
-            method: "get",
-            url: http://localhost:7459/
-        }
-    })
+    // useEffect(() => {
+    //     const configuration = {
+    //         method: "get",
+    //         url: http://localhost:7459/
+    //     }
+    // })
 
     useEffect(() => {
 
@@ -90,9 +90,9 @@ const Dashboard = () => {
 
                             </div>
                         </div>
-                        <a href={`/editingtool/${randomId}`}>
+                        {/* <a href={`/editingtool/${randomId}`}>
                             Click here to go to the editing tool
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>

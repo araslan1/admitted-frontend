@@ -21,7 +21,7 @@ const Home = () => {
             <div>
                 <p id="main-blurb">Win over college admission officers with the #1 essay review platform, where your essays are edited by students who have already been admitted into top unversities!</p>
             </div>
-            <Link to='/signup' class="mainbutton">Get Started!</Link>
+            <Link to='/signup' className="mainbutton">Get Started!</Link>
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
