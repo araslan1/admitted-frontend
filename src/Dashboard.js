@@ -18,6 +18,7 @@ const Dashboard = () => {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     // useEffect(() => {
@@ -27,6 +28,8 @@ const Dashboard = () => {
     //     }
     // })
 
+=======
+>>>>>>> parent of 72658fb (Commit slight change)
 =======
 >>>>>>> parent of 72658fb (Commit slight change)
     useEffect(() => {
@@ -92,9 +95,12 @@ const Dashboard = () => {
                             </div>
                         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         {/* <a href={`/editingtool/${randomId}`}>
                             Click here to go to the editing tool
                         </a> */}
+=======
+>>>>>>> parent of 72658fb (Commit slight change)
 =======
 >>>>>>> parent of 72658fb (Commit slight change)
                     </div>
