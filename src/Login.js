@@ -22,9 +22,7 @@ const Login = () => {
         };
 
         axios(configuration)
-        .then((response) => {
-            const { token } = response.data;
-
+        .then((result) => {
             setLogin(true);
         })
         .catch((error) => {

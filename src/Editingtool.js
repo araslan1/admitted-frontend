@@ -5,7 +5,6 @@ import "./Editingtool.css";
 import { useParams } from "react-router-dom"; 
 import { io } from 'socket.io-client';
 import axios from 'axios';
-import { v4 as uuidV4 } from 'uuid';
 import stick_figure from "./images/sleeping.png";
 import clouds_figure from "./images/clouds.png"; 
 import checkmark from "./images/checkmark.png"; 
