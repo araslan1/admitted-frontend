@@ -62,6 +62,7 @@
     width: 500px; 
     display: flex; 
     align-items: flex-start; 
+    overflow-x: scroll; 
 }
 
 #right-side #essays #upload {

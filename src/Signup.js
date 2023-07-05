@@ -1,10 +1,13 @@
 import { useState } from 'react'; 
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { v4 as uuidV4 } from 'uuid';
 import "./Signup.css"
 
 
 const Signup = () => {
-
+    const history = useHistory();
+    const dashboardId = uuidV4();
     const [fullname, setName] = useState(""); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");   
@@ -13,7 +16,6 @@ const Signup = () => {
 
     const handleSubmit = e =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
-
         const configuration = {
             method: "post",
             url: "http://localhost:7470/register",
@@ -21,6 +23,7 @@ const Signup = () => {
               fullname,
               email,
               password,
+              dashboardId,
             },
           };
          
@@ -29,12 +32,14 @@ const Signup = () => {
             .then((result) => {
                 console.log(result); 
                 setRegister(true); 
+
+                history.push("/login");
             })
             .catch((error) => {
                 console.log("FAILED"); 
                 console.log(error); 
             });
-          
+        
     };
 
     return ( 

@@ -10,6 +10,11 @@ import clouds_figure from "./images/clouds.png";
 import checkmark from "./images/checkmark.png"; 
 import pinkstar from "./images/star.png"
 import ConnectSocket from "./ConnectSocket";
+import Cookies from "universal-cookie"; 
+// const cookies = new Cookies(); 
+// // get token generated on login
+// const token = cookies.get("TOKEN");
+
 
 const Editingtool = () => {
     const [wordCount, setWordCount] = useState(0);
@@ -17,11 +22,31 @@ const Editingtool = () => {
     const [socket, setSocket] = useState(); 
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState([]); 
-    const SAVE_INTERVAL_MS =  2000; 
+    const SAVE_INTERVAL_MS =  50000; 
     const commentsRef = useRef(); 
     let span_tracker = null;
     let span_tracker_key = null; 
     let span_tracker_comment = null;
+
+
+    // useEffect(() => {
+    //     const configuration = {
+    //         method: 'get',
+    //         url: `http://localhost:7470/auth-editingtool/${documentId}`,
+    //         headers: {
+    //             Authorization: `Bearer ${token}`,
+    //         },
+    //     };
+    
+    //     axios(configuration)
+    //         .then((response) => {
+    //             console.log("hurray, given access to editing tool!")
+    //         })
+    //         .catch((error) => {
+    //             console.log("you do not have access to editing tool")
+    //             error = new Error(); 
+    //         });
+    // }, []);
 
     const fetchComments = async () => {
         try {
@@ -35,7 +60,7 @@ const Editingtool = () => {
             console.log("Comments have been grabbed!")
         }
         catch (error) {
-            console.log("Could not get comments");
+            console.log("Could not get comments", error);
         }
     }
 
@@ -117,7 +142,7 @@ const Editingtool = () => {
 
     //useEffect to connect to socket
     useEffect(() => {
-    const s = io("http://localhost:7459")
+    const s = io("http://localhost:7470")
     setSocket(s); 
 
         return () => {
@@ -179,6 +204,7 @@ const Editingtool = () => {
         }); 
         q.disable();
         q.setText("Loading..."); 
+        fetchComments();
  
         setQuill(q); 
     
@@ -299,7 +325,7 @@ const Editingtool = () => {
         try {
             const comments_config = {
                 method: "post",
-                url: "http://localhost:7459/comments",
+                url: "http://localhost:7470/comments",
                 data: {
                     _id: documentId,
                     comments: comments,
@@ -324,9 +350,9 @@ const Editingtool = () => {
     
 
 
-    useEffect( () => {
-        fetchComments();
-    }, [])
+    // useEffect( () => {
+    //     fetchComments();
+    // }, [])
  
     const print_spans =() => {
         let spans = document.querySelector("div.ql-editor span");
