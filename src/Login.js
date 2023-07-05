@@ -2,8 +2,13 @@ import { useState } from "react";
 import './Login.css'; 
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Cookies from "universal-cookie";
+import { useHistory } from 'react-router-dom';
+
+const cookies = new Cookies();
 
 const Login = () => {
+    const history = useHistory(); 
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
@@ -14,7 +19,7 @@ const Login = () => {
 
         const configuration = {
             method: "post",
-            url: "https://dream-catcher-araslan21.onrender.com/login",
+            url: "http://localhost:7470/login",
             data: {
                 email,
                 password,
@@ -24,6 +29,12 @@ const Login = () => {
         axios(configuration)
         .then((result) => {
             setLogin(true);
+            cookies.set("TOKEN", result.data.token,{
+                path: '/',
+            });
+            console.log(cookies)
+            //redirect user to to the auth page
+            setTimeout(history.push(`/dashboard/${result.data.dashboardId}`), 10000);
         })
         .catch((error) => {
             error = new Error();

@@ -1,22 +1,41 @@
 import placeholder from './images/placeholder-college.jpeg'
 import './Checkout.css'
 
-let collegeCount = 0;
-let featuresArr = [false, false, false]
+const collegeArr = [false, false, false, false, false, false]
+const featuresArr = [false, false, false]
 let testArr = [];
 
 const testFun = () => {
-    if (collegeCount > 0) {
-        testArr.push({id: 1, quantity: collegeCount});
+    
+    //Colleges
+    if (collegeArr[0]) {
+        testArr.push({id: 1, quantity: 1});
     }
-    if (featuresArr[0]) {
+    if (collegeArr[1]) {
         testArr.push({id: 2, quantity: 1});
     }
-    if (featuresArr[1]) {
+    if (collegeArr[2]) {
         testArr.push({id: 3, quantity: 1});
     }
-    if (featuresArr[2]) {
+    if (collegeArr[3]) {
         testArr.push({id: 4, quantity: 1});
+    }
+    if (collegeArr[4]) {
+        testArr.push({id: 5, quantity: 1});
+    }
+    if (collegeArr[5]) {
+        testArr.push({id: 6, quantity: 1});
+    }
+
+    //features
+    if (featuresArr[0]) {
+        testArr.push({id: 7, quantity: 1});
+    }
+    if (featuresArr[1]) {
+        testArr.push({id: 8, quantity: 1});
+    }
+    if (featuresArr[2]) {
+        testArr.push({id: 9, quantity: 1});
     }
 }
 
@@ -24,7 +43,7 @@ const Checkout = () => {
     const handleClick = () => {
         testFun()
 
-        fetch('http://localhost:7459/create-checkout-session', {
+        fetch('http://localhost:7470/create-checkout-session', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,18 +66,13 @@ const Checkout = () => {
         })
     }
 
-    let selected = []
-
     const handleSelect = (id) => {
-        let index = selected.indexOf(id);
-        if (index === -1) {
-            selected.push(id);
+        if (!collegeArr[id - 1]) {
+            collegeArr[id - 1] = true;
             document.getElementById('college-' + id).innerHTML = "&#x2713;";
-            collegeCount += 1;
         } else {
-            selected.splice(index, 1)
+            collegeArr[id - 1] = false;
             document.getElementById('college-' + id).innerHTML = "+";
-            collegeCount -= 1;
         }
     }
 

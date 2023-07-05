@@ -7,8 +7,28 @@ import zoomImg4 from "./images/mailchimp-3.webp";
 import './Home.css';
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
+// import axios from 'axios';
+// import { useEffect } from "react";
+// import Cookies from "universal-cookie";
+// const cookies = new Cookies(); 
+// const token = cookies.get('TOKEN'); 
 
 const Home = () => {
+
+
+    // useEffect(() => {
+    //     const configuration = {
+    //         method: 'get',
+    //         url: `http://localhost:7470/auth-endpoint`,
+    //         headers: {
+    //             Authorization: `Bearer ${token}`,
+    //         },
+    //     };
+        
+    //     axios(configuration)
+    //         .then((response) => {
+    //         })
+    // }, [])
     return (
         <>
         <div>
@@ -33,7 +53,7 @@ const Home = () => {
                     <div className="cooking">
                     <div className="card-info" id='card-info-0'>
                         <p className='card-info-blurb'>Did you know that many admissions<br></br>officers at elite universities are alumni?</p>
-                        <Link to='/signup' class="mainbutton" id='card-info-0-button'>Get Started!</Link>
+                        <Link to='/signup' className="mainbutton" id='card-info-0-button'>Get Started!</Link>
                     </div>
                     </div>
                 </div>
@@ -44,7 +64,7 @@ const Home = () => {
                     </div>
                     <div className="card-info" id='card-info-1'>
                         <p className='card-info-blurb'>We've already gone through this<br></br>process!</p>
-                        <Link to='/signup' class="mainbutton" id='card-info-1-button'>Get Started!</Link>
+                        <Link to='/signup' className="mainbutton" id='card-info-1-button'>Get Started!</Link>
                     </div>
                 </div>
                 <div className='feature-cards'>
@@ -54,7 +74,7 @@ const Home = () => {
                     </div>
                     <div className="card-info" id='card-info-2'>
                         <p className='card-info-blurb'>We are also not copying<br></br>Intuit Mailchimp!</p>
-                        <Link to='/signup' class="mainbutton" id='card-info-2-button'>Get Started!</Link>
+                        <Link to='/signup' className="mainbutton" id='card-info-2-button'>Get Started!</Link>
                     </div>
                 </div>
                 <div className='feature-cards'>
@@ -64,7 +84,7 @@ const Home = () => {
                     </div>
                     <div className="card-info" id='card-info-3'>
                         <p className='card-info-blurb'>Generic blurb lorum ipsum<br></br>drago thago FRANK!</p>
-                        <Link to='/signup' class="mainbutton" id='card-info-3-button'>Get Started!</Link>
+                        <Link to='/signup' className="mainbutton" id='card-info-3-button'>Get Started!</Link>
                     </div>
                 </div>
             </div>

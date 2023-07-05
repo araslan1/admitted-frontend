@@ -16,6 +16,10 @@ import Examplefile from "./Examplefile";
 import Checkout from "./Checkout"
 import Cancel from "./Cancel"
 import Success from "./Success"
+import ProtectedRoute from './ProtectedRoute';
+import Account from "./Account";
+import FreeComponent from "./FreeComponent";
+import AuthComponent from "./AuthComponent";
 import { v4 as uuidV4 } from 'uuid';
 import WhyAdmitted from './WhyAdmitted';
 
@@ -27,7 +31,7 @@ function App() {
           <Route exact path="/"><Home /></Route>
           <Route path="/login"><Login /></Route>
           <Route path="/signup"><Signup /></Route>
-          <Route exact path="/dashboard"><Dashboard /></Route>
+          <ProtectedRoute exact path="/dashboard/:id" component={Dashboard}/>
           <Route path="/dashboard/example"><Examplefile /></Route>
           <Route exact path="/editingtool">
             <Redirect to={`/editingtool/${uuidV4()}`} />
@@ -45,6 +49,9 @@ function App() {
           <Route path='/cancel'><Cancel /></Route>
           <Route path='/success'><Success /></Route>
           <Route path='/checkout'><Checkout /></Route>
+          <Route path='/account' component={Account}></Route>
+          <Route path='/free' component={FreeComponent}></Route>
+          <ProtectedRoute path='/auth' component={AuthComponent} />
         </Switch>
       </div>
     </Router>

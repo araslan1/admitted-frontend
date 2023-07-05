@@ -1,44 +1,45 @@
 import { useState } from 'react'; 
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { v4 as uuidV4 } from 'uuid';
 import "./Signup.css"
 
 
 const Signup = () => {
-
+    const history = useHistory();
+    const dashboardId = uuidV4();
     const [fullname, setName] = useState(""); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");   
     const [register, setRegister] = useState(false); 
 
-    //"https://dream-catcher-araslan21.onrender.com/register",
 
     const handleSubmit = e =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
-        console.log("Entered")
         const configuration = {
             method: "post",
-            url: "http://localhost:7459/register",
+            url: "http://localhost:7470/register",
             data: {
               fullname,
               email,
               password,
+              dashboardId,
             },
           };
-          console.log("Defined Configuration")
          
 
           axios(configuration)
             .then((result) => {
-                console.log("Success?")
                 console.log(result); 
                 setRegister(true); 
+
+                history.push("/login");
             })
             .catch((error) => {
                 console.log("FAILED"); 
                 console.log(error); 
             });
-            console.log("Configured")
-          
+        
     };
 
     return ( 
