@@ -11,9 +11,9 @@ import checkmark from "./images/checkmark.png";
 import pinkstar from "./images/star.png"
 import ConnectSocket from "./ConnectSocket";
 import Cookies from "universal-cookie"; 
-// const cookies = new Cookies(); 
-// // get token generated on login
-// const token = cookies.get("TOKEN");
+const cookies = new Cookies(); 
+// get token generated on login
+const token = cookies.get("TOKEN");
 
 
 const Editingtool = () => {
@@ -29,24 +29,24 @@ const Editingtool = () => {
     let span_tracker_comment = null;
 
 
-    // useEffect(() => {
-    //     const configuration = {
-    //         method: 'get',
-    //         url: `http://localhost:7470/auth-editingtool/${documentId}`,
-    //         headers: {
-    //             Authorization: `Bearer ${token}`,
-    //         },
-    //     };
+    useEffect(() => {
+        const configuration = {
+            method: 'get',
+            url: `http://localhost:7470/auth-editingtool/${documentId}`,
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
     
-    //     axios(configuration)
-    //         .then((response) => {
-    //             console.log("hurray, given access to editing tool!")
-    //         })
-    //         .catch((error) => {
-    //             console.log("you do not have access to editing tool")
-    //             error = new Error(); 
-    //         });
-    // }, []);
+        axios(configuration)
+            .then((response) => {
+                console.log("hurray, given access to editing tool!")
+            })
+            .catch((error) => {
+                console.log("you do not have access to editing tool")
+                error = new Error(); 
+            });
+    }, []);
 
     const fetchComments = async () => {
         try {
@@ -275,7 +275,6 @@ const Editingtool = () => {
                 spans = document.querySelectorAll("div.ql-editor span");
                 spans.forEach((myspan, index) => {
                     let find_comment_ref = () => {
-            
                         const comment = commentsRef.current.querySelector(`[data-key="${index}"]`);
                         if (span_tracker){
                             span_tracker_comment.style.transform = 'none';
@@ -292,7 +291,6 @@ const Editingtool = () => {
                         if (textarea.style.display === "none"){
                             textarea.style.display ="initial"
                         }
-                    
                         comment.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
                         comment.style.transform = 'translateX(-15px) translateY(-8px)';
                     }
