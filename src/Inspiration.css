@@ -3,6 +3,10 @@
 }
 #insp-header {
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 40px;
 }
 .insp-sec {
     position: relative;
@@ -49,27 +53,30 @@
 }
 .insp-button {
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-	font-size: 13px;
-	font-weight: 500;
-	line-height: 19.5px;
-	text-align: center;
-    text-decoration: none;
-	background-color: #fc8eac;
-	color: rgb(36, 28, 21);
-	height: 43.5px;
-	width: 91px;
-	padding: 12px 24px;
-	min-width: 91px;
-	cursor: pointer;
-	box-sizing: border-box;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+    position: relative;
+    top: 0px; 
+    background-color: #fc8eac;
+    color: rgb(36, 28, 21);
+    height: 43.5px;
+    width: 400px;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 26px; 
     border: 1px solid black;
-	border-radius: 26px; 
+    text-decoration: none;
 }
 #insp-next-button:hover {
-    transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition: top 0.1s ease-in-out, transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
     box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
-    top: -3.05008px;
+    top: -5px;
 }
 .insp-photo-text-body {
     text-align: left;
+}
+.insp-photo-text-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

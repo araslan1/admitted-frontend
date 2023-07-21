@@ -8,7 +8,7 @@ const Colleges = () => {
         <>
         <Navbar />
         <div className="colleges">
-            <h1>Colleges we offer reviews for:</h1>
+            <h1 id='colleges-header'>Colleges we offer reviews for:</h1>
             <div className="all-colleges">
                 <div className="college-row">
                     <div className="college-ind">
@@ -96,9 +96,30 @@ const Colleges = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="college-row">
+                    <div className="college-ind">
+                        <div className="college-ind-img-wrapper">
+                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
+                        </div>
+                        <div className="college-ind-text">
+                            <p>Brown University</p>
+                        </div>
+                    </div>
+
+                    <div className="college-ind">
+                        <div className="college-ind-img-wrapper">
+                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
+                        </div>
+                        <div className="college-ind-text">
+                            <p>University of Pennsylvania</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
             <div className="college-unlisted">
-                <h2>Your dream school isn't listed?</h2>
+                <h2 id='college-unlisted-header'>Your dream school isn't listed?</h2>
                 <p>
                     We are doing our best to find reviewers at every elite instition. If there is one school in particular that you want reviewed by a current student, email the address listed below to let us know. If we find reviewers, we'll email you back!
                 </p>

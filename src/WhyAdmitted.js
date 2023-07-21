@@ -77,6 +77,11 @@ const WhyAdmitted = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="why-next-btn-wrap">
+                <Link to='/colleges' className='why-next-btn'>Next: What college applications do we offer review for?</Link>
+            </div>
+
         </div>
         <Footer />
         </>

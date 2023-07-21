@@ -18,25 +18,31 @@
   /* The navigation menu links */
 .usersidenav .sidenav a {
     text-decoration: none; 
-    font-size: 14px;
+    font-size: 17px;
     font-weight: black;
     color: 	#787878; 
     margin-top: 20px; 
-    width: 238px;
-    height: 50px; 
-    border-top-right-radius: 22px;
-    border-bottom-right-radius: 22px; 
+    width: 280px;
+    height: 51px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
     display: block;
     transition: 0.3s;
   }
+
+
+
+.sidenav .linksdiv a {
+    padding-left: 1.5rem;
+    padding-top: 17px;
+}
   
   /* When you mouse over the navigation links, change their color */
 .usersidenav .sidenav a:hover {
-    color: white;
-    background-color: #fc8eac;
+    color: rgb(144, 144, 144);
+    background-color: rgb(244, 244, 244);
+    border-left: 10px solid #fc8eac;
 }
 
 .usersidenav .sidenav .linksdiv {
@@ -47,11 +53,18 @@
   /* Position and style the close button (top right corner) */
 .usersidenav .sidenav .closebtn {
     position: absolute;
-    top: 0;
-    left: 25px; 
-    font-size: 36px;
+    background-color: white; 
+    top: 10px;
+    left: 15px; 
     
-  }
+    border: none; 
+    cursor: pointer; 
+    font-size: 36px;
+}
+
+.usersidenav .sidenav .closebtn:hover {
+  transform: translateY(1px)
+}
   
 
 

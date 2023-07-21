@@ -20,7 +20,7 @@ const Editingtool = () => {
     let span_tracker_key = null; 
     let span_tracker_comment = null;
     const text = 
-    `Hello, welcome to our essay editing tool! This is where you'll submit your essays for review. A sentence, word, or phrase that your reviewer has left a comment on will be highlighted. When you click on any highlighted section, you will be shown which comment corresponds to the specific highlighted section you clicked on. For example, click on this sentence!
+    `Hello, welcome to our essay editing tool! This is where you'll submit your essays for review. A sentence, word, or phrase that your reviewer has left a comment on will be highlighted. When you click on any highlighted section, you will be shown which comment corresponds to the specific highlighted section you clicked on. For example, click on this sentence! There are 3 quick steps to follow:
 
  1. A user (you) pays for an essay review and copies the prompts/essays from their requested college into this text box. 
     
@@ -87,10 +87,10 @@ Again, warm welcome to Admitted!`
         q.disable();
         q.setText(text); 
         q.formatText(322, 37, 'background', '#FDB5C9');
-        q.formatText(361, 4, 'background', '#FDB5C9');
-        q.formatText(488, 4, 'background', '#FDB5C9');
-        q.formatText(620, 4, 'background', '#FDB5C9');
-        q.formatText(838, 32, 'bold', true);
+        q.formatText(396, 4, 'background', '#FDB5C9');
+        q.formatText(523, 4, 'background', '#FDB5C9');
+        q.formatText(655, 4, 'background', '#FDB5C9');
+        q.formatText(873, 32, 'bold', true);
         setQuill(q); 
         loadComments();
         q.enable(); 

@@ -46,23 +46,23 @@ const Login = () => {
         <div className="login">
                 <h3>Log in to the WriteWay Dashboard</h3>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="email">Your Email Address</label>
+                    <label htmlFor="email">Email Address:</label>
                     <input
                         type="email"
                         id="email"
-                        placeholder="email address"
+                        placeholder="Email Address"
                         required
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value); 
                         }}
                     />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <input        
                         type="password"
                         id="password"
                         required
-                        placeholder="password"
+                        placeholder="Password"
                         value={password}
                         onChange = {(e) => {
                             setPass(e.target.value); 

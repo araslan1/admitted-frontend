@@ -1,0 +1,147 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    backdrop-filter: blur(4px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .modalContainer {
+    width: 450px;
+    height: 300px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body_confirm {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .footer_confirm {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer .footer_confirm button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+
+  .modalContainer .logbutton{
+	/* Font & Text */
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 19.5px;
+	text-align: center;
+  position: relative;
+  top: 0px; 
+
+	/* Color & Background */
+	background-color: white;
+	color: rgb(36, 28, 21);
+
+	/* Box */
+	height: 43.5px;
+	width: 91px;
+	margin: 0px;
+	padding: 12px 24px;
+	min-height: 0px;
+	min-width: 91px;
+	cursor: pointer;
+	
+
+	/* Effects */
+	transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+	border-radius: 26px; 
+}
+
+.modalContainer  .logbutton:hover {
+  transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+  box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+  top: -3.05008px;
+}
+
+
+.modalContainer .mainbutton {
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-decoration: none solid rgb(36, 28, 21);
+	text-align: center;
+  position: relative;
+  top: 0px; 
+	/* Color & Background */
+	background-color: #fc8eac;
+  /* background-color: #ffe01b; */
+	color: rgb(36, 28, 21);
+
+	/* Box */
+	height: 43.5px;
+	width: 138.305px;
+	padding: 12px 24px;
+  
+
+
+	/* Miscellaneous */
+	cursor: pointer;
+
+	/* Effects */
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 0.25008px 0px 0px;
+  border-radius: 26px; 
+}
+.modalContainer .mainbutton:hover {
+	transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+  box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+  top: -3.05008px;
+}
+
+
+
+  

@@ -2,7 +2,8 @@ import Quill from "quill"
 import "quill/dist/quill.snow.css" 
 import { useState, useCallback, useEffect, useRef } from "react";
 import "./Editingtool.css"; 
-import { useParams } from "react-router-dom"; 
+import { useParams, useHistory} from "react-router-dom"; 
+import Typed from 'typed.js';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 import stick_figure from "./images/sleeping.png";
@@ -11,42 +12,109 @@ import checkmark from "./images/checkmark.png";
 import pinkstar from "./images/star.png"
 import ConnectSocket from "./ConnectSocket";
 import Cookies from "universal-cookie"; 
-// const cookies = new Cookies(); 
-// // get token generated on login
-// const token = cookies.get("TOKEN");
+import Confirm from './Confirm';
+import goal_icon from "./images/goal_icons.png";
+import support_icon from "./images/support_icon.png";
+import return_icon from "./images/return_icon.png";
+import person_icon from "./images/person_icon.png";
+import loading_while_matching from "./images/while_matching.png";
+import new_document_icon from "./images/new_document.png";
+const cookies = new Cookies(); 
+
 
 
 const Editingtool = () => {
+    // // get token generated on login
+    const [userHasSubmitted, setUserHasSubmitted] = useState(false); 
+    const [isReviewer, setIsReviewer] = useState(false);
+    const [essaysReviewed, setEssaysReviewed] = useState(false); 
+    const [confirmationOpen, setConfirmationOpen] = useState(false); 
+    const token = cookies.get("TOKEN");
     const [wordCount, setWordCount] = useState(0);
     const {id: documentId} = useParams(); //contains url id
+    const [dashboardId, setDashboardId] = useState(); 
     const [socket, setSocket] = useState(); 
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState([]); 
     const SAVE_INTERVAL_MS =  50000; 
     const commentsRef = useRef(); 
+    const el = useRef(null);
+    const typed = null; 
     let span_tracker = null;
     let span_tracker_key = null; 
     let span_tracker_comment = null;
+    const history = useHistory(); 
 
+    const submitEssays = async () => {
+        setUserHasSubmitted(true);
+        const configuration = {
+            method: 'post',
+            url: `http://localhost:7470/editingtool/${documentId}`,
+            data: {
+                userHasSubmitted: userHasSubmitted,
+                essaysReviewed: essaysReviewed,  
+            }
+        };
+        
+        await axios(configuration)
+            .then(() => {
+                console.log("essay has been submitted!");
+            })
+            .catch(() => {
+                console.log("error submitting essays");
+            })
+        setConfirmationOpen(false);
+        //add nodemailer code here!
+    }
 
-    // useEffect(() => {
-    //     const configuration = {
-    //         method: 'get',
-    //         url: `http://localhost:7470/auth-editingtool/${documentId}`,
-    //         headers: {
-    //             Authorization: `Bearer ${token}`,
-    //         },
-    //     };
+    useEffect(() => {
+
     
-    //     axios(configuration)
-    //         .then((response) => {
-    //             console.log("hurray, given access to editing tool!")
-    //         })
-    //         .catch((error) => {
-    //             console.log("you do not have access to editing tool")
-    //             error = new Error(); 
-    //         });
-    // }, []);
+
+        var animateButton = function(e) {
+            e.preventDefault();
+            //reset animation
+            e.target.classList.remove('animate');
+            
+            e.target.classList.add('animate');
+            setTimeout(function(){
+                e.target.classList.remove('animate');
+            },700);
+        };
+
+        var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+        for (var i = 0; i < bubblyButtons.length; i++) {
+            bubblyButtons[i].addEventListener('click', animateButton, false);
+        }
+
+        const configuration = {
+            method: 'get',
+            url: `http://localhost:7470/auth-editingtool/${documentId}`,
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+    
+        axios(configuration)
+            .then((response) => {
+                setIsReviewer(response.data.isReviewer)
+                setUserHasSubmitted(response.data.userHasSubmitted); 
+                setEssaysReviewed(response.data.essaysReviewed);
+                console.log("hurray, given access to editing tool!")
+            })
+            .catch((error) => {
+                console.log("you do not have access to editing tool")
+                error = new Error(); 
+            });
+
+        const s = io("http://localhost:7470")
+        setSocket(s); 
+    
+        return () => {
+            s.disconnect(); 
+        }
+    }, []);
 
     const fetchComments = async () => {
         try {
@@ -142,8 +210,8 @@ const Editingtool = () => {
 
     //useEffect to connect to socket
     useEffect(() => {
-    const s = io("http://localhost:7470")
-    setSocket(s); 
+        const s = io("http://localhost:7470")
+        setSocket(s); 
 
         return () => {
             s.disconnect(); 
@@ -207,9 +275,9 @@ const Editingtool = () => {
         fetchComments();
  
         setQuill(q); 
+        
     
     }, [])
-
 
 
     
@@ -275,7 +343,7 @@ const Editingtool = () => {
                 spans = document.querySelectorAll("div.ql-editor span");
                 spans.forEach((myspan, index) => {
                     let find_comment_ref = () => {
-            
+
                         const comment = commentsRef.current.querySelector(`[data-key="${index}"]`);
                         if (span_tracker){
                             span_tracker_comment.style.transform = 'none';
@@ -416,18 +484,55 @@ const Editingtool = () => {
                 ))}
             </div>
 
-            
-
-            {/* <img src={stick_figure} alt ="hello" id="mycartoon"></img>
+            {!isReviewer && !userHasSubmitted &&
+            <>
+            <img src={stick_figure} alt ="hello" id="mycartoon"></img>
             <img src={clouds_figure} alt="hello" id="clouds"></img>
-            <p id="matchingmessage">Your essay has not been matched with a reviewer yet. Click here to be matched within seconds!</p> */}
+            <p id="matchingmessage">Your essay has not been matched with a reviewer yet. Click here to be matched within seconds!<span><button onClick = {() => {setTimeout(() => {
+                if (!userHasSubmitted){
+                    setConfirmationOpen(true);
+                }
+            }, 400)}}
+            style = {{marginTop: "40px", marginLeft:"200px"}} className="bubbly-button">Submit Essays!</button></span></p>
+            </>}
+
+            {!isReviewer && userHasSubmitted &&
+            <>
+            <div style ={{marginLeft: "150px", marginTop: "150px"}}>
+                <img src={loading_while_matching} style={{width:"350px"}}></img>
+                <div>
+                <p style ={{width:"350px", marginLeft: "20px"}}><span ref = {el} >Congrats on submitting your essays. We are currently looking for a match!</span></p>
+                </div>
+            </div>
+            </>}
+            
+            {}
 
             <div id ="sidenav">
-                <button className="button-30" style = {{marginTop: "40px"}} onClick={clear_formatting}>Clear formatting</button>
-                <button className="button-30" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</button>
-                <button className="button-30" style = {{marginTop: "40px"}} onClick={save_comments}>completed</button>
-                <button className="button-30" style = {{marginTop: "40px"}} onClick={print_spans}>Log Spans</button>
-            </div> 
+                <div className = "editing_tool_buttons" onClick = {() => {
+                        history.push('/dashboard');
+                    }}>
+                    Return Dashboard
+                    <img style={{width: "20px", marginLeft: "auto"}} src={return_icon}></img>
+                </div>
+                <div className = "editing_tool_buttons">
+                    Meet Your Reviewer
+                    <img style={{width: "20px", marginLeft: "auto"}} src={person_icon}></img>
+                </div>
+                <div className = "editing_tool_buttons">
+                    Goals
+                    <img style={{width: "20px", marginLeft: "auto"}} src={goal_icon}></img>
+                </div>
+                <div className = "editing_tool_buttons" onClick = {() => {
+                    history.push("/support")
+                }}>
+                    Have questions?
+                    <img style={{width: "20px", marginLeft: "auto"}} src={support_icon}></img>
+                </div>
+        
+                {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
+            </div>   
+            {confirmationOpen && <Confirm closeModal={setConfirmationOpen} submitEssays={submitEssays}/>}    
         </div>
         </>
     ); 

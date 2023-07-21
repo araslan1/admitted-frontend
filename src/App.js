@@ -22,6 +22,8 @@ import FreeComponent from "./FreeComponent";
 import AuthComponent from "./AuthComponent";
 import { v4 as uuidV4 } from 'uuid';
 import WhyAdmitted from './WhyAdmitted';
+import RedirectDashboard from './RedirectDashboard';
+import ReviewerDashboard from './ReviewerDashboard';
 
 function App() {
   return (
@@ -31,12 +33,14 @@ function App() {
           <Route exact path="/"><Home /></Route>
           <Route path="/login"><Login /></Route>
           <Route path="/signup"><Signup /></Route>
+          <ProtectedRoute exact path="/dashboard" component={RedirectDashboard}></ProtectedRoute>
           <ProtectedRoute exact path="/dashboard/:id" component={Dashboard}/>
           <Route path="/dashboard/example"><Examplefile /></Route>
           <Route exact path="/editingtool">
             <Redirect to={`/editingtool/${uuidV4()}`} />
           </Route>
-          <Route path="/editingtool/:id"><Editingtool /></Route>
+          <ProtectedRoute path="/editingtool/:id"><Editingtool /></ProtectedRoute>
+          <Route path="/reviewerdashboard"><ReviewerDashboard /></Route>
           <Route path="/testeditingtool"><Testeditingtool /></Route>
           <Route path='/support'><Support /></Route>
           <Route path='/about-us'><AboutUs /></Route>

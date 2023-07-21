@@ -60,7 +60,6 @@ const Checkout = () => {
             return res.json().then(json => Promise.reject(json))
         }).then(({ url }) => {
             window.location = url
-            console.log(url)
         }).catch(e => {
             console.error(e.error)
         })
@@ -229,7 +228,7 @@ const Checkout = () => {
                 </div>
 
                 <div className="button-wrapper">
-                    <button onClick={() => handleClick()}>Checkout</button>
+                    <button onClick={handleClick}>Checkout</button>
                 </div>
             </div>
         </div>

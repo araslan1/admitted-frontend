@@ -7,32 +7,17 @@ import zoomImg4 from "./images/mailchimp-3.webp";
 import './Home.css';
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
-// import axios from 'axios';
-// import { useEffect } from "react";
-// import Cookies from "universal-cookie";
-// const cookies = new Cookies(); 
-// const token = cookies.get('TOKEN'); 
+import { useEffect } from "react";
 
 const Home = () => {
 
-
-    // useEffect(() => {
-    //     const configuration = {
-    //         method: 'get',
-    //         url: `http://localhost:7470/auth-endpoint`,
-    //         headers: {
-    //             Authorization: `Bearer ${token}`,
-    //         },
-    //     };
-        
-    //     axios(configuration)
-    //         .then((response) => {
-    //         })
-    // }, [])
     return (
         <>
         <div>
             <Navbar />
+            <div className="free-trial-banner">
+                <p>Admitted officially launches in August 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
+            </div>
         </div>
         <div className="home">
             <div style ={{marginTop:"20px"}}>
@@ -47,7 +32,7 @@ const Home = () => {
                     <div className="image-wrapper">
                         <a href='http://localhost:3000/dashboard'><img src={zoomImg1} className='zoom-imgs'></img></a>
                         <div className="text-overlay">
-                            <h2><Link to='/dashboard' className="top-left">Get into your<br></br>dream school!</Link></h2>
+                            <h2><Link to='/dashboard' className="top-left">Get into your dream school!</Link></h2>
                         </div>
                     </div>
                     <div className="cooking">

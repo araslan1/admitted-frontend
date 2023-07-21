@@ -20,9 +20,13 @@ const CostCalculator = () => {
         document.getElementById(id).style.color = test;
 
         if (addBorder) {
-            document.getElementById(id).style.textDecoration = "underline 2px";
+            let innerText = document.getElementById(id).innerHTML
+            document.getElementById(id).innerHTML = innerText.substring(0, innerText.length - 1) + "&#x2713;"
+            // document.getElementById(id).style.textDecoration = "underline 2px";
         } else {
-            document.getElementById(id).style.textDecoration = "none";
+            let innerText2 = document.getElementById(id).innerHTML
+            document.getElementById(id).innerHTML = innerText2.substring(0, innerText2.length - 1) + "&#x2715;"
+            // document.getElementById(id).style.textDecoration = "none";
         }
     }
 
@@ -158,9 +162,9 @@ const CostCalculator = () => {
                         </div>
                     </div>
                     <div className="calc-answers">
-                        <button className='calc-answer-button button-color-1' id='calc-1-1' onClick={() => handleClickQuestion1(2.5, 1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+</button>
-                        <button className='calc-answer-button button-color-2' id='calc-1-2' onClick={() => handleClickQuestion1(2.75, 2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Premium</button>
-                        <button className='calc-answer-button button-color-3' id='calc-1-3' onClick={() => handleClickQuestion1(3.0, 3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Essentials</button>
+                        <button className='calc-answer-button button-color-1' id='calc-1-1' onClick={() => handleClickQuestion1(2.5, 1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+ &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button button-color-2' id='calc-1-2' onClick={() => handleClickQuestion1(2.75, 2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Premium &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button button-color-3' id='calc-1-3' onClick={() => handleClickQuestion1(3.0, 3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Essentials &nbsp;|&nbsp; &#x2715;</button>
                     </div>
                 </div>
                 <div className="calc-questions-ind">
@@ -173,19 +177,19 @@ const CostCalculator = () => {
                     </div>
                     <div className="calc-answers-2">
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(100, 1)} style={{backgroundColor: '#B83A4B', color: 'white'}}>Stanford</button>
-                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(100, 2)} style={{backgroundColor: '#FFC72C', color: '#990000'}}>USC</button>
-                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(100, 3)} style={{backgroundColor: '#0f4d92', color: 'white'}}>Yale</button>
+                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(100, 1)} style={{backgroundColor: '#B83A4B', color: 'white'}}>Stanford &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(100, 2)} style={{backgroundColor: '#FFC72C', color: '#990000'}}>USC &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(100, 3)} style={{backgroundColor: '#0f4d92', color: 'white'}}>Yale &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(100, 4)} style={{backgroundColor: 'white', color: '#A51C30'}}>Harvard</button>
-                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(100, 5)} style={{backgroundColor: '#f58025', color: 'black'}}>Princeton</button>
-                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(100, 6)} style={{backgroundColor: '#9BDDFF', color: '#003865'}}>Columbia</button>
+                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(100, 4)} style={{backgroundColor: 'white', color: '#A51C30'}}>Harvard &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(100, 5)} style={{backgroundColor: '#f58025', color: 'black'}}>Princeton &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(100, 6)} style={{backgroundColor: '#9BDDFF', color: '#003865'}}>Columbia &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(100, 7)} style={{backgroundColor: '#006633', color: 'white'}}>Dartmouth</button>
-                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(100, 8)} style={{backgroundColor: '#E4002B', color: '#381C00'}}>Brown</button>
-                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(100, 9)} style={{backgroundColor: 'white', color: '#B31B1B'}}>Cornell</button>
+                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(100, 7)} style={{backgroundColor: '#006633', color: 'white'}}>Dartmouth &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(100, 8)} style={{backgroundColor: '#E4002B', color: '#381C00'}}>Brown &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(100, 9)} style={{backgroundColor: 'white', color: '#B31B1B'}}>Cornell &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                     </div>
                 </div>
@@ -198,9 +202,9 @@ const CostCalculator = () => {
                         </div>
                    </div>
                     <div className="calc-answers">
-                        <button className='calc-answer-button-3 button-color-1' id='calc-3-1' onClick={() => handleClickQuestion3(1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Practice Interview</button>
-                        <button className='calc-answer-button-3 button-color-2' id='calc-3-2' onClick={() => handleClickQuestion3(2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Resume Review</button>
-                        <button className='calc-answer-button-3 button-color-3' id='calc-3-3' onClick={() => handleClickQuestion3(3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Activities & Honors</button>
+                        <button className='calc-answer-button-3 button-color-1' id='calc-3-1' onClick={() => handleClickQuestion3(1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Practice Interview &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button-3 button-color-2' id='calc-3-2' onClick={() => handleClickQuestion3(2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Resume Review &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button-3 button-color-3' id='calc-3-3' onClick={() => handleClickQuestion3(3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Activities & Honors &nbsp;|&nbsp; &#x2715;</button>
                     </div>
                 </div>
                 <div className="calc-price">

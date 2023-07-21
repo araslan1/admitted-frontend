@@ -106,3 +106,20 @@ top: 63.5%;
   top: 10%;
   left: 5%;
 }
+.free-trial-banner {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.free-trial-banner p {
+  margin: 0;
+  padding: 5px;
+}
+.free-trial-banner a {
+  color: white;
+}
+.free-trial-banner a:hover {
+  color: #fc8eac;
+}

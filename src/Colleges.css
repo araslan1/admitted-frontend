@@ -1,6 +1,12 @@
 .colleges {
     text-align: center;
 }
+#colleges-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 40px;
+}
 .all-colleges {
     display: flex;
     flex-direction: column;
@@ -28,6 +34,12 @@
 .college-unlisted {
     max-width: 460px;
     margin: 50px auto;
+}
+#college-unlisted-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
 }
 .colleges-email {
     color: blue;

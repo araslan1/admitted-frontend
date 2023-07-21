@@ -2,7 +2,10 @@ import './ReviewPolicy.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
-import placeholder from './images/essay.jpeg';
+import essay from './images/placeholderEssay.jpeg'
+import resume from './images/placeholderResume.jpeg'
+import honorsActivities from './images/honorsActivitiesPlaceholder.jpeg'
+import interview from './images/interviewPlaceholder.jpeg'
 
 const ReviewPolicy = () => {
     return (
@@ -23,26 +26,22 @@ const ReviewPolicy = () => {
                     <td>
                         <h2 className='policy-table-header'>Premium+</h2>
                         <p>Our most complete service, with everything from practice interviews to resume review included.</p>
-                        <p className='policy-table-price-text'>Starts at<br></br><span className='policy-table-price'>$X00</span><br></br>per college reviewed</p>
                         <Link to='/signup' className='policy-table-button'>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Premium</h2>
-                        <p>Best suited for students who are applying to 10+ schools. BLAH BLAH BLAH BLAH BLAH BLAH</p>
-                        <p className='policy-table-price-text'>Starts at<br></br><span className='policy-table-price'>$X00</span><br></br>per college reviewed</p>
-                        <Link to='/signup' className='policy-table-button'>Get Started!</Link>
+                        <p>A comprehensive review of the Common Application, ideal for those applying to mutliple schools.</p>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FDADC3'}}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Essentials</h2>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p className='policy-table-price-text'>Costs at most<br></br><span className='policy-table-price'>$X0</span><br></br>per college reviewed</p>
-                        <Link to='/signup' className='policy-table-button'>Get Started!</Link>
+                        <p>An extensive review of every application essay, suited for those who solely want essay feedback..</p>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEC6D5'}}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Free</h2>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p className='policy-table-price-text'><span className='policy-table-price'>$0</span><br></br>for one short essay review for certain schools</p>
-                        <Link to='/signup' className='policy-table-button'>Get Started!</Link>
+                        <p>A sample essay review for either Stanford or USC; limited to one of the short essays.</p>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEDEE7'}}>Get Started!</Link>
                     </td>
                 </tr>
                 <tr className='row-colored'>
@@ -60,10 +59,10 @@ const ReviewPolicy = () => {
                     <td>&#x2717;</td>
                 </tr>
                 <tr className='row-colored'>
-                    <td>Price / Word Reviewed</td>
-                    <td>&#162;2.5</td>
-                    <td>&#162;2.5</td>
-                    <td>&#162;3</td>
+                    <td>Price / College Reviewed (All supplementals)</td>
+                    <td>$45</td>
+                    <td>$47.50</td>
+                    <td>$50</td>
                     <td>Free</td>
                 </tr>
                 <tr>
@@ -89,12 +88,16 @@ const ReviewPolicy = () => {
                 </tr>
             </table>
 
+            <div className="next-btn-wrap">
+                <Link to='/cost-calculator' className='next-btn'>Next: Determine the Exact Price w/ Our Cost Calculator</Link>
+            </div>
+
             <div className="review-sec-section">
                 <h1 className='review-header'>How do our <span className='review-header-underline'>reviews</span> work?</h1>
                 <div className="review-sec-row">
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={placeholder} alt="..." />
+                            <img className='review-sec-ind-img' src={essay} alt="..." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Essays</h3>
@@ -109,7 +112,7 @@ const ReviewPolicy = () => {
 
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={placeholder} alt="..." />
+                            <img className='review-sec-ind-img' src={interview} alt="..." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Interviews</h3>
@@ -124,7 +127,7 @@ const ReviewPolicy = () => {
                 <div className="review-sec-row">
                 <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={placeholder} alt="..." />
+                            <img className='review-sec-ind-img' src={honorsActivities} alt="..." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>10 Activities & 5 Academic Honors</h3>
@@ -138,7 +141,7 @@ const ReviewPolicy = () => {
                     </div>
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={placeholder} alt="..." />
+                            <img className='review-sec-ind-img' src={resume} alt="..." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Resume</h3>

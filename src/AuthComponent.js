@@ -1,39 +1,35 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react';
-import Cookies from "universal-cookie"; 
+import { useEffect, useState } from "react";
+import axios from 'axios'; 
+import Cookies from 'universal-cookie';
+import React from 'react'; 
 const cookies = new Cookies(); 
-const token = cookies.get('TOKEN'); 
+const token = cookies.get("TOKEN");
 
 const AuthComponent = () => {
-    const [message, setMessage] = useState("");
-
-    const logout = () => {
-        cookies.remove("TOKEN", { path: '/' });
-        window.location.href = "/";
-    }
+    const [ message, setMessage ] = useState(""); 
 
     useEffect(() => {
         const configuration = {
-            method: 'get',
-            url: `http://localhost:7470/auth-endpoint`,
+            method: 'get', 
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`
             },
-        };
-        
+            url: "http://localhost:7470/auth-endpoint",
+        }
         axios(configuration)
-            .then((response) => {
-                console.log('success');
+            .then((result) => {
+                console.log("You are authorized!")
+                setMessage(result.data.message); 
             })
             .catch((error) => {
-                error = new Error(); 
+                console.log("You are not authorized!")
+                setMessage("You are not authorized to access me");
             })
     }, [])
 
     return (  
         <div>
-            <h1 className="text-center">{message}</h1>
-            <button onClick={() => {logout()}}>Log out</button>
+            <h1>{message}</h1>
         </div>
     );
 }
