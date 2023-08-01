@@ -31,13 +31,7 @@ const ReviewerDashboard = () => {
         };
         return(dateObject.toLocaleString(undefined, options));
     }
-
-    const logout = (event) => {
-        event.preventDefault();
-        cookies.remove("TOKEN", { path: '/' });
-        window.location.href = "/";
-    };
-
+    
     const redirect = (id) => {
         // update information
         history.push(`/editingtool/${id}`);
@@ -145,7 +139,7 @@ const ReviewerDashboard = () => {
                     <a href="/">Services</a>
                     <a href="/">Clients</a>
                     <a href="/">Contact</a>
-                    <button onClick={logout}>Log Out</button>
+                    <a href="/logout">Log Out</a>
                 </div>
             </div>
 

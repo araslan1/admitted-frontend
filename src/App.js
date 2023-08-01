@@ -24,6 +24,7 @@ import WhyAdmitted from './WhyAdmitted';
 import RedirectDashboard from './RedirectDashboard';
 import ReviewerDashboard from './ReviewerDashboard';
 import ReviewerSignup from './ReviewerSignup'; 
+import Logout from './Logout'; 
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path='/reviewersignup'><ReviewerSignup /></Route>
           <Route path='/account' component={Account}></Route>
           <Route path='/free' component={FreeComponent}></Route>
+          <Route path='/logout' component={Logout}></Route>
           <ProtectedRoute path='/auth' component={AuthComponent} />
         </Switch>
       </div>

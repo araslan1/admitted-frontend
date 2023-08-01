@@ -33,11 +33,7 @@ const Dashboard = () => {
         history.push(`/editingtool/${id}`);
     }
 
-    const logout = (event) => {
-        event.preventDefault();
-        cookies.remove("TOKEN", { path: '/' });
-        window.location.href = "/";
-    }
+
     
 
     useEffect(() => {
@@ -95,7 +91,7 @@ const Dashboard = () => {
                         <a href="/">Services</a>
                         <a href="/">Clients</a>
                         <a href="/">Contact</a>
-                        <button href="#" onClick={logout}>Log Out</button>
+                        <a href="/logout">Log Out</a>
                     </div>
                 </div>
 
