@@ -1,9 +1,11 @@
 import './WhyAdmitted.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import placeholder from './images/placeholder-college.jpeg';
 import circlePlaceholder from './images/IMG_0101.jpg';
-import profilePlaceholder from './images/IMG_1861.jpg';
+import circle1 from './images/whyCircleIMG1.jpg'
+import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
+import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
+import headImg from './images/whyAdmittedHead.jpeg'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const WhyAdmitted = () => {
@@ -18,11 +20,17 @@ const WhyAdmitted = () => {
                             <p className='why-main-text-top'>Why Admitted?</p>
                             <h2 className='why-main-text-title'>We're built to help you get into college at an affordable price</h2>
                         </div>
-                        <p className='why-main-text-bot'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p className='why-main-text-bot'>
+                            With hundreds of thousands of students applying to elite universities each year, the college application process is extremely competitive.
+                            As such, there is a growing number of college "counselors" and "gurus" claiming they know the secret to get into top colleges.
+                            Yet, their services are both extremely expensive and not effective! 
+                            Here at Admitted, we pair you with a group of dedicated reviewers at an affordable price, with all of them being current or recent students at top universities.
+                            These students know what it took to be accepted into their respective universities and they're ready to help you be admitted too!
+                        </p>
                         <Link to='/signup' className='why-button'>Get Started!</Link>
                     </div>
                     <div className="why-main-img-wrapper">
-                        <img className='why-main-img' src={placeholder} alt="..." />
+                        <img className='why-main-img' src={headImg} alt="..." />
                     </div>
                 </div>
             </div>
@@ -30,10 +38,13 @@ const WhyAdmitted = () => {
             <div className="why-circle-content">
                 <div className="why-ind-circle">
                     <div className="why-circle-img-wrapper">
-                        <img className='why-circle-img' src={circlePlaceholder} alt="..." />
+                        <img className='why-circle-img' src={circle1} alt="..." />
                     </div>
                     <div className="why-circle-text">
-                        <p>Vitae elementum curabitur vitae nunc sed. Aliquet nec ullamcorper sit amet risus nullam eget felis eget.</p>
+                        <p>
+                            College-specific essays will only be read by a student from that university! 
+                            This ensures expert feedback from someone who knows the culture and spirit of a school.
+                        </p>
                     </div>
                 </div>
                 <div className="why-ind-circle">
@@ -41,7 +52,10 @@ const WhyAdmitted = () => {
                         <img className='why-circle-img' src={circlePlaceholder} alt="..." />
                     </div>
                     <div className="why-circle-text">
-                        <p>Vitae elementum curabitur vitae nunc sed. Aliquet nec ullamcorper sit amet risus nullam eget felis eget.</p>
+                        <p>
+                            Other college counseling services can cost from $850 at the lowest to over $10,000. 
+                            A college application review from Admitted costs as little as $55.
+                        </p>
                     </div>
                 </div>
                 <div className="why-ind-circle">
@@ -49,7 +63,10 @@ const WhyAdmitted = () => {
                         <img className='why-circle-img' src={circlePlaceholder} alt="..." />
                     </div>
                     <div className="why-circle-text">
-                        <p>Vitae elementum curabitur vitae nunc sed. Aliquet nec ullamcorper sit amet risus nullam eget felis eget.</p>
+                        <p>
+                            Alongside offering essay feedback and practice interviews, Admitted also reviews resumes and the Common Application's 
+                            Activities & Academic Honors sections. 
+                        </p>
                     </div>
                 </div>
             </div>
@@ -59,20 +76,28 @@ const WhyAdmitted = () => {
                 <div className="why-profiles-all">
                     <div className="why-profile-ind">
                         <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={profilePlaceholder} alt="..." />
+                            <img className='why-profile-img' src={admittedStudentReviewer1} alt="..." />
                         </div>
                         <div className="why-profile-text">
-                            <p className='why-profile-text-meet'>Meet Fiona</p>
-                            <p>Rutrum quisque non tellus orci ac auctor. In fermentum posuere urna nec tincidunt praesent semper feugiat. At tempor commodo ullamcorper a lacus vestibulum sed arcu.</p>
+                            <p className='why-profile-text-meet'>Meet Odessa</p>
+                            <p>
+                                Odessa graduated from Harvard University in 2023 with a double major in Chemistry and Neuroscience. 
+                                When Odessa 
+                                She knows what it takes to get into Harvard and wants to help you get there too!
+                            </p>
                         </div>
                     </div>
                     <div className="why-profile-ind">
                         <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={profilePlaceholder} alt="..." />
+                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="..." />
                         </div>
                         <div className="why-profile-text">
                             <p className='why-profile-text-meet'>Meet Fiona</p>
-                            <p>Rutrum quisque non tellus orci ac auctor. In fermentum posuere urna nec tincidunt praesent semper feugiat. At tempor commodo ullamcorper a lacus vestibulum sed arcu.</p>
+                            <p>
+                                Fiona is a sophomore majoring in Psychology at USC. 
+                                When Fiona was applying to USC she was lucky to get application advice from a friend already attending the university. 
+                                Now, she is excited to pass on that advice to help you improve your application!
+                            </p>
                         </div>
                     </div>
                 </div>

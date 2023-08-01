@@ -61,8 +61,8 @@ const ReviewPolicy = () => {
                 <tr className='row-colored'>
                     <td>Price / College Reviewed (All supplementals)</td>
                     <td>$45</td>
-                    <td>$47.50</td>
                     <td>$50</td>
+                    <td>$55</td>
                     <td>Free</td>
                 </tr>
                 <tr>
@@ -86,10 +86,17 @@ const ReviewPolicy = () => {
                     <td>&#x2717;</td>
                     <td>&#x2717;</td>
                 </tr>
+                <tr className='row-colored'>
+                    <td>Base Price:</td>
+                    <td>$100 + $45/College Selected</td>
+                    <td>$50 + $50/College Selected</td>
+                    <td>$0 + $55/College Selected</td>
+                    <td>Free</td>
+                </tr>
             </table>
 
             <div className="next-btn-wrap">
-                <Link to='/cost-calculator' className='next-btn'>Next: Determine the Exact Price w/ Our Cost Calculator</Link>
+                <Link to='/cost-calculator' className='next-btn'>Next: Determine the Exact Price with Our Cost Calculator</Link>
             </div>
 
             <div className="review-sec-section">
@@ -102,10 +109,11 @@ const ReviewPolicy = () => {
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Essays</h3>
                             <ul>
-                                <li>Your Common App main essay will be reviewed by a student from your primary school (selected by you during registration)</li>
-                                <li>College-specific essays are reviewed by a student from that specific university</li>
-                                <li>Essays will be reviewed within a week of submission</li>
-                                <li>Reviewers will not write your essay for you!</li>
+                                <li>College-specific essays will be reviewed by an Admitted student-reviewer from that specific university</li>
+                                <li>The Common Application essay will be reviewed by the Admitted student-reviewer from the college you designate as your 'Primary University'</li>
+                                <li>Essays will be reviewed within 3-7 days of submission</li>
+                                <li>Essay feedback may include: content suggestions (tone, wording, etc.), grammar corrections, readability & structure advice, and more</li>
+                                <li>Essays will only be reviewed once</li>
                             </ul>
                         </div>
                     </div>
@@ -117,9 +125,10 @@ const ReviewPolicy = () => {
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Interviews</h3>
                             <ul>
-                                <li>You will schedule a 30-minute meeting(s) to meet with a student(s) from whichever university/universities you wish to practice an interview</li>
-                                <li>The university student will spend 25-minutes conducting an interview similar to the one they recieved when they applied</li>
-                                <li>After the interview, the student will spend 5+ minutes giving feedback</li>
+                                <li>Practice interviews will last 30 minutes and will be conducted over Zoom</li>
+                                <li>The interviewer will be Admitted student-reviewer from the college you designate as your 'Primary University'</li>
+                                <li>The interviewer will spend 25-minutes conducting an interview similar to the one they recieved during their admissions process</li>
+                                <li>After the interview, the interviewer will spend 5+ minutes giving feedback</li>
                             </ul>
                         </div>
                     </div>
@@ -130,12 +139,13 @@ const ReviewPolicy = () => {
                             <img className='review-sec-ind-img' src={honorsActivities} alt="..." />
                         </div>
                         <div className="review-sec-ind-text">
-                            <h3 className='review-sec-ind-text-header'>10 Activities & 5 Academic Honors</h3>
+                            <h3 className='review-sec-ind-text-header'>Activities & Academic Honors</h3>
                             <ul>
-                                <li>Your Common App main essay will be reviewed by a student from your primary school (selected by you during registration)</li>
-                                <li>College-specific essays are reviewed by a student from that specific university</li>
-                                <li>Essays will be reviewed within a week of submission</li>
-                                <li>Reviewers will not write your essay for you!</li>
+                                <li>Review of the Common Application's 10 Activities and 5 Academic Honors section</li>
+                                <li>Activites & Academic Honors will be reviewed by an Admitted student-reviewer from the college you designate as your 'Primary University'</li>
+                                <li>Feedback may include: strategies to reduce character-count, content suggestions, grammar corrections, and more</li>
+                                <li>Activities & Academic Honors will be reviewed within 3-7 days of submission</li>
+                                <li>Activities & Academic Honors will only be reviewed once</li>
                             </ul>
                         </div>
                     </div>
@@ -146,14 +156,19 @@ const ReviewPolicy = () => {
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Resume</h3>
                             <ul>
-                                <li>Your Common App main essay will be reviewed by a student from your primary school (selected by you during registration)</li>
-                                <li>College-specific essays are reviewed by a student from that specific university</li>
-                                <li>Essays will be reviewed within a week of submission</li>
-                                <li>Reviewers will not write your essay for you!</li>
+                                <li>Purchasing the Premium or Premium+ plans grants access to Admitted's resume-building tool and template</li>
+                                <li>The submitted resume will be reviewed by an an Admitted student-reviewer from the college you designate as your 'Primary University'</li>
+                                <li>Feedback may include: content & design suggestions, grammar corrections, readability & structure advice, and more</li>
+                                <li>Resumes will be reviewed within 3-7 days of submission</li>
+                                <li>Resumes will only be reviewed once</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="next-btn-wrap">
+                <Link to='/contact-us' className='next-btn'>Still have questions?</Link>
             </div>
         </div>
         <Footer />

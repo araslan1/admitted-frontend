@@ -21,7 +21,7 @@ const Signup = () => {
 
         const configuration = {
             method: "post",
-            url: "http://localhost:7470/register",
+            url: `${process.env.REACT_APP_SERVER_URL}/register`,
             data: {
               fullname,
               email,
@@ -35,11 +35,18 @@ const Signup = () => {
             .then((result) => {
                 console.log(result); 
                 setRegister(true); 
+                history.push('/login'); 
             })
             .catch((error) => {
                 console.log("FAILED"); 
                 console.log(error); 
-                history.push("/login");
+                if (error.response && error.response.status === 409) {
+                    // Display the error message to the user if the email is already taken
+                    window.alert(error.response.data.message);
+                } else {
+                    // Display a generic error message for other errors
+                    window.alert("Create account failed!");
+                }
             });
           
     };

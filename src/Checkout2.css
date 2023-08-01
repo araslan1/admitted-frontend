@@ -1,0 +1,151 @@
+.checkout-banner-launch {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.checkout-banner-launch p {
+    padding: 5px;
+    margin: 0;
+}
+
+.checkout-2-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.checkout-all-boxes {
+    display: flex;
+    width: max-content;
+    margin: 30px auto;
+  }
+.checkout-options-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.checkout-options-header button {
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+.checkout-options-header button:hover {
+    color: #fc8eac;
+}
+  .checkout-options-box {
+    max-width: 320px;
+  }
+  .checkout-individual-box {
+    width: 320px;
+    border: .1px solid #BCBAB8;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .checkout-individual-box:hover {
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+    z-index: 2;
+    transform: translateY(-5px);
+  }
+  .checkout-options-features {
+    line-height: 50px;
+    margin-top: 0;
+  }
+  .checkout-options-features-line {
+    padding: 15px;
+    border-bottom: 1px solid #DBD9D2;
+  }
+  .checkout-options-features-line-x {
+    color: #CDCAC1;
+  }
+
+  .checkout-college-boxes-all {
+    width: max-content;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout-college-boxes-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .checkout-college-ind {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;;
+    height: 100px;
+    width: 375px;
+    border: .1px solid #BCBAB8;
+    transition: transform 0.3s ease;
+  }
+  .checkout-college-ind:hover {
+    box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
+    z-index: 2;
+    transform: translateY(-5px);
+  }
+  .checkout-college-ind img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .checkout-college-ind p {
+    font-size: 17px;
+    width: 175px;
+    text-align: center;
+  }
+  .checkout-college-ind button {
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+  }
+  .checkout-college-ind button:hover {
+    color: #fc8eac;
+  }
+  .proceed-to-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+  }
+  .proceed-to-payment button {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 19.5px;
+	text-align: center;
+    position: relative;
+    top: 0px; 
+	color: rgb(36, 28, 21);
+	height: 43.5px;
+	width: 250px;
+	padding: 12px 24px;
+	cursor: pointer;
+	box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 26px; 
+    margin-left: 10px;
+    background-color: #fc8eac;
+  }
+  .proceed-to-payment button:hover {
+    transition: top 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+    top: -3.05008px;
+  }
+  .proceed-to-payment p {
+    color: red;
+    font-weight: bold;
+  }
+  .checkout-disclaimer {
+    text-align: center;
+  }

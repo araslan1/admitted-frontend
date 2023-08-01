@@ -24,6 +24,8 @@ import { v4 as uuidV4 } from 'uuid';
 import WhyAdmitted from './WhyAdmitted';
 import RedirectDashboard from './RedirectDashboard';
 import ReviewerDashboard from './ReviewerDashboard';
+import ReviewerSignup from './ReviewerSignup'; 
+import MyEditingTool from './MyEditingTool';
 
 function App() {
   return (
@@ -40,7 +42,9 @@ function App() {
             <Redirect to={`/editingtool/${uuidV4()}`} />
           </Route>
           <ProtectedRoute path="/editingtool/:id"><Editingtool /></ProtectedRoute>
-          <Route path="/reviewerdashboard"><ReviewerDashboard /></Route>
+          <Route exact path="/reviewerdashboard"><ReviewerDashboard /></Route>
+          <ProtectedRoute exact path="/reviewerdashboard/:id" component={ReviewerDashboard}></ProtectedRoute>
+          <Route exact path="/reviewerdashboard"><ReviewerDashboard /></Route>
           <Route path="/testeditingtool"><Testeditingtool /></Route>
           <Route path='/support'><Support /></Route>
           <Route path='/about-us'><AboutUs /></Route>
@@ -53,8 +57,10 @@ function App() {
           <Route path='/cancel'><Cancel /></Route>
           <Route path='/success'><Success /></Route>
           <Route path='/checkout'><Checkout /></Route>
+          <Route path='/reviewersignup'><ReviewerSignup /></Route>
           <Route path='/account' component={Account}></Route>
           <Route path='/free' component={FreeComponent}></Route>
+          <Route path='/myeditingtool' component={MyEditingTool}></Route>
           <ProtectedRoute path='/auth' component={AuthComponent} />
         </Switch>
       </div>

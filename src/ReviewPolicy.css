@@ -80,12 +80,16 @@ td p {
     vertical-align: middle;
 }
 .review-sec-ind-text {
-    max-width: 250px;
+    max-width: 260px;
     margin-left: 20px;
+}
+.review-sec-ind-text li {
+    font-size: 14px;
 }
 .review-sec-ind-text-header {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
 }
 .review-policy .next-btn-wrap {
     text-align: center;

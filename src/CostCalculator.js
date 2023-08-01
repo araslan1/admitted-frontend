@@ -2,14 +2,15 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import './CostCalculator.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import './NavbarListener.js'
 
 const CostCalculator = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     let centPerWord = 0;
     const packages = [false, false, false]
-    const collegeArr = [false, false, false, false, false, false, false, false, false]
-    const features = [false, false, false];
-    const selectedArr = [];
+    const collegeArr = [false, false, false, false, false, false, false, false, false, false]
+    // const features = [false, false, false];
     let totWords = 0;
 
     const colorSwap = (id, addBorder) => {
@@ -22,11 +23,9 @@ const CostCalculator = () => {
         if (addBorder) {
             let innerText = document.getElementById(id).innerHTML
             document.getElementById(id).innerHTML = innerText.substring(0, innerText.length - 1) + "&#x2713;"
-            // document.getElementById(id).style.textDecoration = "underline 2px";
         } else {
             let innerText2 = document.getElementById(id).innerHTML
             document.getElementById(id).innerHTML = innerText2.substring(0, innerText2.length - 1) + "&#x2715;"
-            // document.getElementById(id).style.textDecoration = "none";
         }
     }
 
@@ -34,15 +33,20 @@ const CostCalculator = () => {
         let temp = 0;
         // temp += (totWords + 650) * centPerWord;
         // console.log(temp);
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < collegeArr.length; i++) {
             if (collegeArr[i]) {
                 temp++;
             }
         }
-        temp *= 5000;
-        if (features[0]) {temp += 5000};
-        if (features[1]) {temp += 2500};
-        if (features[2]) {temp += 2500};
+        if (packages[0]) {
+            temp *= 4500;
+            temp += 10000
+        } else if (packages[1]) {
+            temp *= 5000
+            temp += 5000
+        } else if (packages[2]) {
+            temp *= 5500
+        }
 
         temp /= 100;
         setTotalPrice(temp);
@@ -53,13 +57,13 @@ const CostCalculator = () => {
                 colorSwap('calc-1-' + i, false);
                 packages[i - 1] = false;
             }
-            if (features[i - 1]) {
-                colorSwap('calc-3-' + i, false);
-                features[i - 1] = false;
-            }
-            document.getElementById('calc-3-' + i).disabled = false;
+            // if (features[i - 1]) {
+            //     colorSwap('calc-3-' + i, false);
+            //     features[i - 1] = false;
+            // }
+            // document.getElementById('calc-3-' + i).disabled = false;
         }
-        for (let i = 1; i <= 9; i++) {
+        for (let i = 1; i <= collegeArr.length; i++) {
             if (collegeArr[i - 1]) {
                 colorSwap('calc-2-' + i, false);
                 collegeArr[i - 1] = false;
@@ -83,38 +87,38 @@ const CostCalculator = () => {
             }
         }
         
-        if (packages[0]) {
-            for (let i = 1; i <= 3; i++) {
-                if (!features[i-1]) {
-                    colorSwap('calc-3-' + i, true);
-                    features[i - 1] = true;
-                }
-                document.getElementById('calc-3-' + i).disabled = true;
-            }
-        }
-        else if (packages[1]) {
-            if (features[0]) {
-                colorSwap('calc-3-1', false)
-                features[0] = false;
-            }
-            document.getElementById('calc-3-' + 1).disabled = false;
-            for (let i = 2; i <= 3; i++) {
-                if (!features[i - 1]) {
-                    colorSwap('calc-3-' + i, true)
-                    features[i - 1] = true;
-                }
-                document.getElementById('calc-3-' + i).disabled = true;
-            }
-        }
-        else {
-            for (let i = 1; i <= 3; i++) {
-                if (features[i - 1]) {
-                    colorSwap('calc-3-' + i, false);
-                    features[i - 1] = false;
-                }
-                document.getElementById('calc-3-' + i).disabled = false;
-            }
-        }
+        // if (packages[0]) {
+        //     for (let i = 1; i <= 3; i++) {
+        //         if (!features[i-1]) {
+        //             colorSwap('calc-3-' + i, true);
+        //             features[i - 1] = true;
+        //         }
+        //         document.getElementById('calc-3-' + i).disabled = true;
+        //     }
+        // }
+        // else if (packages[1]) {
+        //     if (features[0]) {
+        //         colorSwap('calc-3-1', false)
+        //         features[0] = false;
+        //     }
+        //     document.getElementById('calc-3-' + 1).disabled = false;
+        //     for (let i = 2; i <= 3; i++) {
+        //         if (!features[i - 1]) {
+        //             colorSwap('calc-3-' + i, true)
+        //             features[i - 1] = true;
+        //         }
+        //         document.getElementById('calc-3-' + i).disabled = true;
+        //     }
+        // }
+        // else {
+        //     for (let i = 1; i <= 3; i++) {
+        //         if (features[i - 1]) {
+        //             colorSwap('calc-3-' + i, false);
+        //             features[i - 1] = false;
+        //         }
+        //         document.getElementById('calc-3-' + i).disabled = false;
+        //     }
+        // }
     }
 
     const handleClickQuestion2 = (maxWordCount, id) => {
@@ -133,16 +137,16 @@ const CostCalculator = () => {
         }
     }
 
-    const handleClickQuestion3 = (id) => {
-        if (features[id - 1]) {
-            features[id - 1] = false;
-            colorSwap('calc-3-' + id, false);
-        }
-        else {
-            features[id - 1] = true;
-            colorSwap('calc-3-' + id, true);
-        }
-    }
+    // const handleClickQuestion3 = (id) => {
+    //     if (features[id - 1]) {
+    //         features[id - 1] = false;
+    //         colorSwap('calc-3-' + id, false);
+    //     }
+    //     else {
+    //         features[id - 1] = true;
+    //         colorSwap('calc-3-' + id, true);
+    //     }
+    // }
 
     return (
         <>
@@ -154,63 +158,62 @@ const CostCalculator = () => {
             <div className="calc-questions-all">
                 <h2 className='calc-header'>Cost Calculator</h2>
                 <div className="calc-questions-ind" id='calc-questions-ind-1'>
-                    <div className='calc-popout'>
-                        <button className='calc-question'>Plan</button>
+                    <div className='calc-popout' data-dropdown>
+                        <button className='calc-question' data-dropdown-button>Plan</button>
                         <div className="calc-popout-info">
                             <p className='calc-popout-info-header'>Plan</p>
-                            <p className='calc-popout-info-text'>Morbi tempus iaculis urna id. Nibh tortor id aliquet lectus. Neque volutpat ac tincidunt vitae semper quis.</p>
+                            <p className='calc-popout-info-text'>Each Admitted service plan includes different features. 
+                            To see the exact details please visit our <Link to='/review-policy'>Review Policy</Link> page. 
+                            In general, the <span>Premium+</span> plan is our most comprehensive service that includes all of our available features. 
+                            The <span>Premium</span> plan includes all features except a practice interview, and the <span>Essentials</span> plan only includes our essay review feature. 
+                            Our <span>Free Trial</span> is comprised of one example review of a short supplemental essay from Stanford University or USC.</p>
                         </div>
                     </div>
                     <div className="calc-answers">
-                        <button className='calc-answer-button button-color-1' id='calc-1-1' onClick={() => handleClickQuestion1(2.5, 1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+ &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button button-color-2' id='calc-1-2' onClick={() => handleClickQuestion1(2.75, 2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Premium &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button button-color-3' id='calc-1-3' onClick={() => handleClickQuestion1(3.0, 3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Essentials &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-1' onClick={() => handleClickQuestion1(2.5, 1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+ &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-2' onClick={() => handleClickQuestion1(2.75, 2)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-3' onClick={() => handleClickQuestion1(3.0, 3)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Essentials &nbsp;|&nbsp; &#x2715;</button>
                     </div>
                 </div>
                 <div className="calc-questions-ind">
-                    <div className='calc-popout'>
-                        <button className='calc-question'>Colleges</button>
+                    <div className='calc-popout' data-dropdown>
+                        <button className='calc-question' data-dropdown-button>Colleges*</button>
                         <div className="calc-popout-info">
-                            <p className='calc-popout-info-header'>Colleges</p>
-                            <p className='calc-popout-info-text'>Morbi tempus iaculis urna id. Nibh tortor id aliquet lectus. Neque volutpat ac tincidunt vitae semper quis.</p>
+                            <p className='calc-popout-info-header'>Colleges*</p>
+                            <p className='calc-popout-info-text'>*Admitted is not officially affiliated or endorsed by any of the listed universities<br></br><br></br>
+                            Selecting a college means that you wish for an Admitted reviewer from that college to read and provide feedback 
+                            on your main <span>Common Application essay</span> and all of the selected college's <span>required supplemental essays</span>.
+                            For additional information, feel free to visit our <Link to='/review-policy'>Review Policy</Link> page.</p>
                         </div>
                     </div>
                     <div className="calc-answers-2">
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(100, 1)} style={{backgroundColor: '#B83A4B', color: 'white'}}>Stanford &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(100, 2)} style={{backgroundColor: '#FFC72C', color: '#990000'}}>USC &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(100, 3)} style={{backgroundColor: '#0f4d92', color: 'white'}}>Yale &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(100, 1)} style={{backgroundColor: '#FB7196', color: 'black'}}>Stanford &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(100, 2)} style={{backgroundColor: '#FB7196', color: 'black'}}>USC &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(100, 3)} style={{backgroundColor: '#FB7196', color: 'black'}}>Yale &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(100, 4)} style={{backgroundColor: 'white', color: '#A51C30'}}>Harvard &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(100, 5)} style={{backgroundColor: '#f58025', color: 'black'}}>Princeton &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(100, 6)} style={{backgroundColor: '#9BDDFF', color: '#003865'}}>Columbia &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(100, 4)} style={{backgroundColor: '#FB5682', color: 'black'}}>Harvard &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(100, 5)} style={{backgroundColor: '#FB5682', color: 'black'}}>Princeton &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(100, 6)} style={{backgroundColor: '#FB5682', color: 'black'}}>Columbia &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(100, 7)} style={{backgroundColor: '#006633', color: 'white'}}>Dartmouth &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(100, 8)} style={{backgroundColor: '#E4002B', color: '#381C00'}}>Brown &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(100, 9)} style={{backgroundColor: 'white', color: '#B31B1B'}}>Cornell &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(100, 7)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Dartmouth &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(100, 8)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Brown &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(100, 9)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Cornell &nbsp;|&nbsp; &#x2715;</button>
                         </div>
-                    </div>
-                </div>
-                <div className="calc-questions-ind">
-                   <div className='calc-popout'>
-                        <button className='calc-question'>Additional Features</button>
-                        <div className="calc-popout-info">
-                            <p className='calc-popout-info-header'>Features</p>
-                            <p className='calc-popout-info-text'>Morbi tempus iaculis urna id. Nibh tortor id aliquet lectus. Neque volutpat ac tincidunt vitae semper quis.</p>
+                        <div className="calc-answers-row">
+                            <button className='calc-answer-button-2' id='calc-2-10' onClick={() => handleClickQuestion2(100, 10)} style={{backgroundColor: '#F91F59', color: 'black'}}>UPenn &nbsp;|&nbsp; &#x2715;</button>
                         </div>
-                   </div>
-                    <div className="calc-answers">
-                        <button className='calc-answer-button-3 button-color-1' id='calc-3-1' onClick={() => handleClickQuestion3(1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Practice Interview &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button-3 button-color-2' id='calc-3-2' onClick={() => handleClickQuestion3(2)} style={{backgroundColor: '#C98DFC', color: 'black'}}>Resume Review &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button-3 button-color-3' id='calc-3-3' onClick={() => handleClickQuestion3(3)} style={{backgroundColor: '#FCF58D', color: 'black'}}>Activities & Honors &nbsp;|&nbsp; &#x2715;</button>
                     </div>
                 </div>
                 <div className="calc-price">
                     <button onClick={() => calcPrice()} className='calc-price-button'>Calculate Price</button>
                     <p className='calc-price-num'>${totalPrice}</p>
                 </div>
+            </div>
+            <div className="cost-calc-disclaimer">
+                <p>*Admitted is not officially affiliated or endorsed by any of the above universities</p>
             </div>
         </div>
         <Footer />

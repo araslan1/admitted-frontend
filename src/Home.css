@@ -32,11 +32,12 @@
 .top-left {
   position: absolute;
   top: 5%;
-  left: 20%;
+  left: 22%;
   text-decoration: none;
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
+  max-width: 210px;
 }
 .card-info {
   margin: 0;
@@ -50,7 +51,7 @@
 #card-info-0-button {
   background-color: #FDB5C9;
   top: 65%;
-  left: 25%;
+  left: 32%;
 }
 
 #card-info-0-button:hover {
@@ -80,7 +81,7 @@ top: 63.5%;
 #card-info-1-button {
   background-color: #FECEDB;
   top: 65%;
-  left: 25%;
+  left: 32%;
 }
 #card-info-2 {
   background-color: #FEE6ED;
@@ -88,7 +89,7 @@ top: 63.5%;
 #card-info-2-button {
   background-color: #FEE6ED;
   top: 65%;
-  left: 25%;
+  left: 32%;
 }
 #card-info-3 {
   background-color: #FFF7F9;
@@ -96,7 +97,7 @@ top: 63.5%;
 #card-info-3-button {
   background-color: #FFF7F9;
   top: 65%;
-  left: 25%;
+  left: 32%;
 }
 .top-left:hover {
   text-decoration: underline;
@@ -104,7 +105,8 @@ top: 63.5%;
 .card-info-blurb {
   position: absolute;
   top: 10%;
-  left: 5%;
+  left: 10%;
+  max-width: 300px;
 }
 .free-trial-banner {
   background-color: black;
@@ -122,4 +124,10 @@ top: 63.5%;
 }
 .free-trial-banner a:hover {
   color: #fc8eac;
+}
+.card-info .mainbutton {
+  width: 130px;
+}
+#main-blurb {
+  height: fit-content;
 }

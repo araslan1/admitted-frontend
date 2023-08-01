@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 import './Colleges.css'
-import collegePhoto1 from './images/placeholder-college.jpeg';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -8,113 +8,22 @@ const Colleges = () => {
         <>
         <Navbar />
         <div className="colleges">
-            <h1 id='colleges-header'>Colleges we offer reviews for:</h1>
-            <div className="all-colleges">
-                <div className="college-row">
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Stanford University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>University of Southern California</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Tulane University</p>
-                        </div>
-                    </div>
+            <h1 id='colleges-header'>Colleges we offer reviews for:<sup>*</sup></h1>
+            <div className="college-list">
+                <div className="college-col">
+                    <p>Stanford University</p>
+                    <p>Harvard University</p>
+                    <p>Princeton University</p>
+                    <p>University of Pennsylvania</p>
+                    <p>Columbia University</p>
                 </div>
 
-                <div className="college-row">
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Yale University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Dartmouth University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Harvard University</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="college-row">
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Cornell University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Princeton University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Columbia University</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="college-row">
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>Brown University</p>
-                        </div>
-                    </div>
-
-                    <div className="college-ind">
-                        <div className="college-ind-img-wrapper">
-                            <img className='college-ind-img' src={collegePhoto1} alt="..." />
-                        </div>
-                        <div className="college-ind-text">
-                            <p>University of Pennsylvania</p>
-                        </div>
-                    </div>
+                <div className="college-col">
+                    <p>University of Southern California</p>
+                    <p>Yale University</p>
+                    <p>Dartmouth University</p>
+                    <p>Cornell University</p>
+                    <p>Brown University</p>
                 </div>
             </div>
             
@@ -125,6 +34,12 @@ const Colleges = () => {
                 </p>
                 <p className='colleges-email'>araslan@usc.edu</p>
             </div>
+
+            <div className="colleges-next-btn">
+                <Link to='/review-policy'>Next: How do our reviews work?</Link>
+            </div>
+
+            <p className='colleges-disclaimer'>*Admitted is not officially affiliated or endorsed by any of the above universities</p>
         </div>
         <Footer />
         </>

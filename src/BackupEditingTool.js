@@ -61,7 +61,7 @@ const Editingtool = () => {
         console.log(typeof dueDate);
         const configuration = {
             method: 'post',
-            url: `${process.env.REACT_APP_SERVER_URL}/editingtool/${documentId}`,
+            url: `http://localhost:7470/editingtool/${documentId}`,
             data: {
                 userHasSubmitted: true,
                 essaysReviewed: essaysReviewed,  
@@ -102,7 +102,7 @@ const Editingtool = () => {
 
         const configuration = {
             method: 'get',
-            url: `${process.env.REACT_APP_SERVER_URL}/auth-editingtool/${documentId}`,
+            url: `http://localhost:7470/auth-editingtool/${documentId}`,
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -129,13 +129,20 @@ const Editingtool = () => {
                 }
                 history.push("/login"); 
             });
+
+        // const s = io("http://localhost:7470")
+        // setSocket(s); 
+    
+        // return () => {
+        //     s.disconnect(); 
+        // }
     }, []);
 
     const fetchComments = async () => {
         try {
             const configuration = {
                 method: "get",
-                url: `${process.env.REACT_APP_SERVER_URL}/comments/${documentId}`,
+                url: `http://localhost:7470/comments/${documentId}`,
             };
             
             const response = await axios(configuration);
@@ -232,7 +239,7 @@ const Editingtool = () => {
             console.log("didn't connect to socket");
             return;
         }
-        const s = io(`${process.env.REACT_APP_SERVER_URL}`)
+        const s = io("http://localhost:7470")
         setSocket(s); 
 
         return () => {
@@ -306,7 +313,6 @@ const Editingtool = () => {
 
     const add_comment = () => {
         console.log(quill.getText(0,10));
-        quill.focus(); 
         const selection = quill.getSelection();
         if (!quill){
             console.log("quill doesn't exist")
@@ -421,7 +427,7 @@ const Editingtool = () => {
         try {
             const comments_config = {
                 method: "post",
-                url: `${process.env.REACT_APP_SERVER_URL}/comments`,
+                url: "http://localhost:7470/comments",
                 data: {
                     _id: documentId,
                     comments: comments,

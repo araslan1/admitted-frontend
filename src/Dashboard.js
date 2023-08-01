@@ -43,7 +43,8 @@ const Dashboard = () => {
     useEffect(() => {
         const configuration = {
             method: 'get',
-            url: `http://localhost:7470/auth-dashboard/${dashboardId}`,
+
+            url: `${process.env.REACT_APP_SERVER_URL}/auth-dashboard/${dashboardId}`,
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -60,6 +61,10 @@ const Dashboard = () => {
             .catch((error) => {
                 console.log("you do not have access to dashboard")
                 error = new Error(); 
+                if (token){
+                    cookies.remove("TOKEN", { path: '/' });
+                }
+                history.push("/login"); 
             });
     }, []);
     
@@ -163,17 +168,17 @@ const Dashboard = () => {
                                 <li>
                                     <span>Choose the colleges that you want to apply to</span>
                                     <ul>
-                                        <li>Find the specific application requirements each college asks for (Number of reccomendation letters, essays, etc.)</li>
+                                        <li>Find the specific application requirements each college asks for (Number of recommendation letters, essays, etc.)</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <span>Write your Common App and college-specific essays</span>
                                     <ul>
-                                        <li>If you plan on having an Admitted student review your essay, we reccommend going through multiple revisions before using our service</li>
+                                        <li>If you plan on having an Admitted student review your essay, we recommend going through multiple revisions before using our service</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <span>Contact teachers and other mentors for reccomendations</span>
+                                    <span>Contact teachers and other mentors for recommendations</span>
                                 </li>
                                 <li>
                                     <span>Lorum ipsum sit amet dolourm </span>

@@ -4,17 +4,109 @@ import Typed from 'typed.js';
 import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import documenticon from "./images/document_icon.png"
+import Cookies from "universal-cookie";
+import axios from 'axios'; 
+import Confirm from './Confirm';
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+const cookies = new Cookies();
+
 
 const ReviewerDashboard = () => {
+    const [currDocId, setCurrDocId] = useState("");
+    const [currDueBy, setCurrDueBy] = useState(""); 
+    const [confirmationOpen, setConfirmationOpen] = useState(false); 
+    const token = cookies.get('TOKEN'); 
     const history = useHistory();
-    const [UserName, setUserName] = useState("Adam Raslan");
-    const [documentIds, setDocumentIds] = useState(null);
+    const {id: dashboardId} = useParams(); 
+    const [UserName, setUserName] = useState("");
+    const [reviewerEssays, setReviewerEssays] = useState([]);
+    const [allAvailableEssays, setAllAvailableEssays] = useState([])
     const el = useRef(null);
 
+    const formatDate = (date) => {
+        const dateObject = new Date(date);
+        const options = {
+            month: 'long', // 'short' for abbreviated month name, 'long' for full month name
+            day: 'numeric' // 'numeric' for day of the month as a number
+        };
+        return(dateObject.toLocaleString(undefined, options));
+    }
 
-    const logout = () => {
-
+    const logout = (event) => {
+        event.preventDefault();
+        cookies.remove("TOKEN", { path: '/' });
+        window.location.href = "/";
     };
+
+    const redirect = (id) => {
+        // update information
+        history.push(`/editingtool/${id}`);
+    };
+
+    const acceptEssay = async () => {
+        const object = {
+            documentId: currDocId,
+            dueBy: currDueBy,
+        }
+        const backup_reviewerEssays = [...reviewerEssays, object]; 
+        setReviewerEssays(backup_reviewerEssays);
+        let configuration = {
+            method: 'post', 
+            data: {
+                reviewerEssays: backup_reviewerEssays,
+            },
+            url: `${process.env.REACT_APP_SERVER_URL}/update-reviewer/${dashboardId}`,
+        }
+        await axios(configuration);
+
+        configuration = {
+            method: 'post',
+            url: `${process.env.REACT_APP_SERVER_URL}/editingtool/${currDocId}`,
+            data: {
+                userHasSubmitted: true,
+                essaysReviewed: false,  
+                essayMatched: true,  
+                dashboardId: dashboardId,
+            }
+        };
+        
+        await axios(configuration)
+            .then(() => {
+                console.log("");
+            })
+            .catch(() => {
+                console.log("error submitting essays");
+            })
+        
+
+        redirect(currDocId);
+    }; 
+
+    useEffect(() => {
+        const configuration = {
+            method: 'get',
+            url: `${process.env.REACT_APP_SERVER_URL}/auth-reviewer-dashboard/${dashboardId}`,
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+    
+        axios(configuration)
+            .then((response) => {
+                console.log("hurray, given access to dashboard!")
+                setReviewerEssays(response.data.documentIds);
+                setUserName(response.data.fullname);
+                setAllAvailableEssays(response.data.availableNotMatchedDocuments); 
+            })
+            .catch((error) => {
+                console.log("you do not have access to dashboard");
+                if (token){
+                    cookies.remove("TOKEN", { path: '/' });
+                }
+                history.push("/login"); 
+                error = new Error(); 
+            });
+    }, []);
 
     const openNav = () => {
         document.querySelector("#mySidenav").style.width = "280px";
@@ -24,6 +116,8 @@ const ReviewerDashboard = () => {
         document.querySelector("#mySidenav").style.width = "0";
     }
 
+
+    
 
     useEffect(() => {
         const typed = new Typed(el.current, {
@@ -102,6 +196,16 @@ const ReviewerDashboard = () => {
 
                         </div>
                     </div> 
+                    {reviewerEssays && reviewerEssays.map((doc, index) => (
+                            <div id="upload" onClick={() => {redirect(doc.documentId)}} key={index}>
+                                <img src={documenticon}></img>
+                                <h2 style={{textAlign: 'center'}}>Due By: {formatDate(doc.dueBy)}</h2>
+                                <div> 
+
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
                 <h3 className="right-side-header" style={{marginLeft: "20px", marginTop: "20px"}}> pick up an available essay here</h3>
                 <hr></hr>
@@ -115,9 +219,28 @@ const ReviewerDashboard = () => {
 
                         </div>
                     </div> 
+                    {/* onClick={() => {redirect(doc._id)}}  */}
+                    {allAvailableEssays && allAvailableEssays.map((doc, index) => (
+                            <div id="upload" onClick = {() => {setTimeout(() => {
+                                setCurrDocId(doc._id);
+                                setCurrDueBy(doc.dueBy);
+                                setConfirmationOpen(true)
+                            }, 400)}} 
+                               
+                                key={index}
+                                >
+                                <img src={documenticon}></img>
+                                <h2 style={{textAlign: 'center'}}>Due By: {formatDate(doc.dueBy)}</h2>
+                                <div>
+
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
+        {confirmationOpen && <Confirm closeModal={setConfirmationOpen} submitEssays={acceptEssay} title="Are you sure you want to review this essay?"/>}    
     </div> 
     );
 }

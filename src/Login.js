@@ -12,6 +12,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
+    const [isReviewer, setIsReviewer] = useState(false); 
 
 
     const handleSubmit = (e) => {
@@ -19,7 +20,7 @@ const Login = () => {
 
         const configuration = {
             method: "post",
-            url: "http://localhost:7470/login",
+            url:   `${process.env.REACT_APP_SERVER_URL}/login`,
             data: {
                 email,
                 password,
@@ -28,13 +29,19 @@ const Login = () => {
 
         axios(configuration)
         .then((result) => {
+            //check if it was reviewer or not who logged in!
             setLogin(true);
+            setIsReviewer(result.data.isReviewer);
             cookies.set("TOKEN", result.data.token,{
                 path: '/',
             });
-            console.log(cookies)
+            console.log(cookies);
             //redirect user to to the auth page
-            setTimeout(history.push(`/dashboard/${result.data.dashboardId}`), 10000);
+            if (!result.data.isReviewer){
+                history.push(`/dashboard/${result.data.dashboardId}`)
+            }else{
+                history.push(`/reviewerdashboard/${result.data.dashboardId}`)
+            }
         })
         .catch((error) => {
             error = new Error();

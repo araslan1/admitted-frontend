@@ -4,6 +4,7 @@ import Footer from './Footer';
 import personPhoto from './images/IMG_6420.jpg';
 import personPhoto2 from './images/IMG_0101.jpg';
 import personPhoto3 from './images/IMG_1861.jpg';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const AboutUs = () => {
     return (
@@ -54,6 +55,10 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="about-us-next-btn-wrap">
+                <Link to='/inspiration' className='about-us-next-btn'>Next: Our Story!</Link>
             </div>
         </div>
         <Footer />

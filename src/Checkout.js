@@ -42,8 +42,7 @@ const testFun = () => {
 const Checkout = () => {
     const handleClick = () => {
         testFun()
-
-        fetch('http://localhost:7470/create-checkout-session', {
+        fetch(`${process.env.REACT_APP_SERVER_URL}/create-checkout-session`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
