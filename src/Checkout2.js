@@ -3,42 +3,48 @@ import './Checkout2.css';
 const Checkout2 = () => {
 
    const plans = [false, false, false, false];
-   const selectedColleges = [false, false, false, false, false, false, false, false, false, false]
+   const selectedColleges = [false, false, false, false, false, false, false, false, false, false, false]
 
    const compileItems = () => {
-        let compiledArr = []
-        if (selectedColleges[0]) {
-            compiledArr.push({id: 1, quantity: 1});
-        }
-        if (selectedColleges[1]) {
-            compiledArr.push({id: 2, quantity: 1});
-        }
-        if (selectedColleges[2]) {
-            compiledArr.push({id: 3, quantity: 1});
-        }
-        if (selectedColleges[3]) {
-            compiledArr.push({id: 4, quantity: 1});
-        }
-        if (selectedColleges[4]) {
-            compiledArr.push({id: 5, quantity: 1});
-        }
-        if (selectedColleges[5]) {
-            compiledArr.push({id: 6, quantity: 1});
+        let compiledArr
+
+        if (plans[3]) {
+            compiledArr = makeArr(2); //Premium+
+            compiledArr.push({id: 34, quantity: 1});
+            compiledArr.push({id: 35, quantity: 1});
+            compiledArr.push({id: 36, quantity: 1});
+        } else if (plans[2]) {
+            compiledArr = makeArr(1); //Premium
+            compiledArr.push({id: 34, quantity: 1});
+            compiledArr.push({id: 35, quantity: 1});
+        } else  if (plans[1]) {
+            compiledArr = makeArr(0); //Essentials
         }
 
         return compiledArr;
    }
 
+   const makeArr = (mod) => {
+        const arr = [];
+
+        for (let i = 1; i <= selectedColleges.length; i++) {
+            if (selectedColleges[i - 1]) {
+                arr.push({id: 1 + mod + ((i - 1) * 3), quantity: 1});
+            }
+        }
+        return arr;
+   }
+
     const proceedToPayment = () => {
         let oneAnswered = false;
-        let twoAnswered = false;
-        let freeTrial = true;
         for (let i = 0; i < plans.length; i++) {
             if (plans[i]) {
                 oneAnswered = true;
                 break
             }
         }
+
+        let twoAnswered = false;
         for (let i = 0; i < selectedColleges.length; i++) {
             if (selectedColleges[i]) {
                 twoAnswered = true;
@@ -46,38 +52,40 @@ const Checkout2 = () => {
             }
         }
 
-        if (plans[3] && (selectedColleges[0] && selectedColleges[1])) {
-            freeTrial = false;
+        let freeTrialIncorrect = false;
+        if (plans[0] && (selectedColleges[0] && selectedColleges[1])) {
+            freeTrialIncorrect = true;
         }
 
-        if ((oneAnswered && twoAnswered) && freeTrial) {
-            fetch(`${process.env.REACT_APP_SERVER_URL}/create-checkout-session`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                items: compileItems()
-                // items: [
-                //     { id: 1, quantity: collegeCount},
-                //     { id: 2, quantity: resumeCount}
-                // ]
-            })
-        }).then(res => {
-            if (res.ok) return res.json()
-            return res.json().then(json => Promise.reject(json))
-        }).then(({ url }) => {
-            window.location = url
-            console.log(url)
-        }).catch(e => {
-            console.error(e.error)
-        })
+        if (!freeTrialIncorrect && (oneAnswered && twoAnswered)) {
+            if (plans[0]) {
+                console.log('You chose free trial!')
+                //Create a short essay document for them based on whether they chose Stanford or USC; no need to send to stripe
+            } else {
+                fetch('http://localhost:7459/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        items: compileItems()
+                    })
+                }).then(res => {
+                    if (res.ok) return res.json()
+                    return res.json().then(json => Promise.reject(json))
+                }).then(({ url }) => {
+                    window.location = url
+                    console.log(url)
+                }).catch(e => {
+                    console.error(e.error)
+                })
+            }
         }
         else {
             if (!oneAnswered || !twoAnswered) {
                 document.getElementById('proceed-to-payment-error').innerHTML = 'Please select a plan and at least one university'
             }
-            if (!freeTrial) {
+            if (freeTrialIncorrect) {
                 document.getElementById('proceed-to-payment-error').innerHTML = 'Free trial only allows for one college review'
             }
         }
@@ -90,11 +98,11 @@ const Checkout2 = () => {
             plans[id] = true;
 
             for (let i = 0; i < plans.length; i++) {
-                if (i != id && plans[i] == true) {
+                if (i !== id && plans[i]) {
                     document.getElementById('checkout-button-1-' + i).innerHTML = "+"
                     document.getElementById('checkout-ind-box-' + i).style.border = '.1px solid #BCBAB8'
                     plans[i] = false;
-                    if (i == 3) {
+                    if (i === 0) {
                         for (let j = 2; j < selectedColleges.length; j++) {
                             document.getElementById('checkout-button-2-' + j).disabled = false;
                             document.getElementById('checkout-button-2-' + j).style.backgroundColor = 'black'
@@ -104,7 +112,7 @@ const Checkout2 = () => {
                 }
             }
 
-            if (id == 3) {
+            if (id === 0) {
                 for (let i = 2; i < selectedColleges.length; i++) {
                     document.getElementById('checkout-button-2-' + i).disabled = true;
                     document.getElementById('checkout-button-2-' + i).style.backgroundColor = '#6D6D6D';
@@ -120,7 +128,7 @@ const Checkout2 = () => {
             document.getElementById('checkout-button-1-' + id).innerHTML = "+"
             document.getElementById('checkout-ind-box-' + id).style.border = '.1px solid #BCBAB8'
             plans[id] = false;
-            if (id == 3) {
+            if (id === 0) {
                 for (let j = 2; j < selectedColleges.length; j++) {
                     document.getElementById('checkout-button-2-' + j).disabled = false;
                     document.getElementById('checkout-button-2-' + j).style.backgroundColor = 'black'
@@ -152,53 +160,8 @@ const Checkout2 = () => {
                     <div className="checkout-options-box">
                         <div className="checkout-individual-box" id='checkout-ind-box-0'>
                             <div className="checkout-options-header">
-                                <h3>Premium+</h3>
-                                <button id='checkout-button-1-0' onClick={() => handlePlanSelect(0)}>+</button>
-                            </div>
-                            <p className='checkout-options-features'>
-                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Activities & Honors Evaluation<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Resume Evaluation<br></br></span>
-                                <span className='checkout-options-features-last-line'>&#x2713; 30-Minute Practice Interview<br></br></span>
-                            </p> 
-                        </div>
-                    </div>
-                    <div className="checkout-options-box">
-                        <div className="checkout-individual-box" id='checkout-ind-box-1'>
-                        <div className="checkout-options-header">
-                                <h3>Premium</h3>
-                                <button id='checkout-button-1-1' onClick={() => handlePlanSelect(1)}>+</button>
-                            </div>
-                            <p className='checkout-options-features'>
-                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Activities & Honors Evaluation<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Resume Evaluation<br></br></span>
-                                <span className='checkout-options-features-last-line checkout-options-features-line-x'>&#x2715; 30-Minute Practice Interview<br></br></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="checkout-options-box">
-                        <div className="checkout-individual-box" id='checkout-ind-box-2'>
-                        <div className="checkout-options-header">
-                                <h3>Essentials</h3>
-                                <button id='checkout-button-1-2' onClick={() => handlePlanSelect(2)}>+</button>
-                            </div>
-                            <p className='checkout-options-features'>
-                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
-                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
-                                <span className='checkout-options-features-line checkout-options-features-line-x'>&#x2715; Activities & Honors Evaluation<br></br></span>
-                                <span className='checkout-options-features-line checkout-options-features-line-x'>&#x2715; Resume Evaluation<br></br></span>
-                                <span className='checkout-options-features-last-line checkout-options-features-line-x'>&#x2715; 30-Minute Practice Interview<br></br></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="checkout-options-box">
-                        <div className="checkout-individual-box" id='checkout-ind-box-3'>
-                            <div className="checkout-options-header">
                                 <h3>Free Trial</h3>
-                                <button id='checkout-button-1-3' onClick={() => handlePlanSelect(3)}>+</button>
+                                <button id='checkout-button-1-0' onClick={() => handlePlanSelect(0)}>+</button>
                             </div>
                             <p className='checkout-options-features'>
                                 <span className='checkout-options-features-line'>&#x2713; Sample Essay Analysis<br></br></span>
@@ -207,6 +170,51 @@ const Checkout2 = () => {
                                 <span className='checkout-options-features-line checkout-options-features-line-x'>&#x2715; Resume Evaluation<br></br></span>
                                 <span className='checkout-options-features-last-line checkout-options-features-line-x'>&#x2715; 30-Minute Practice Interview<br></br></span>
                             </p>
+                        </div>
+                    </div>
+                    <div className="checkout-options-box">
+                        <div className="checkout-individual-box" id='checkout-ind-box-1'>
+                        <div className="checkout-options-header">
+                                <h3>Essentials</h3>
+                                <button id='checkout-button-1-1' onClick={() => handlePlanSelect(1)}>+</button>
+                            </div>
+                            <p className='checkout-options-features'>
+                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
+                                <span className='checkout-options-features-line checkout-options-features-line-x'>&#x2715; Activities & Honors Evaluation<br></br></span>
+                                <span className='checkout-options-features-line checkout-options-features-line-x'>&#x2715; Resume Evaluation<br></br></span>
+                                <span className='checkout-options-features-last-line checkout-options-features-line-x'>&#x2715; 30-Minute Practice Interview<br></br></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="checkout-options-box">
+                        <div className="checkout-individual-box" id='checkout-ind-box-2'>
+                        <div className="checkout-options-header">
+                                <h3>Premium</h3>
+                                <button id='checkout-button-1-2' onClick={() => handlePlanSelect(2)}>+</button>
+                            </div>
+                            <p className='checkout-options-features'>
+                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Activities & Honors Evaluation<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Resume Evaluation<br></br></span>
+                                <span className='checkout-options-features-last-line checkout-options-features-line-x'>&#x2715; 30-Minute Practice Interview<br></br></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="checkout-options-box">
+                        <div className="checkout-individual-box" id='checkout-ind-box-3'>
+                            <div className="checkout-options-header">
+                                <h3>Premium+</h3>
+                                <button id='checkout-button-1-3' onClick={() => handlePlanSelect(3)}>+</button>
+                            </div>
+                            <p className='checkout-options-features'>
+                                <span className='checkout-options-features-line'>&#x2713; Supplemental Essay Analysis<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Common App Essay Review<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Activities & Honors Evaluation<br></br></span>
+                                <span className='checkout-options-features-line'>&#x2713; Resume Evaluation<br></br></span>
+                                <span className='checkout-options-features-last-line'>&#x2713; 30-Minute Practice Interview<br></br></span>
+                            </p> 
                         </div>
                     </div>
                 </div>
@@ -262,6 +270,10 @@ const Checkout2 = () => {
                     <div className="checkout-college-ind" id='checkout-college-ind-9'>
                         <p>UPenn</p>
                         <button id='checkout-button-2-9' onClick={() => handleCollegeSelect(9)}>+</button>
+                    </div>
+                    <div className="checkout-college-ind" id='checkout-college-ind-10'>
+                        <p>Tulane University</p>
+                        <button id='checkout-button-2-10' onClick={() => handleCollegeSelect(10)}>+</button>
                     </div>
                 </div>
             </div>

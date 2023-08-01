@@ -24,6 +24,7 @@ import WhyAdmitted from './WhyAdmitted';
 import RedirectDashboard from './RedirectDashboard';
 import ReviewerDashboard from './ReviewerDashboard';
 import ReviewerSignup from './ReviewerSignup'; 
+import Checkout2 from './Checkout2'; 
 import Logout from './Logout'; 
 
 function App() {
@@ -54,7 +55,8 @@ function App() {
           <Route path='/cost-calculator'><CostCalculator /></Route>
           <Route path='/cancel'><Cancel /></Route>
           <Route path='/success'><Success /></Route>
-          <Route path='/checkout'><Checkout /></Route>
+          <Route exact path='/checkout'><Checkout /></Route>
+          <Route exact path='/checkout2' component={Checkout2}></Route>
           <Route path='/reviewersignup'><ReviewerSignup /></Route>
           <Route path='/account' component={Account}></Route>
           <Route path='/free' component={FreeComponent}></Route>

@@ -1,116 +1,85 @@
-import './WhyAdmitted.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import circlePlaceholder from './images/IMG_0101.jpg';
-import circle1 from './images/whyCircleIMG1.jpg'
-import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
-import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
-import headImg from './images/whyAdmittedHead.jpeg'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import zoomImg1 from "./images/mailchimp-0.webp";
+import zoomImg2 from "./images/mailchimp-1.webp";
+import zoomImg3 from "./images/mailchimp-2.webp";
+import zoomImg4 from "./images/mailchimp-3.webp";
+import './Home.css';
+import PaymentOptions from "./PaymentOptions";
+import Footer from "./Footer";
 
-const WhyAdmitted = () => {
+const Home = () => {
+    // const clientUrl = process.env.REACT_APP_CLIENT_URL;
+
     return (
         <>
-        <Navbar />
-        <div className="why-admitted">
-            <div className="why-main">
-                <div className="why-main-content">
-                    <div className="why-main-text-all">
-                        <div className="why-main-text-head">
-                            <p className='why-main-text-top'>Why Admitted?</p>
-                            <h2 className='why-main-text-title'>We're built to help you get into college at an affordable price</h2>
+        <div>
+            <Navbar />
+            <div className="free-trial-banner">
+                <p>Admitted officially launches in August 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
+            </div>
+        </div>
+        <div className="home">
+            <div style={{ marginTop: "20px" }}>
+                <h1>Turning Essays into Acceptances</h1>
+            </div>
+            <div>
+                <p id="main-blurb">Win over college admission officers with the #1 essay review platform, where your essays are edited by students who have already been admitted into top universities!</p>
+            </div>
+            <Link to='/signup' className="mainbutton">Get Started!</Link>
+            <div className="feature-card-section">
+                <div className='feature-cards'>
+                    <div className="image-wrapper">
+                        <Link to='/signup'><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></Link>
+                        <div className="text-overlay">
+                            <h2><Link to='/signup' className="top-left">Get Into Your Dream School!</Link></h2>
                         </div>
-                        <p className='why-main-text-bot'>
-                            With hundreds of thousands of students applying to elite universities each year, the college application process is extremely competitive.
-                            As such, there is a growing number of college "counselors" and "gurus" claiming they know the secret to get into top colleges.
-                            Yet, their services are both extremely expensive and not effective! 
-                            Here at Admitted, we pair you with a group of dedicated reviewers at an affordable price, with all of them being current or recent students at top universities.
-                            These students know what it took to be accepted into their respective universities and they're ready to help you be admitted too!
-                        </p>
-                        <Link to='/signup' className='why-button'>Get Started!</Link>
                     </div>
-                    <div className="why-main-img-wrapper">
-                        <img className='why-main-img' src={headImg} alt="..." />
+                    <div className="cooking">
+                    <div className="card-info" id='card-info-0'>
+                        <p className='card-info-blurb'>Did you know that many admissions officers at elite universities are alumni?</p>
+                        <Link to='/signup' className="mainbutton" id='card-info-0-button'>Get Started!</Link>
+                    </div>
+                    </div>
+                </div>
+                <div className='feature-cards'>
+                    <div className="image-wrapper">
+                        <Link to='/inspiration'><img src={zoomImg2} className='zoom-imgs' alt="Zoom 2" /></Link>
+                        <h2><Link to='/inspiration' className="top-left">Made By Students For Students</Link></h2>
+                    </div>
+                    <div className="card-info" id='card-info-1'>
+                        <p className='card-info-blurb'>We've already gone through the process!</p>
+                        <Link to='/inspiration' className="mainbutton" id='card-info-1-button'>Our Story</Link>
+                    </div>
+                </div>
+                <div className='feature-cards'>
+                    <div className="image-wrapper">
+                        <Link to='/review-policy'><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></Link>
+                        <h2><Link to='/review-policy' className="top-left">College-Specific Reviews</Link></h2>
+                    </div>
+                    <div className="card-info" id='card-info-2'>
+                        <p className='card-info-blurb'>Receive feedback from someone who actually attends the university</p>
+                        <Link to='/review-policy' className="mainbutton" id='card-info-2-button'>Review Policy</Link>
+                    </div>
+                </div>
+                <div className='feature-cards'>
+                    <div className="image-wrapper">
+                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" /></Link>
+                        <h2><Link to='/why-admitted' className="top-left">College Counseling Made Affordable</Link></h2>
+                    </div>
+                    <div className="card-info" id='card-info-3'>
+                        <p className='card-info-blurb'>Don't pay thousands for an advisor who applied to colleges last century!</p>
+                        <Link to='/why-admitted' className="mainbutton" id='card-info-3-button'>Why Choose Admitted?</Link>
                     </div>
                 </div>
             </div>
-
-            <div className="why-circle-content">
-                <div className="why-ind-circle">
-                    <div className="why-circle-img-wrapper">
-                        <img className='why-circle-img' src={circle1} alt="..." />
-                    </div>
-                    <div className="why-circle-text">
-                        <p>
-                            College-specific essays will only be read by a student from that university! 
-                            This ensures expert feedback from someone who knows the culture and spirit of a school.
-                        </p>
-                    </div>
-                </div>
-                <div className="why-ind-circle">
-                    <div className="why-circle-img-wrapper">
-                        <img className='why-circle-img' src={circlePlaceholder} alt="..." />
-                    </div>
-                    <div className="why-circle-text">
-                        <p>
-                            Other college counseling services can cost from $850 at the lowest to over $10,000. 
-                            A college application review from Admitted costs as little as $55.
-                        </p>
-                    </div>
-                </div>
-                <div className="why-ind-circle">
-                    <div className="why-circle-img-wrapper">
-                        <img className='why-circle-img' src={circlePlaceholder} alt="..." />
-                    </div>
-                    <div className="why-circle-text">
-                        <p>
-                            Alongside offering essay feedback and practice interviews, Admitted also reviews resumes and the Common Application's 
-                            Activities & Academic Honors sections. 
-                        </p>
-                    </div>
-                </div>
+            <div>
+                <PaymentOptions />
             </div>
-
-            <div className="why-profiles">
-                <h3 className='why-profiles-header'>Our reviewers have been in your position!</h3>
-                <div className="why-profiles-all">
-                    <div className="why-profile-ind">
-                        <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={admittedStudentReviewer1} alt="..." />
-                        </div>
-                        <div className="why-profile-text">
-                            <p className='why-profile-text-meet'>Meet Odessa</p>
-                            <p>
-                                Odessa graduated from Harvard University in 2023 with a double major in Chemistry and Neuroscience. 
-                                When Odessa 
-                                She knows what it takes to get into Harvard and wants to help you get there too!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="why-profile-ind">
-                        <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="..." />
-                        </div>
-                        <div className="why-profile-text">
-                            <p className='why-profile-text-meet'>Meet Fiona</p>
-                            <p>
-                                Fiona is a sophomore majoring in Psychology at USC. 
-                                When Fiona was applying to USC she was lucky to get application advice from a friend already attending the university. 
-                                Now, she is excited to pass on that advice to help you improve your application!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="why-next-btn-wrap">
-                <Link to='/colleges' className='why-next-btn'>Next: What college applications do we offer review for?</Link>
-            </div>
-
         </div>
         <Footer />
         </>
     );
 }
- 
-export default WhyAdmitted;
+
+export default Home;

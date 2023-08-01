@@ -3,6 +3,10 @@
   margin-top: 250px;
   margin-bottom: 50px;
 }
+.payment-options a {
+  text-decoration: none;
+  color: black;
+}
 .pay-options-all-boxes {
   display: flex;
 }

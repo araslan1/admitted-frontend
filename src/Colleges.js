@@ -16,6 +16,7 @@ const Colleges = () => {
                     <p>Princeton University</p>
                     <p>University of Pennsylvania</p>
                     <p>Columbia University</p>
+                    <p>Tulane University</p>
                 </div>
 
                 <div className="college-col">

@@ -9,7 +9,7 @@ import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
 
 const Home = () => {
-    const clientUrl = process.env.REACT_APP_CLIENT_URL;
+    // const clientUrl = process.env.REACT_APP_CLIENT_URL;
 
     return (
         <>
@@ -30,7 +30,7 @@ const Home = () => {
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <a href={`${clientUrl}/signup`}><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></a>
+                        <Link to='/signup'><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></Link>
                         <div className="text-overlay">
                             <h2><Link to='/signup' className="top-left">Get Into Your Dream School!</Link></h2>
                         </div>
@@ -44,7 +44,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <a href={`${clientUrl}/inspiration`}><img src={zoomImg2} className='zoom-imgs' alt="Zoom 2" /></a>
+                        <Link to='/inspiration'><img src={zoomImg2} className='zoom-imgs' alt="Zoom 2" /></Link>
                         <h2><Link to='/inspiration' className="top-left">Made By Students For Students</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-1'>
@@ -54,7 +54,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <a href={`${clientUrl}/review-policy`}><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></a>
+                        <Link to='/review-policy'><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></Link>
                         <h2><Link to='/review-policy' className="top-left">College-Specific Reviews</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>
@@ -64,7 +64,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <a href={`${clientUrl}/why-admitted`}><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" /></a>
+                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" /></Link>
                         <h2><Link to='/why-admitted' className="top-left">College Counseling Made Affordable</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-3'>

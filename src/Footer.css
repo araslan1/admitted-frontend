@@ -22,11 +22,11 @@
     height: 100px;
     margin-top: 50px;
 }
-.footer a {
+.footer-col a {
     color: black;
     border-radius: 4px;
     padding: 4px;
 }
-.footer a:hover {
+.footer-col a:hover {
     background-color: #FFF7F9;
 }

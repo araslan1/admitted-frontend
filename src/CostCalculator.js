@@ -8,9 +8,7 @@ import './NavbarListener.js'
 const CostCalculator = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const packages = [false, false, false]
-    const collegeArr = [false, false, false, false, false, false, false, false, false, false]
-    // const features = [false, false, false];
-    // let totWords = 0;
+    const collegeArr = [false, false, false, false, false, false, false, false, false, false, false]
 
     const colorSwap = (id, addBorder) => {
         let test = '';
@@ -30,8 +28,6 @@ const CostCalculator = () => {
 
     const calcPrice = () => {
         let temp = 0;
-        // temp += (totWords + 650) * centPerWord;
-        // console.log(temp);
         for (let i = 0; i < collegeArr.length; i++) {
             if (collegeArr[i]) {
                 temp++;
@@ -49,18 +45,11 @@ const CostCalculator = () => {
 
         temp /= 100;
         setTotalPrice(temp);
-        // centPerWord = 0;
-        // totWords = 0;
         for (let i = 1; i <= 3; i++) {
             if (packages[i - 1]) {
                 colorSwap('calc-1-' + i, false);
                 packages[i - 1] = false;
             }
-            // if (features[i - 1]) {
-            //     colorSwap('calc-3-' + i, false);
-            //     features[i - 1] = false;
-            // }
-            // document.getElementById('calc-3-' + i).disabled = false;
         }
         for (let i = 1; i <= collegeArr.length; i++) {
             if (collegeArr[i - 1]) {
@@ -71,7 +60,6 @@ const CostCalculator = () => {
     }
 
     const handleClickQuestion1 = (pricePerWord, id) => {
-        // centPerWord = pricePerWord;
         if (packages[id - 1]) {
             colorSwap('calc-1-' + id, false);
             packages[id - 1] = false;
@@ -85,39 +73,6 @@ const CostCalculator = () => {
                 }
             }
         }
-        
-        // if (packages[0]) {
-        //     for (let i = 1; i <= 3; i++) {
-        //         if (!features[i-1]) {
-        //             colorSwap('calc-3-' + i, true);
-        //             features[i - 1] = true;
-        //         }
-        //         document.getElementById('calc-3-' + i).disabled = true;
-        //     }
-        // }
-        // else if (packages[1]) {
-        //     if (features[0]) {
-        //         colorSwap('calc-3-1', false)
-        //         features[0] = false;
-        //     }
-        //     document.getElementById('calc-3-' + 1).disabled = false;
-        //     for (let i = 2; i <= 3; i++) {
-        //         if (!features[i - 1]) {
-        //             colorSwap('calc-3-' + i, true)
-        //             features[i - 1] = true;
-        //         }
-        //         document.getElementById('calc-3-' + i).disabled = true;
-        //     }
-        // }
-        // else {
-        //     for (let i = 1; i <= 3; i++) {
-        //         if (features[i - 1]) {
-        //             colorSwap('calc-3-' + i, false);
-        //             features[i - 1] = false;
-        //         }
-        //         document.getElementById('calc-3-' + i).disabled = false;
-        //     }
-        // }
     }
 
     const handleClickQuestion2 = (maxWordCount, id) => {
@@ -127,25 +82,12 @@ const CostCalculator = () => {
 
         if (!collegeArr[id - 1]) {
             collegeArr[id - 1] = true;
-            // totWords += maxWordCount;
             colorSwap("calc-2-" + id, true);
         } else {
             collegeArr[id - 1] = false;
-            // totWords -= maxWordCount;
             colorSwap("calc-2-" + id, false)
         }
     }
-
-    // const handleClickQuestion3 = (id) => {
-    //     if (features[id - 1]) {
-    //         features[id - 1] = false;
-    //         colorSwap('calc-3-' + id, false);
-    //     }
-    //     else {
-    //         features[id - 1] = true;
-    //         colorSwap('calc-3-' + id, true);
-    //     }
-    // }
 
     return (
         <>
@@ -203,6 +145,7 @@ const CostCalculator = () => {
                         </div>
                         <div className="calc-answers-row">
                             <button className='calc-answer-button-2' id='calc-2-10' onClick={() => handleClickQuestion2(100, 10)} style={{backgroundColor: '#F91F59', color: 'black'}}>UPenn &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-11' onClick={() => handleClickQuestion2(100, 11)} style={{backgroundColor: '#F91F59', color: 'black'}}>Tulane &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                     </div>
                 </div>

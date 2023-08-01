@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from './images/admitted-white.jpeg';
+import logo from './images/admittedLogo.png';
 import './NavbarListener.js'
 
 const Navbar = () => {
