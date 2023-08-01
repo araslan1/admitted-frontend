@@ -124,21 +124,7 @@ const Editingtool = () => {
             });
     }, [documentId, history, token]);
 
-    const fetchComments = async () => {
-        try {
-            const configuration = {
-                method: "get",
-                url: `${process.env.REACT_APP_SERVER_URL}/comments/${documentId}`,
-            };
-            
-            const response = await axios(configuration);
-            setComments(response.data);
-            console.log("Comments have been grabbed!")
-        }
-        catch (error) {
-            console.log("Could not get comments", error);
-        }
-    }
+
 
     const loadComments =  () => {
         console.log("load comments called")
@@ -208,13 +194,9 @@ const Editingtool = () => {
                 
                 quill.setContents(document);
                 quill.enable(); //this is to enable text editor until document has loaded
-                loadComments(); 
             })
 
             socket.emit('get-document', documentId); 
-
-        
-
     }, [socket, quill, documentId]);
 
 
@@ -276,6 +258,21 @@ const Editingtool = () => {
     }, [socket, quill])
 
     const wrapperRef = useCallback((wrapper) => {
+        const fetchComments = async () => {
+            try {
+                const configuration = {
+                    method: "get",
+                    url: `${process.env.REACT_APP_SERVER_URL}/comments/${documentId}`,
+                };
+                
+                const response = await axios(configuration);
+                setComments(response.data);
+                console.log("Comments have been grabbed!")
+            }
+            catch (error) {
+                console.log("Could not get comments", error);
+            }
+        }
         if (wrapper == null) return; 
         wrapper.innerHTML = "";
         const editor = document.createElement('div');
@@ -292,7 +289,7 @@ const Editingtool = () => {
         setQuill(q); 
         
     
-    }, [])
+    }, [documentId])
 
 
 
@@ -513,7 +510,7 @@ const Editingtool = () => {
             </div>
             </>}
             
-            {}
+
 
             <div id ="sidenav">
                 <div className = "editing_tool_buttons" onClick = {() => {
@@ -537,7 +534,10 @@ const Editingtool = () => {
                     <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
                 </div>
         
-                {<div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
+                {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
+                        
+                {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={save_comments}>Save comments</div>}
+                <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={loadComments}>Load comments</div>
             </div>   
             {confirmationOpen && <Confirm closeModal={setConfirmationOpen} submitEssays={submitEssays} title="Are you sure you want to submit your essays?"/>}    
         </div>
