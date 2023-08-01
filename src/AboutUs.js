@@ -15,7 +15,7 @@ const AboutUs = () => {
                 <div className="person-boxes-row">
                     <div className="person-box">
                         <div className="person-image-wrapper">
-                            <img src={personPhoto} className='person-img' alt="profile photo for Admitted co-founder Alastair Deng" />
+                            <img src={personPhoto} className='person-img' alt="profile for Admitted co-founder Alastair Deng" />
                         </div>
                         <div className="person-img-info">
                             <div className="person-img-name">

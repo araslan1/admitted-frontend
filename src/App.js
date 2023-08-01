@@ -12,7 +12,6 @@ import Colleges from './Colleges';
 import ReviewPolicy from './ReviewPolicy';
 import CostCalculator from './CostCalculator';
 import Testeditingtool from "./Testeditingtool"; 
-import Examplefile from "./Examplefile";
 import Checkout from "./Checkout"
 import Cancel from "./Cancel"
 import Success from "./Success"
@@ -25,7 +24,6 @@ import WhyAdmitted from './WhyAdmitted';
 import RedirectDashboard from './RedirectDashboard';
 import ReviewerDashboard from './ReviewerDashboard';
 import ReviewerSignup from './ReviewerSignup'; 
-import MyEditingTool from './MyEditingTool';
 
 function App() {
   return (
@@ -37,7 +35,6 @@ function App() {
           <Route path="/signup"><Signup /></Route>
           <ProtectedRoute exact path="/dashboard" component={RedirectDashboard}></ProtectedRoute>
           <ProtectedRoute exact path="/dashboard/:id" component={Dashboard}/>
-          <Route path="/dashboard/example"><Examplefile /></Route>
           <Route exact path="/editingtool">
             <Redirect to={`/editingtool/${uuidV4()}`} />
           </Route>
@@ -60,7 +57,6 @@ function App() {
           <Route path='/reviewersignup'><ReviewerSignup /></Route>
           <Route path='/account' component={Account}></Route>
           <Route path='/free' component={FreeComponent}></Route>
-          <Route path='/myeditingtool' component={MyEditingTool}></Route>
           <ProtectedRoute path='/auth' component={AuthComponent} />
         </Switch>
       </div>

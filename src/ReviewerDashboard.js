@@ -106,7 +106,7 @@ const ReviewerDashboard = () => {
                 history.push("/login"); 
                 error = new Error(); 
             });
-    }, []);
+    }, [history, dashboardId, token]);
 
     const openNav = () => {
         document.querySelector("#mySidenav").style.width = "280px";
@@ -190,7 +190,7 @@ const ReviewerDashboard = () => {
                     <div id="upload" onClick={() => {
                         history.push('/testeditingtool')
                     }}>
-                        <img src={documenticon}></img>
+                        <img src={documenticon} alt="document"></img>
                         <h2>Demo</h2>
                         <div> 
 
@@ -198,7 +198,7 @@ const ReviewerDashboard = () => {
                     </div> 
                     {reviewerEssays && reviewerEssays.map((doc, index) => (
                             <div id="upload" onClick={() => {redirect(doc.documentId)}} key={index}>
-                                <img src={documenticon}></img>
+                                <img src={documenticon} alt="document"></img>
                                 <h2 style={{textAlign: 'center'}}>Due By: {formatDate(doc.dueBy)}</h2>
                                 <div> 
 
@@ -213,7 +213,7 @@ const ReviewerDashboard = () => {
                     <div id="upload" onClick={() => {
                         history.push('/testeditingtool')
                     }}>
-                        <img src={documenticon}></img>
+                        <img src={documenticon} alt="document"></img>
                         <h2>Demo</h2>
                         <div> 
 
@@ -229,7 +229,7 @@ const ReviewerDashboard = () => {
                                
                                 key={index}
                                 >
-                                <img src={documenticon}></img>
+                                <img src={documenticon} alt="document"></img>
                                 <h2 style={{textAlign: 'center'}}>Due By: {formatDate(doc.dueBy)}</h2>
                                 <div>
 

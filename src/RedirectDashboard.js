@@ -28,7 +28,7 @@ const RedirectDashboard = () => {
                 // For example, you can redirect to the login page like this:
                 history.push("/login");
             });
-    }, []); // The empty dependency array ensures that this effect runs only once on component mount.
+    }, [history]); // The empty dependency array ensures that this effect runs only once on component mount.
 
     return null; // You can simply return null if the component doesn't need to render anything.
 }
