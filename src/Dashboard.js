@@ -21,7 +21,7 @@ const Dashboard = () => {
     const [servicesRequested, setServicesRequested] = useState(null);
     const {id: dashboardId} = useParams(); 
     const [documentIds, setDocumentIds] = useState(null);
-    const [auth, setAuth] = useState(false); 
+
     const el = useRef(null);
     const openNav = () => {
         document.querySelector("#mySidenav").style.width = "280px";
@@ -66,7 +66,7 @@ const Dashboard = () => {
                 }
                 history.push("/login"); 
             });
-    }, []);
+    }, [history, dashboardId, token]);
     
     // Separate useEffect for UserName, documentIds, and servicesRequested
     useEffect(() => {
@@ -95,7 +95,7 @@ const Dashboard = () => {
                         <a href="/">Services</a>
                         <a href="/">Clients</a>
                         <a href="/">Contact</a>
-                        <a href="#" onClick={logout}>Log Out</a>
+                        <button href="#" onClick={logout}>Log Out</button>
                     </div>
                 </div>
 
@@ -138,7 +138,7 @@ const Dashboard = () => {
                         <div id="upload" onClick={() => {
                             history.push('/testeditingtool')
                         }}>
-                            <img src={documenticon}></img>
+                            <img src={documenticon} alt="document"></img>
                             <h2>Demo</h2>
                             <div> 
 
@@ -146,7 +146,7 @@ const Dashboard = () => {
                         </div> 
                         {documentIds && documentIds.map((id, index) => (
                             <div id="upload" onClick={() => {redirect(id)}} key={index}>
-                                <img src={documenticon}></img>
+                                <img src={documenticon} alt="document"></img>
                                 <h2 style={{textAlign: 'center'}}>{servicesRequested[index]}</h2>
                                 <div> 
 
@@ -154,10 +154,10 @@ const Dashboard = () => {
                             </div>
                         ))
                         }
-                        <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
+                        <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
                     </div>
                     <div className="resume_link" style={{marginBottom: "50px"}}>
-                        <h3 style={{marginLeft: "50px"}}>Jump into our free resume tool!<img style={{width:"50px", height: "40px",  position: "fixed", top: "338px", right: "330px"}} src={arrow}></img> <button class="button-55" role="button">Resume Tool</button>
+                        <h3 style={{marginLeft: "50px"}}>Jump into our free resume tool!<img style={{width:"50px", height: "40px",  position: "fixed", top: "338px", right: "330px"}} src={arrow} alt="arrow"></img> <button class="button-55">Resume Tool</button>
                         </h3>
         
                     </div>

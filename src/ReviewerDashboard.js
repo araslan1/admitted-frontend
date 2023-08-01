@@ -145,7 +145,7 @@ const ReviewerDashboard = () => {
                     <a href="/">Services</a>
                     <a href="/">Clients</a>
                     <a href="/">Contact</a>
-                    <a href="#" onClick={logout}>Log Out</a>
+                    <button onClick={logout}>Log Out</button>
                 </div>
             </div>
 

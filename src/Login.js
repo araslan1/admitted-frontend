@@ -12,7 +12,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
-    const [isReviewer, setIsReviewer] = useState(false); 
+    // const [isReviewer, setIsReviewer] = useState(false); 
 
 
     const handleSubmit = (e) => {
@@ -31,7 +31,7 @@ const Login = () => {
         .then((result) => {
             //check if it was reviewer or not who logged in!
             setLogin(true);
-            setIsReviewer(result.data.isReviewer);
+            // setIsReviewer(result.data.isReviewer);
             cookies.set("TOKEN", result.data.token,{
                 path: '/',
             });

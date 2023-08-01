@@ -7,11 +7,10 @@ import './NavbarListener.js'
 
 const CostCalculator = () => {
     const [totalPrice, setTotalPrice] = useState(0);
-    let centPerWord = 0;
     const packages = [false, false, false]
     const collegeArr = [false, false, false, false, false, false, false, false, false, false]
     // const features = [false, false, false];
-    let totWords = 0;
+    // let totWords = 0;
 
     const colorSwap = (id, addBorder) => {
         let test = '';
@@ -50,8 +49,8 @@ const CostCalculator = () => {
 
         temp /= 100;
         setTotalPrice(temp);
-        centPerWord = 0;
-        totWords = 0;
+        // centPerWord = 0;
+        // totWords = 0;
         for (let i = 1; i <= 3; i++) {
             if (packages[i - 1]) {
                 colorSwap('calc-1-' + i, false);
@@ -72,7 +71,7 @@ const CostCalculator = () => {
     }
 
     const handleClickQuestion1 = (pricePerWord, id) => {
-        centPerWord = pricePerWord;
+        // centPerWord = pricePerWord;
         if (packages[id - 1]) {
             colorSwap('calc-1-' + id, false);
             packages[id - 1] = false;
@@ -80,7 +79,7 @@ const CostCalculator = () => {
             colorSwap('calc-1-' + id, true);
             packages[id - 1] = true;
             for (let i = 1; i <= 3; i++) {
-                if (i != (id) && packages[i - 1]) {
+                if (i !== (id) && packages[i - 1]) {
                     colorSwap('calc-1-' + i, false);
                     packages[i - 1] = false;
                 }
@@ -128,11 +127,11 @@ const CostCalculator = () => {
 
         if (!collegeArr[id - 1]) {
             collegeArr[id - 1] = true;
-            totWords += maxWordCount;
+            // totWords += maxWordCount;
             colorSwap("calc-2-" + id, true);
         } else {
             collegeArr[id - 1] = false;
-            totWords -= maxWordCount;
+            // totWords -= maxWordCount;
             colorSwap("calc-2-" + id, false)
         }
     }

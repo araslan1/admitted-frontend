@@ -28,7 +28,7 @@ const AboutUs = () => {
                     </div>
                     <div className="person-box">
                         <div className="person-image-wrapper">
-                            <img src={personPhoto2} className='person-img' alt="profile photo for Admitted co-founder Adam Raslan" />
+                            <img src={personPhoto2} className='person-img' alt="profile for Admitted co-founder Adam Raslan" />
                         </div>
                         <div className="person-img-info">
                             <div className="person-img-name">
@@ -43,7 +43,7 @@ const AboutUs = () => {
                 <div className="person-boxes-row">
                     <div className="person-box">
                         <div className="person-image-wrapper">
-                            <img src={personPhoto3} className='person-img' alt="profile photo for Admitted advisor Fiona Collins" />
+                            <img src={personPhoto3} className='person-img' alt="profile for Admitted advisor Fiona Collins" />
                         </div>
                         <div className="person-img-info">
                             <div className="person-img-name">
