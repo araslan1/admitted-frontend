@@ -138,12 +138,7 @@ Again, warm welcome to Admitted!`
                 ))}
             </div>
 
-            
-
-            {/* <img src={stick_figure} alt ="hello" id="mycartoon"></img>
-            <img src={clouds_figure} alt="hello" id="clouds"></img>
-            <p id="matchingmessage">Your essay has not been matched with a reviewer yet. Click here to be matched within seconds!</p> */}
-
+        
             <div id ="sidenav">
 
             </div> 

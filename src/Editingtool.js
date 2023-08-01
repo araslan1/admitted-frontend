@@ -3,14 +3,11 @@ import "quill/dist/quill.snow.css"
 import { useState, useCallback, useEffect, useRef } from "react";
 import "./Editingtool.css"; 
 import { useParams, useHistory} from "react-router-dom"; 
-import Typed from 'typed.js';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 import stick_figure from "./images/sleeping.png";
 import clouds_figure from "./images/clouds.png"; 
 import checkmark from "./images/checkmark.png"; 
-import pinkstar from "./images/star.png"
-import ConnectSocket from "./ConnectSocket";
 import Cookies from "universal-cookie"; 
 import Confirm from './Confirm';
 import goal_icon from "./images/goal_icons.png";
@@ -18,7 +15,6 @@ import support_icon from "./images/support_icon.png";
 import return_icon from "./images/return_icon.png";
 import person_icon from "./images/person_icon.png";
 import loading_while_matching from "./images/while_matching.png";
-import new_document_icon from "./images/new_document.png";
 const cookies = new Cookies(); 
 
 
@@ -33,16 +29,13 @@ const Editingtool = () => {
     const token = cookies.get("TOKEN");
     const [wordCount, setWordCount] = useState(0);
     const {id: documentId} = useParams(); //contains url id
-    const [dashboardId, setDashboardId] = useState(); 
     const [socket, setSocket] = useState(); 
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState([]); 
     const SAVE_INTERVAL_MS =  2000; 
     const commentsRef = useRef(); 
     const el = useRef(null);
-    const typed = null; 
     let span_tracker = null;
-    let span_tracker_key = null; 
     let span_tracker_comment = null;
     const clear_formatting = () => {
         var length = quill.getLength()
@@ -129,7 +122,7 @@ const Editingtool = () => {
                 }
                 history.push("/login"); 
             });
-    }, []);
+    }, [documentId, history, token]);
 
     const fetchComments = async () => {
         try {
@@ -161,11 +154,10 @@ const Editingtool = () => {
                 if (span_tracker){
                     span_tracker_comment.style.transform = 'none';
                     span_tracker = myspan;
-                    span_tracker_key = index;
+
                     span_tracker_comment = comment;
                 }else{
                     span_tracker = myspan;
-                    span_tracker_key = index;
                     span_tracker_comment = comment;
                 }
                 console.log("CLICKED!");
@@ -380,11 +372,9 @@ const Editingtool = () => {
                         if (span_tracker){
                             span_tracker_comment.style.transform = 'none';
                             span_tracker = myspan;
-                            span_tracker_key = index;
                             span_tracker_comment = comment;
                         }else{
                             span_tracker = myspan;
-                            span_tracker_key = index;
                             span_tracker_comment = comment;
                         }
                         console.log("CLICKED!")
@@ -442,18 +432,7 @@ const Editingtool = () => {
     }
 
     
-    
-    
 
-
-    // useEffect( () => {
-    //     fetchComments();
-    // }, [])
- 
-    const print_spans =() => {
-        let spans = document.querySelector("div.ql-editor span");
-        console.log(spans);
-    }
 
     return (
         <>
@@ -527,7 +506,7 @@ const Editingtool = () => {
             {!isReviewer && userHasSubmitted &&
             <>
             <div style ={{marginLeft: "150px", marginTop: "150px"}}>
-                <img src={loading_while_matching} style={{width:"350px"}}></img>
+                <img src={loading_while_matching} style={{width:"350px"}} alt="matching essays"></img>
                 <div>
                 <p style ={{width:"350px", marginLeft: "20px"}}><span ref = {el} >Congrats on submitting your essays. We are currently looking for a match!</span></p>
                 </div>
@@ -541,21 +520,21 @@ const Editingtool = () => {
                         history.push('/dashboard');
                     }}>
                     Return Dashboard
-                    <img style={{width: "20px", marginLeft: "auto"}} src={return_icon}></img>
+                    <img style={{width: "20px", marginLeft: "auto"}} src={return_icon} alt="return"></img>
                 </div>
                 <div className = "editing_tool_buttons">
                     Meet Your Reviewer
-                    <img style={{width: "20px", marginLeft: "auto"}} src={person_icon}></img>
+                    <img style={{width: "20px", marginLeft: "auto"}} src={person_icon} alt="person"></img>
                 </div>
                 <div className = "editing_tool_buttons">
                     Goals
-                    <img style={{width: "20px", marginLeft: "auto"}} src={goal_icon}></img>
+                    <img style={{width: "20px", marginLeft: "auto"}} src={goal_icon} alt="goal"></img>
                 </div>
                 <div className = "editing_tool_buttons" onClick = {() => {
                     history.push("/support")
                 }}>
                     Have questions?
-                    <img style={{width: "20px", marginLeft: "auto"}} src={support_icon}></img>
+                    <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
                 </div>
         
                 {<div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
