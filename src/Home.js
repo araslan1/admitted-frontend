@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import zoomImg1 from "./images/mailchimp-0.webp";
+// import zoomImg1 from "./images/mailchimp-0.webp";
+import homepage1 from "./images/books.jpg"
 import zoomImg2 from "./images/mailchimp-1.webp";
 import zoomImg3 from "./images/mailchimp-2.webp";
 import zoomImg4 from "./images/mailchimp-3.webp";
@@ -30,7 +31,7 @@ const Home = () => {
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/signup'><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></Link>
+                        <Link to='/signup'><img src={homepage1} className='zoom-imgs' alt="Zoom 1"  style={{height: "550px", width: "100%"}}/></Link>
                         <div className="text-overlay">
                             <h2><Link to='/signup' className="top-left">Get Into Your Dream School!</Link></h2>
                         </div>

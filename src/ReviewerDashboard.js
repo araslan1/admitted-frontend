@@ -159,21 +159,7 @@ const ReviewerDashboard = () => {
 
                 <p className="left-side-p">Welcome back to the workspace, we missed You!</p>
 
-                <h3>
-                    Notifications
-                </h3>
-                <div id ="projectscontainer">
-                    <div className="noti-ind">
-                        <p>Hello this is a notification</p>
-                        {/* Need to add delete notification function */}
-                        <button><p className="x-but">&#x2715;</p></button>
-                    </div>
-                    <div className="noti-ind">
-                        <p>Hello this is a notification</p>
-                        {/* Need to add delete notification function */}
-                        <button><p className="x-but">&#x2715;</p></button>
-                    </div>
-                </div>
+            
 
             </div>
             <div id="right-side">

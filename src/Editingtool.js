@@ -21,7 +21,10 @@ const cookies = new Cookies();
 
 const Editingtool = () => {
     // // get token generated on login
-    const [ cleared, setCleared ] = useState(false);
+    // const [ cleared, setCleared ] = useState(false);
+    const [triggerLoadComments, setTriggerLoadComments] = useState(false); 
+    const [documentHasLoaded, setDocumentHasLoaded] = useState(false); 
+    const [savingCommentsInProgress, setSavingCommentsInProgress] = useState(false); 
     const [userHasSubmitted, setUserHasSubmitted] = useState(null); 
     const [isReviewer, setIsReviewer] = useState(false);
     const [essaysReviewed, setEssaysReviewed] = useState(false); 
@@ -32,7 +35,7 @@ const Editingtool = () => {
     const [socket, setSocket] = useState(); 
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState([]); 
-    const SAVE_INTERVAL_MS =  2000; 
+    const SAVE_INTERVAL_MS =  4000; 
     const commentsRef = useRef(); 
     const el = useRef(null);
     let span_tracker = null;
@@ -108,7 +111,7 @@ const Editingtool = () => {
                 setIsReviewer(response.data.isReviewer);
                 if (response.data.userHasSubmitted){
                     console.log("cleared set to")
-                    setCleared(true); 
+                    // setCleared(true); 
                 }
                 setEssaysReviewed(response.data.essaysReviewed);
                 console.log("hurray, given access to editing tool!")
@@ -160,17 +163,45 @@ const Editingtool = () => {
         
     }
     
+    const save_comments = useCallback(() => {
+        try {
+            setSavingCommentsInProgress(true); 
+            const comments_config = {
+                method: "post",
+                url: `${process.env.REACT_APP_SERVER_URL}/comments`,
+                data: {
+                    _id: documentId,
+                    comments: comments,
+                }
+            }
+
+            axios(comments_config)
+                .then(() => {
+                    console.log("comments were saved!");
+                    setSavingCommentsInProgress(false); 
+                })
+                .catch((error) => {
+                    console.log("comments failed to save!");
+                });
+        }
+        catch (error) {
+            console.log("Could not save comment")
+        }  
+    }, [comments, documentId])
+
 
     useEffect(() => {
-        if (cleared) return; 
         if (socket == null || quill == null) return; 
         if (socket){
             
             const interval = setInterval(() => {
                 if (quill){
-                    console.log(cleared); 
+                    // console.log(cleared); 
                     console.log("saved");
                     socket.emit("save-document", quill.getContents()); 
+                    if (!savingCommentsInProgress && comments.length > 0 && isReviewer){
+                        save_comments(); 
+                    }
                 }
                 
             }, SAVE_INTERVAL_MS)
@@ -180,7 +211,7 @@ const Editingtool = () => {
             }
         }
     
-    }, [socket, quill, cleared])
+    }, [socket, quill, save_comments, savingCommentsInProgress, comments, isReviewer])
 
     //this will check with our server if there is existing document
     //if there is update the content
@@ -194,6 +225,7 @@ const Editingtool = () => {
                 
                 quill.setContents(document);
                 quill.enable(); //this is to enable text editor until document has loaded
+                setDocumentHasLoaded(true); 
             })
 
             socket.emit('get-document', documentId); 
@@ -202,17 +234,13 @@ const Editingtool = () => {
 
     //useEffect to connect to socket
     useEffect(() => {
-        if (cleared){
-            console.log("didn't connect to socket");
-            return;
-        }
         const s = io(`${process.env.REACT_APP_SERVER_URL}`)
         setSocket(s); 
 
         return () => {
             s.disconnect(); 
         }
-    }, [cleared])
+    }, [])
 
 
     //use Effect for socket to receive changes
@@ -404,30 +432,12 @@ const Editingtool = () => {
     }
     
 
-    const save_comments = () => {
-        try {
-            const comments_config = {
-                method: "post",
-                url: `${process.env.REACT_APP_SERVER_URL}/comments`,
-                data: {
-                    _id: documentId,
-                    comments: comments,
-                }
-            }
-
-            axios(comments_config)
-                .then(() => {
-                    console.log("comments were saved!");
-                })
-                .catch((error) => {
-                    console.log("comments failed to save!");
-                });
+    useEffect(() => {
+        const boolean = isReviewer || essaysReviewed; 
+        if (documentHasLoaded && userHasSubmitted && boolean){
+            setTriggerLoadComments(true); 
         }
-        catch (error) {
-            console.log("Could not save comment")
-        }  
-    }
-
+    }, [documentHasLoaded, essaysReviewed, isReviewer, userHasSubmitted])
     
 
 
@@ -534,12 +544,13 @@ const Editingtool = () => {
                     <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
                 </div>
         
-                {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
+                {!isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
                         
                 {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={save_comments}>Save comments</div>}
                 <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={loadComments}>Load comments</div>
             </div>   
             {confirmationOpen && <Confirm closeModal={setConfirmationOpen} submitEssays={submitEssays} title="Are you sure you want to submit your essays?"/>}    
+            {triggerLoadComments && <Confirm closeModal={setTriggerLoadComments} submitEssays={loadComments} title="Hey there! Click below to view your comments"/>}    
         </div>
         </>
     ); 

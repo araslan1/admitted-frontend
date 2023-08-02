@@ -2,12 +2,17 @@ import Quill from "quill"
 import "quill/dist/quill.snow.css" 
 import { useState, useCallback, useRef, useEffect } from "react";
 import "./Editingtool.css"; 
+import goal_icon from "./images/goal_icons.png";
+import support_icon from "./images/support_icon.png";
+import return_icon from "./images/return_icon.png";
+import person_icon from "./images/person_icon.png";
 import checkmark from "./images/checkmark.png"; 
 
 
 
 
 const Editingtool = () => {
+
     const [wordCount, setWordCount] = useState(0);
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState(["Welcome to Admitted!","You've clicked on bullet point 1! This is where the essay reviewer you have been matched with will leave their comments. A link to their profile will pop on the right navigation bar for you to see who's reviewing your essay and their qualifications!","You've clicked on bullet point 2! Our mission is to provide you with high quality service and do what we can to increase your chances at getting into amazing universities.","You've clicked on bullet point 3! If you've decided to test out Admitted, go back to your dashboard, pick out your school(s) and extra services by clicking the 'New' document underneath your workspace. Unfortunately, our services do come at a cost but we've minimized our desire for profit to give you the most affordable prices while still providing high quality services."]); 
@@ -58,7 +63,6 @@ Again, warm welcome to Admitted!`
                 }
                 myspan.addEventListener('click', find_comment_ref);
             })
-            
         }
 
         loadComments();
@@ -140,7 +144,26 @@ Again, warm welcome to Admitted!`
 
         
             <div id ="sidenav">
-
+                <div className = "editing_tool_buttons" onClick = {() => {
+                  
+                    }}>
+                    Return Dashboard
+                    <img style={{width: "20px", marginLeft: "auto"}} src={return_icon} alt="return"></img>
+                </div>
+                <div className = "editing_tool_buttons">
+                    Meet Your Reviewer
+                    <img style={{width: "20px", marginLeft: "auto"}} src={person_icon} alt="person"></img>
+                </div>
+                <div className = "editing_tool_buttons">
+                    Goals
+                    <img style={{width: "20px", marginLeft: "auto"}} src={goal_icon} alt="goal"></img>
+                </div>
+                <div className = "editing_tool_buttons" onClick = {() => {
+   
+                }}>
+                    Have questions?
+                    <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
+                </div>
             </div> 
         </div>
         </>

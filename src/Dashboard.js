@@ -111,22 +111,6 @@ const Dashboard = () => {
 
                     <p className="left-side-p">Welcome back to the workspace, we missed You!</p>
 
-                    <h3>
-                        Notifications
-                    </h3>
-                    <div id ="projectscontainer">
-                        <div className="noti-ind">
-                            <p>Hello this is a notification</p>
-                            {/* Need to add delete notification function */}
-                            <button><p className="x-but">&#x2715;</p></button>
-                        </div>
-                        <div className="noti-ind">
-                            <p>Hello this is a notification</p>
-                            {/* Need to add delete notification function */}
-                            <button><p className="x-but">&#x2715;</p></button>
-                        </div>
-                    </div>
-
                 </div>
                 <div id ="right-side">
                     <h1 className='right-side-header' style={{marginLeft: "20px"}}>Your Workspace</h1>
@@ -152,11 +136,7 @@ const Dashboard = () => {
                         }
                         <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
                     </div>
-                    <div className="resume_link" style={{marginBottom: "50px"}}>
-                        <h3 style={{marginLeft: "50px"}}>Jump into our free resume tool!<img style={{width:"50px", height: "40px",  position: "fixed", top: "338px", right: "330px"}} src={arrow} alt="arrow"></img> <button class="button-55">Resume Tool</button>
-                        </h3>
-        
-                    </div>
+    
                     <div id="checklist-container">
                         <h3 className="right-side-header" style={{textAlign: 'center'}}>Application Checklist</h3>
                         <div className="checklist-items">
