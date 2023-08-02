@@ -9,7 +9,6 @@ import Cookies from "universal-cookie";
 import axios from 'axios'; 
 import { useHistory } from "react-router-dom";
 import new_document_icon from "./images/new_document.png";
-import arrow from "./images/arrow.png";
 const cookies = new Cookies(); 
 
 
