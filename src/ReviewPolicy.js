@@ -95,8 +95,8 @@ const ReviewPolicy = () => {
                 </tr>
             </table>
 
-            <div className="next-btn-wrap">
-                <Link to='/cost-calculator' className='next-btn'>Next: Determine the Exact Price with Our Cost Calculator</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/cost-calculator' className='admitted-next-btn'>Next: Determine the Exact Price with Our Cost Calculator</Link>
             </div>
 
             <div className="review-sec-section">
@@ -104,7 +104,7 @@ const ReviewPolicy = () => {
                 <div className="review-sec-row">
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={essay} alt="..." />
+                            <img className='review-sec-ind-img' src={essay} alt="Example college application essay with latin text" />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Essays</h3>
@@ -120,7 +120,7 @@ const ReviewPolicy = () => {
 
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={interview} alt="..." />
+                            <img className='review-sec-ind-img' src={interview} alt='An illustration of a practice college interview, with a stick figure interviewer saying "Hello!' />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Interviews</h3>
@@ -136,7 +136,7 @@ const ReviewPolicy = () => {
                 <div className="review-sec-row">
                 <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={honorsActivities} alt="..." />
+                            <img className='review-sec-ind-img' src={honorsActivities} alt="Representation of the Common Application's (Common App) 10 activities & 5 academic honors sections." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Activities & Academic Honors</h3>
@@ -167,8 +167,8 @@ const ReviewPolicy = () => {
                 </div>
             </div>
 
-            <div className="next-btn-wrap">
-                <Link to='/contact-us' className='next-btn'>Still have questions?</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/contact-us' className='admitted-next-btn'>Still have questions?</Link>
             </div>
         </div>
         <Footer />

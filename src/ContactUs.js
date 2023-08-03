@@ -51,8 +51,8 @@ const ContactUs = () => {
                 </div>
             </div>
 
-            <div className="contact-next-btn">
-                <Link to='/signup'>Get Started!</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/signup' className='admitted-next-btn'>Get Started!</Link>
             </div>
         </div>
         <Footer />

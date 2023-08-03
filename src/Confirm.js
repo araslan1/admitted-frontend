@@ -2,8 +2,6 @@ import "./Confirm.css"
 
 
 const Confirm = ({ closeModal, submitEssays, title }) => {
-    
-
 
     return (
         <div className ="modalBackground">

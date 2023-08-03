@@ -36,8 +36,8 @@ const Colleges = () => {
                 <p className='colleges-email'>araslan@usc.edu</p>
             </div>
 
-            <div className="colleges-next-btn">
-                <Link to='/review-policy'>Next: How do our reviews work?</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/review-policy' className='admitted-next-btn'>Next: How do our reviews work?</Link>
             </div>
 
             <p className='colleges-disclaimer'>*Admitted is not officially affiliated or endorsed by any of the above universities</p>

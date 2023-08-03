@@ -1,18 +1,17 @@
 import './ReviewerProfile.css';
-import profilePhoto from './images/IMG_6420.jpg'
 
-const ReviewerProfile = () => {
+const ReviewerProfile = (props) => {
+
+    const info = props.profile;
+
     return (
-        <div className="reviewer-profile">
-            <div className="profile-wrapper">
-                <img className='profile-photo' src={profilePhoto} alt="..." />
-            </div>
-            <p className='profile-name'>Firstname Lastname</p>
-            <p className='profile-school'>Stanford</p>
+        <div className="reviewer-profile" id='select-profile'>
+            <img className='profile-photo' src={props.image} alt="..." />
+            <p className='profile-name'>{info.name}</p>
+            <p className='profile-school'>{info.school}</p>
             <div className="profile-description-wrap">
-                <p className='profile-description'>Hi! I'm a Freshman studying <span>Biology</span> at <span>Stanford University</span>.</p>
+                <p className='profile-description'>{info.description[0]} is a {info.description[1]} studying <span>{info.description[2]}</span> at <span>{info.school}</span>!</p>
             </div>
-            <p className='profile-email'>modelStudent@stanford.edu</p>
         </div>
     );
 }

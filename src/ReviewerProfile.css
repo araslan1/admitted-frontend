@@ -2,26 +2,22 @@
 .reviewer-profile {
     font-family:sans-serif;
     width: 300px;
-    height: 400px;
-    background-color: #27235D;
-    border-radius: 30px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
     text-align: center;
     font-weight: 100;
-
-    margin: 20px auto;
     padding: 10px;
 
-    color: white;
+    color: black;
     box-shadow: black 0px 0px 10px -2px;
-    box-sizing: border-box;
-    border-bottom: 5px solid #F5DD1A;
 }
 .profile-wrapper {
     border-radius: 50%;
     padding: 10px;
     width: 170px;
     margin: 10px auto;
-    border-right: 4px solid #f5dd1a;
+    border-right: 2px solid #fc8eac;
 }
 .profile-photo {
     border-radius: 50%;
@@ -30,15 +26,16 @@
     width: 150px;
 }
 .profile-name {
-    color: white;
+    color: black;
     font-size: 20px;
-    margin: 10px 0px;
+    margin: 20px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .profile-school {
     font-weight: bold;
     font-size: 15px;
     margin: 10px 0px;
-    color: #A99CE3;
+    color: #fc8eac;
 }
 .profile-description-wrap {
     width: 260px;
@@ -48,14 +45,6 @@
     text-align: left;
 }
 .profile-description span {
-    color: #F5DD1A;
-}
-.profile-email {
-    padding: 4px 10px;
-    background-color: #A99CE3;
-    border-radius: 8px;
-    color: white;
-    width: max-content;
-    margin: 20px auto;
-    cursor: pointer;
+    color: #fc8eac;
+    font-weight: bold;
 }

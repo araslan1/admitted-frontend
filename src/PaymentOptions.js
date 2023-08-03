@@ -68,8 +68,8 @@ const PaymentOptions = () => {
                         </div>
                     </Link>
                 </div>
-            <div className="pay-options-next-btn-wrap">
-                <Link to='/why-admitted' className='pay-options-next-btn'>Next: How Admitted Can Help You!</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/why-admitted' className='admitted-next-btn'>Next: How Admitted Can Help You!</Link>
             </div>
         </div>
     );

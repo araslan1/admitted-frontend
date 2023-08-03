@@ -52,7 +52,9 @@ const Inspiration = () => {
                     </div>
                 </div>
             </div>
-            <Link to='/why-admitted' className="insp-button" id='insp-next-button'>Next: Why choose us!</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/why-admitted' className="admitted-next-btn">Next: Why choose us?</Link>
+            </div>
         </div>
         <Footer />
         </>

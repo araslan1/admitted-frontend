@@ -1,23 +1,31 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-// import zoomImg1 from "./images/mailchimp-0.webp";
-import homepage1 from "./images/books.jpg"
+import zoomImg1 from "./images/mailchimp-0.webp";
 import zoomImg2 from "./images/mailchimp-1.webp";
 import zoomImg3 from "./images/mailchimp-2.webp";
 import zoomImg4 from "./images/mailchimp-3.webp";
 import './Home.css';
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
+import ReviewerProfile from "./ReviewerProfile";
+import reviewerIMG1 from './images/IMG_AdamA.jpeg';
+import reviewerIMG2 from './images/IMG_6420.jpg';
+import reviewerIMG3 from './images/IMG_FIONA2.jpeg';
 
 const Home = () => {
-    // const clientUrl = process.env.REACT_APP_CLIENT_URL;
+
+    const profiles = new Map([
+        [1, { name: 'Adam Aladahir', school: 'Tulane', description: ['Adam', 'Junior', 'Biology'] }],
+        [2, { name: 'Alastair Deng', school: 'Stanford', description: ['Alastair', 'Freshman', 'Computer Science'] }],
+        [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
+    ])
 
     return (
         <>
         <div>
             <Navbar />
             <div className="free-trial-banner">
-                <p>Admitted officially launches in August 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
+                <p>Admitted officially launches in September 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
             </div>
         </div>
         <div className="home">
@@ -31,7 +39,7 @@ const Home = () => {
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/signup'><img src={homepage1} className='zoom-imgs' alt="Zoom 1"  style={{height: "550px", width: "100%"}}/></Link>
+                        <Link to='/signup'><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></Link>
                         <div className="text-overlay">
                             <h2><Link to='/signup' className="top-left">Get Into Your Dream School!</Link></h2>
                         </div>
@@ -74,7 +82,27 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div>
+
+            <div className="meet-our-reviewers">
+                <h3>Meet some of our reviewers!</h3>
+                <div className="profile-section">
+                    <div className="profile-margin">
+                        <ReviewerProfile profile={profiles.get(1)} image={reviewerIMG1}/>
+                    </div>
+                    <div className="profile-margin" id='specific-profile-margin'>
+                        <ReviewerProfile profile={profiles.get(2)} image={reviewerIMG2} />
+                    </div>
+                    <div className="profile-margin">
+                        <ReviewerProfile profile={profiles.get(3)} image={reviewerIMG3}/>
+                    </div>
+                </div>
+
+                <div className="admitted-next-btn-wrap">
+                    <Link to='/colleges' className='admitted-next-btn'>Next: See what colleges we review for</Link>
+                </div>
+            </div>
+
+            <div className="home-pay-options">
                 <PaymentOptions />
             </div>
         </div>

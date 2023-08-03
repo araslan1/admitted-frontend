@@ -57,8 +57,8 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            <div className="about-us-next-btn-wrap">
-                <Link to='/inspiration' className='about-us-next-btn'>Next: Our Story!</Link>
+            <div className="admitted-next-btn-wrap">
+                <Link to='/inspiration' className='admitted-next-btn'>Next: Our Story!</Link>
             </div>
         </div>
         <Footer />

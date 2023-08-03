@@ -153,7 +153,7 @@ const Checkout2 = () => {
     return (
         <div className="checkout-2">
             <div className="checkout-banner-launch">
-                <p>Admitted officially launches in August 2023! In the meantime, see how our service works with our <span>Free Trial</span></p>
+                <p>Admitted officially launches in September 2023! In the meantime, see how our service works with our <span>Free Trial</span></p>
             </div>
             <h2 className='checkout-2-header'>Select Plan:</h2>
                 <div className="checkout-all-boxes">

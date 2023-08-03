@@ -131,3 +131,32 @@ top: 63.5%;
 #main-blurb {
   height: fit-content;
 }
+.meet-our-reviewers {
+  margin-top: 225px;
+  text-align: center;
+  width: 100%;
+}
+.meet-our-reviewers h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 48px;
+  text-align: center;
+}
+.profile-section {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px 0;
+}
+.profile-margin {
+  margin: 0px 50px;
+  height: 350px;
+  width: 300px;
+}
+.home-pay-options {
+  height: max-content;
+  margin-top: 50px;
+}
+
