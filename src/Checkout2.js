@@ -62,7 +62,7 @@ const Checkout2 = () => {
                 console.log('You chose free trial!')
                 //Create a short essay document for them based on whether they chose Stanford or USC; no need to send to stripe
             } else {
-                fetch('http://localhost:7459/create-checkout-session', {
+                fetch(`${process.env.REACT_APP_SERVER_URL}/create-checkout-session`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
