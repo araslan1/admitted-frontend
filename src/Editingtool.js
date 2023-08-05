@@ -500,8 +500,8 @@ const Editingtool = () => {
 
             {!isReviewer && userHasSubmitted === false && 
             <>
-            <img src={stick_figure} alt ="hello" id="mycartoon"></img>
-            <img src={clouds_figure} alt="hello" id="clouds"></img>
+            <img src={stick_figure} alt ="Cartoon of a stick figure man holding a teddy bear yawning while walking to his bed." id="mycartoon"></img>
+            <img src={clouds_figure} alt="A drawing of six cartoon clouds." id="clouds"></img>
             <p id="matchingmessage">Your essay has not been matched with a reviewer yet. Click here to be matched within seconds!<span><button onClick = {() => {setTimeout(() => {
                 if (!userHasSubmitted){
                     setConfirmationOpen(true);

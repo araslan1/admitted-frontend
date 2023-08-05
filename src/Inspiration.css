@@ -26,7 +26,7 @@
     border-radius: 20px;
 }
 .insp-photo-text {
-    max-width: 300px;
+    max-width: 400px;
     background-color: #FEE6ED;
     padding: 1rem;
     border-radius: 10px;
@@ -39,7 +39,7 @@
     box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
 }
 .insp-photo-text-2 {
-    max-width: 300px;
+    max-width: 400px;
     background-color: #FEE6ED;
     padding: 1rem;
     border-radius: 10px;
@@ -53,6 +53,9 @@
 }
 .insp-photo-text-body {
     text-align: left;
+}
+.insp-photo-text-body a:hover {
+    color: #fc8eac;
 }
 .insp-photo-text-header {
     font-family: Georgia, 'Times New Roman', Times, serif;

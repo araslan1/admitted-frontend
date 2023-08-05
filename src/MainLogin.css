@@ -1,0 +1,140 @@
+
+.mainlogin {
+    background: white; 
+    width: 100%; 
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white; 
+    margin: 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: white; 
+}
+
+.mainlogin .leftside {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    background-color: rgb(31 41 55); 
+    padding: 60px 30px; 
+    padding-top: 20px; 
+    border-radius: 30px; 
+    margin-left: 80px; 
+}
+
+.mainlogin .rightside {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    background-color: white; 
+    margin-right: 120px; 
+}
+
+.mainlogin .rightside .account_header {
+    font-family: 'Inter', sans-serif; 
+    font-size: 30px; 
+} 
+.mainlogin .rightside  label {
+    display: block; 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 700; 
+    margin-left: 5px; 
+}
+
+.mainlogin .rightside input {
+    font-family: 'Inter', "helvetica neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 100;
+        background-color: white;
+        width: 352px; 
+        background: right -10px center #fff;
+        background-size: 20px;
+        border: 1px solid #c9cbd4;
+        border-radius: 6px;
+        color: #3f4450;
+        padding: 9px 8px 7px;
+        margin: 2px auto 20px auto;
+        display: block;
+        cursor: text;
+        position: relative;
+        height: 40px;
+        box-sizing: border-box;
+}
+
+.mainlogin .rightside .terms_of_service {
+    width: 20px; 
+}
+
+.mainlogin .rightside  button {
+    display: block; 
+    margin-top: 10px; 
+    margin-left: 10px; 
+    background: #fc8eac;
+    /* background: #ffe01b; */
+    color: black;
+    border: 0;
+    height: 40px; 
+    width: 350px; 
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+} 
+
+.mainlogin .rightside button:hover {
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+      box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+      transform: translateY(-3px); 
+    }
+
+.mainlogin .rightside a {
+    font-family: 'Inter', sans-serif; 
+    color: #fc8eac;
+    font-weight: 700; 
+}
+
+.mainlogin .mainlogo {
+    width: 200px; 
+    margin-bottom: 40px; 
+
+}
+
+
+.mainlogin .checkbox {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+.mainlogin .checkmark {
+    width: 35px; 
+    /* margin-top: 40px;  */
+}
+
+.mainlogin .leftside .checkbox .label h3 {
+    display: inline; 
+    margin-top: 0;
+    font-weight: 700;
+    color: white; 
+    font-size: 28px; 
+    font-family: 'Inter', sans-serif; 
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    margin-left: 20px; 
+}
+.mainlogin .leftside .checkbox .label p {
+    color: rgb(156 163 175); 
+}
+
+
+
+.mainlogin .leftside .checkbox .label {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px; 
+}

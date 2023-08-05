@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Signup from './Signup';
+// import Signup from './Signup';
 import Login from './Login';
 import Support from './Support';
 import AboutUs from './AboutUs';
@@ -26,6 +26,8 @@ import ReviewerDashboard from './ReviewerDashboard';
 import ReviewerSignup from './ReviewerSignup'; 
 import Checkout2 from './Checkout2'; 
 import Logout from './Logout'; 
+import OTP from './Otp'; 
+import MainLogin from './MainLogin';
 
 function App() {
   return (
@@ -34,7 +36,7 @@ function App() {
         <Switch>
           <Route exact path="/"><Home /></Route>
           <Route path="/login"><Login /></Route>
-          <Route path="/signup"><Signup /></Route>
+          <Route path="/signup"><MainLogin /></Route>
           <ProtectedRoute exact path="/dashboard" component={RedirectDashboard}></ProtectedRoute>
           <ProtectedRoute exact path="/dashboard/:id" component={Dashboard}/>
           <Route exact path="/editingtool">
@@ -62,6 +64,8 @@ function App() {
           <Route path='/free' component={FreeComponent}></Route>
           <Route path='/logout' component={Logout}></Route>
           <ProtectedRoute path='/auth' component={AuthComponent} />
+          <Route exact path = '/OTP' component={OTP}></Route>
+          <Route exact path = '/mainlogin' component={MainLogin}></Route>
         </Switch>
       </div>
     </Router>

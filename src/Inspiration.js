@@ -19,10 +19,12 @@ const Inspiration = () => {
                 </div>
                 <div className="insp-photo-text">
                     <div className="insp-photo-text-header">
-                        <h3>History of Lorum Ipsum...</h3>
+                        <h3>How It All Started...</h3>
                     </div>
                     <div className="insp-photo-text-body">
-                        <p>The term Lorem Ipsum is derived from the Latin term Dolorem Ipsum which means "pain itself. " The text has been in use for a very long time and its history spans for over two millennia.</p>
+                        <p>
+                            As young college students, we did not remember the free-for-all contest that is applying to college fondly. In one short application, we had to prove our worth and justify our lives to colleges who did not know us. Looking back, one thing has become abundantly clear. If you don’t know the rules of the college application game and you don’t have the money to find out, your dream school would remain a dream. So, we decided to change the game.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -32,10 +34,12 @@ const Inspiration = () => {
                 </div>
                 <div className="insp-photo-text-2">
                     <div className="insp-photo-text-header">
-                        <h3>De Finibus Bonorum et Malorum</h3>
+                        <h3>Our Idea</h3>
                     </div>
                     <div className="insp-photo-text-body">
-                        <p>It was due to the popularity of De Finibus Bonorum et Malorum that the Lorem Ipsum text came to be in its current form. Cicero was considered one of the most skilled rhetoricians of all time. During the age of enlightenment, his works were considered the standard for prose in Latin.</p>
+                        <p>
+                        When we were applying to college, we would look online and lament at the vague advice most websites offered and the helpful services locked behind $1,000+ price tags. We figured that there had to be a more affordable way to amplify your chances of getting into an elite university. And there is! The people who can review your application best are those who have already written a successful application to your dream schools. That means connecting you with current or recent students at elite institutions!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -45,10 +49,12 @@ const Inspiration = () => {
                 </div>
                 <div className="insp-photo-text">
                     <div className="insp-photo-text-header">
-                        <h3>Lorum's Uses</h3>
+                        <h3>The Next Step</h3>
                     </div>
                     <div className="insp-photo-text-body">
-                        <p>The Lorem Ipsum text is not only there as a placeholder. You can also use it to keep you focused on the draft copy. Why do you think the typesetter intentionally garbled Cicero's work? He probably did it to avoid distraction.</p>
+                        <p>
+                        After three months of development, we are excited to have released our <Link to='/review-policy'>Free Trial</Link> plan, with more comprehensive services launching this September! We have already begun our <Link to='/why-admitted'>College Match Guarantee</Link> service, ensuring that your application for each college will be reviewed by a current or recent student from that university. With this and many more ideas still in development, we hope you will let Admitted help you with your college application journey.
+                        </p>
                     </div>
                 </div>
             </div>

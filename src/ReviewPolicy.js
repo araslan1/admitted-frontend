@@ -151,7 +151,7 @@ const ReviewPolicy = () => {
                     </div>
                     <div className="review-sec-ind">
                         <div className="review-sec-ind-img-wrapper">
-                            <img className='review-sec-ind-img' src={resume} alt="..." />
+                            <img className='review-sec-ind-img' src={resume} alt="Model resume that has a school, achievements, and activities section." />
                         </div>
                         <div className="review-sec-ind-text">
                             <h3 className='review-sec-ind-text-header'>Resume</h3>

@@ -1,6 +1,6 @@
 import "./Dashboard.css"
 import "./UserSideNav.css"
-import documenticon from "./images/document_icon.png"
+import documenticon from "./images/dashboard_document.jpeg"
 import React from 'react';
 import Typed from 'typed.js';
 import { useState, useRef, useEffect } from "react";
@@ -140,33 +140,37 @@ const Dashboard = () => {
                         <h3 className="right-side-header" style={{textAlign: 'center'}}>Application Checklist</h3>
                         <div className="checklist-items">
                             <ul id='app-checklist'>
-                                <li>
+                            <li>
                                     <span>Choose the colleges that you want to apply to</span>
                                     <ul>
                                         <li>Find the specific application requirements each college asks for (Number of recommendation letters, essays, etc.)</li>
+                                        <li>Make a note of all early and regular decision deadlines</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <span>Write your Common App and college-specific essays</span>
+                                    <span>Fill out your Common Application and College-Specific Supplementals</span>
                                     <ul>
-                                        <li>If you plan on having an Admitted student review your essay, we recommend going through multiple revisions before using our service</li>
+                                        <li>If you plan on having an Admitted student review your application, we recommend going through multiple revisions before using our service</li>
+                                        <li>Don’t wait until the last minute to answer any questions!</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <span>Contact teachers and other mentors for recommendations</span>
-                                </li>
-                                <li>
-                                    <span>Lorum ipsum sit amet dolourm </span>
                                     <ul>
-                                        <li>Interdum velit euismod in pellentesque massa. Mi ipsum faucibus vitae aliquet nec.</li>
-                                        <li>Lacinia quis vel eros donec ac odio tempor orci.</li>
+                                        <li>You should do this at least one month before your earliest deadline</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <span>Lorum ipsum sit amet dolourm </span>
+                                    <span>Look into Alumni Interviews</span>
                                     <ul>
-                                        <li>Interdum velit euismod in pellentesque massa. Mi ipsum faucibus vitae aliquet nec.</li>
-                                        <li>Lacinia quis vel eros donec ac odio tempor orci.</li>
+                                        <li>Practice for your interview with Admitted’s Premium+ plan!</li>
+                                        <li>Some schools (Brown, UChicago, etc.) require a short video profile rather than an alumni interview. Check each school’s requirements and prepare for interviews/video profiles ahead of time</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Check your email!</span>
+                                    <ul>
+                                        <li>Most universities will send you emails regarding your application, so check your spam folder daily!</li>
                                     </ul>
                                 </li>
                             </ul>

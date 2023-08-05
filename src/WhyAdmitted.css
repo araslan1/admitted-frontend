@@ -82,6 +82,13 @@
     text-align: center;
     font-size: 15px;
 }
+.why-circle-text p {
+    margin: 15px;
+}
+.circle-text-head {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .why-circle-content {
     display: flex;
     justify-content: space-evenly;
@@ -119,7 +126,9 @@
 }
 .why-profiles-header {
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .why-profile-text-meet {
     font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

@@ -1,24 +1,26 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import zoomImg1 from "./images/mailchimp-0.webp";
+import zoomIMG1 from "./images/IMG_1709.jpeg";
 import zoomImg2 from "./images/mailchimp-1.webp";
 import zoomImg3 from "./images/mailchimp-2.webp";
 import zoomImg4 from "./images/mailchimp-3.webp";
 import './Home.css';
+import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
+import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
-import ReviewerProfile from "./ReviewerProfile";
-import reviewerIMG1 from './images/IMG_AdamA.jpeg';
-import reviewerIMG2 from './images/IMG_6420.jpg';
-import reviewerIMG3 from './images/IMG_FIONA2.jpeg';
+// import ReviewerProfile from "./ReviewerProfile";
+// import reviewerIMG1 from './images/IMG_AdamA.jpeg';
+// import reviewerIMG2 from './images/IMG_6420.jpg';
+// import reviewerIMG3 from './images/IMG_FIONA2.jpeg';
 
 const Home = () => {
 
-    const profiles = new Map([
-        [1, { name: 'Adam Aladahir', school: 'Tulane', description: ['Adam', 'Junior', 'Biology'] }],
-        [2, { name: 'Alastair Deng', school: 'Stanford', description: ['Alastair', 'Freshman', 'Computer Science'] }],
-        [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
-    ])
+    // const profiles = new Map([
+    //     [1, { name: 'Adam Aladahir', school: 'Tulane', description: ['Adam', 'Junior', 'Biology'] }],
+    //     [2, { name: 'Alastair Deng', school: 'Stanford', description: ['Alastair', 'Freshman', 'Computer Science'] }],
+    //     [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
+    // ])
 
     return (
         <>
@@ -33,15 +35,15 @@ const Home = () => {
                 <h1>Turning Essays into Acceptances</h1>
             </div>
             <div>
-                <p id="main-blurb">Win over college admission officers with the #1 essay review platform, where your essays are edited by students who have already been admitted into top universities!</p>
+                <p id="main-blurb">Win over college admission officers with the #1 essay review platform, where your applications are reviewed by a current student at each university you're applying to!</p>
             </div>
             <Link to='/signup' className="mainbutton">Get Started!</Link>
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/signup'><img src={zoomImg1} className='zoom-imgs' alt="Zoom 1" /></Link>
+                        <Link to='/signup'><img src={zoomIMG1} className='zoom-imgs' alt="Zoom 1" /></Link>
                         <div className="text-overlay">
-                            <h2><Link to='/signup' className="top-left">Get Into Your Dream School!</Link></h2>
+                            <h2><Link to='/signup' className="top-left">Get Into Your<br></br>Dream School!</Link></h2>
                         </div>
                     </div>
                     <div className="cooking">
@@ -54,7 +56,7 @@ const Home = () => {
                 <div className='feature-cards'>
                     <div className="image-wrapper">
                         <Link to='/inspiration'><img src={zoomImg2} className='zoom-imgs' alt="Zoom 2" /></Link>
-                        <h2><Link to='/inspiration' className="top-left">Made By Students For Students</Link></h2>
+                        <h2><Link to='/inspiration' className="top-left">Made By Students<br></br>For Students</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-1'>
                         <p className='card-info-blurb'>We've already gone through the process!</p>
@@ -64,7 +66,7 @@ const Home = () => {
                 <div className='feature-cards'>
                     <div className="image-wrapper">
                         <Link to='/review-policy'><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></Link>
-                        <h2><Link to='/review-policy' className="top-left">College-Specific Reviews</Link></h2>
+                        <h2><Link to='/review-policy' className="top-left">College-Specific<br></br>Reviews</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>
                         <p className='card-info-blurb'>Receive feedback from someone who actually attends the university</p>
@@ -74,7 +76,7 @@ const Home = () => {
                 <div className='feature-cards'>
                     <div className="image-wrapper">
                         <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" /></Link>
-                        <h2><Link to='/why-admitted' className="top-left">College Counseling Made Affordable</Link></h2>
+                        <h2><Link to='/why-admitted' className="top-left">College Counseling<br></br>Made Affordable</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-3'>
                         <p className='card-info-blurb'>Don't pay thousands for an advisor who applied to colleges last century!</p>
@@ -83,7 +85,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="meet-our-reviewers">
+            {/* <div className="meet-our-reviewers">
                 <h3>Meet some of our reviewers!</h3>
                 <div className="profile-section">
                     <div className="profile-margin">
@@ -100,7 +102,45 @@ const Home = () => {
                 <div className="admitted-next-btn-wrap">
                     <Link to='/colleges' className='admitted-next-btn'>Next: See what colleges we review for</Link>
                 </div>
+            </div> */}
+
+
+            <div className="why-profiles" style ={{marginTop: "300px"}}>
+                <h3 className='why-profiles-header'>Our reviewers have been in your position!</h3>
+                <div className="why-profiles-all">
+                    <div className="why-profile-ind">
+                        <div className="why-profile-img-wrapper">
+                            <img className='why-profile-img' src={admittedStudentReviewer1} alt="Odessa Deng, an alumni from Harvard University, poses in front of Widener Library." />
+                        </div>
+                        <div className="why-profile-text">
+                            <p className='why-profile-text-meet'>Meet Odessa</p>
+                            <p>
+                                Odessa graduated from Harvard University in 2023 with a double major in Chemistry and Neuroscience. 
+                                When Odessa 
+                                She knows what it takes to get into Harvard and wants to help you get there too!
+                            </p>
+                        </div>
+                    </div>
+                    <div className="why-profile-ind">
+                        <div className="why-profile-img-wrapper">
+                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="..." />
+                        </div>
+                        <div className="why-profile-text">
+                            <p className='why-profile-text-meet'>Meet Fiona</p>
+                            <p>
+                                Fiona is a sophomore majoring in Psychology at USC. 
+                                When Fiona was applying to USC she was lucky to get application advice from a friend already attending the university. 
+                                Now, she is excited to pass on that advice to help you improve your application!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div className="admitted-next-btn-wrap">
+                <Link to='/about-us' className='admitted-next-btn'>More Reviewers</Link>
+            </div>
+
 
             <div className="home-pay-options">
                 <PaymentOptions />

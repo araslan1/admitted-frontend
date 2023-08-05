@@ -34,10 +34,16 @@
   top: 5%;
   left: 22%;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: #fc8eac;
+  text-shadow: 0 0 3px black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
-  max-width: 210px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  width: max-content;
+  max-height: 63px;
+  box-shadow: rgba(140, 140, 140, 0.75) 0px 0px 10px -2px;
 }
 .card-info {
   margin: 0;

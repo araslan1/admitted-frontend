@@ -25,6 +25,7 @@
 
 .userdashboard #left-side h1{
     font-family: 'Inter';
+    font-weight: 300; 
     color: white; 
 }
 
