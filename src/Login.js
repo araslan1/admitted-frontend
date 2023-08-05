@@ -16,8 +16,8 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
-    const [page, setPage] = useState('login'); 
-    const [OTP, setOTP] = useState(); 
+    // const [page, setPage] = useState('login'); 
+    // const [OTP, setOTP] = useState(); 
     // const [isReviewer, setIsReviewer] = useState(false); 
 
     // const NavigateComponents = () => {
@@ -34,7 +34,7 @@ const Login = (props) => {
                 OTP: newOTP, 
             }
             console.log(newOTP); 
-            setOTP(newOTP); 
+            // setOTP(newOTP); 
             const configuration = {
                 method: "post", 
                 url:   `${process.env.REACT_APP_SERVER_URL}/send-email`,
