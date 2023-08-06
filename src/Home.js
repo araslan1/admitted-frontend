@@ -9,6 +9,7 @@ import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
 import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
+import { useEffect } from "react";
 // import ReviewerProfile from "./ReviewerProfile";
 // import reviewerIMG1 from './images/IMG_AdamA.jpeg';
 // import reviewerIMG2 from './images/IMG_6420.jpg';
@@ -21,6 +22,16 @@ const Home = () => {
     //     [2, { name: 'Alastair Deng', school: 'Stanford', description: ['Alastair', 'Freshman', 'Computer Science'] }],
     //     [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
     // ])
+
+    useEffect(() => {
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            return <>
+                <div>
+                    This is a web app meant for computers!
+                </div>
+            </>
+          }
+    }, [])
 
     return (
         <>
