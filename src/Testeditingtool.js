@@ -7,12 +7,15 @@ import support_icon from "./images/support_icon.png";
 import return_icon from "./images/return_icon.png";
 import person_icon from "./images/person_icon.png";
 import checkmark from "./images/checkmark.png"; 
+import Confirm from './Confirm';
 
 
 
 
 const Editingtool = () => {
-
+    const [triggerLoadComments, setTriggerLoadComments] = useState(false); 
+    let span_tracker = null;
+    let span_tracker_comment = null;
     const [wordCount, setWordCount] = useState(0);
     const [quill, setQuill] = useState(); 
     const [comments, setComments] = useState(["Welcome to Admitted!","You've clicked on bullet point 1! This is where the essay reviewer you have been matched with will leave their comments. A link to their profile will pop on the right navigation bar for you to see who's reviewing your essay and their qualifications!","You've clicked on bullet point 2! Our mission is to provide you with high quality service and do what we can to increase your chances at getting into amazing universities.","You've clicked on bullet point 3! If you've decided to test out Admitted, go back to your dashboard, pick out your school(s) and extra services by clicking the 'New' document underneath your workspace. Unfortunately, our services do come at a cost but we've minimized our desire for profit to give you the most affordable prices while still providing high quality services."]); 
@@ -30,8 +33,39 @@ You will be immediately notified via email when your essay has been reviewed.
 
 Again, warm welcome to Admitted!`
 
-
-   
+    const loadComments =  () => {
+        console.log("load comments called")
+        let spans = document.querySelectorAll("div.ql-editor span");
+        console.log(spans);
+        spans.forEach((myspan, index) => {
+            myspan.setAttribute("data-key", index);
+            myspan.style.borderBottom = '2px solid #EA1537';
+            myspan.style.paddingTop = "3.2px";
+            myspan.style.paddingBottom = "3.2px";
+            let find_comment_ref = () => {
+                const comment = commentsRef.current.querySelector(`[data-key="${index}"]`);
+                if (span_tracker){
+                    span_tracker_comment.style.transform = 'none';
+                    span_tracker = myspan;
+        
+                    span_tracker_comment = comment;
+                }else{
+                    span_tracker = myspan;
+                    span_tracker_comment = comment;
+                }
+                console.log("CLICKED!");
+                const textarea = comment.querySelector('.mycomments')
+                if (textarea.style.display === "none"){
+                    textarea.style.display ="initial"
+                }
+            
+                comment.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                comment.style.transform = 'translateX(-15px) translateY(-8px)';
+            }
+            myspan.addEventListener('click', find_comment_ref);
+        })
+        setTriggerLoadComments(false); 
+    }
 
     
     useEffect(() => {
@@ -39,33 +73,7 @@ Again, warm welcome to Admitted!`
         const text = quill.getText().trim();
         const words = text.split(/\s+/).filter((word) => word !== "");
         setWordCount(words.length);
-
-        const loadComments =  () => {
-            console.log("load comments called")
-            let spans = document.querySelectorAll("div.ql-editor span");
-            console.log(spans);
-            spans.forEach((myspan, index) => {
-                myspan.setAttribute("data-key", index);
-                myspan.style.borderBottom = '2px solid #EA1537';
-                myspan.style.paddingTop = "3.2px";
-                myspan.style.paddingBottom = "3.2px";
-                let find_comment_ref = () => {
-                    const comment = commentsRef.current.querySelector(`[data-key="${index}"]`);
-                  
-                    console.log("CLICKED!");
-                    const textarea = comment.querySelector('.mycomments')
-                    if (textarea.style.display === "none"){
-                        textarea.style.display ="initial"
-                    }
-                
-                    comment.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-                    comment.style.transform = 'translateX(-15px) translateY(-8px)';
-                }
-                myspan.addEventListener('click', find_comment_ref);
-            })
-        }
-
-        loadComments();
+        setTriggerLoadComments(true); 
     }, [quill])
 
    
@@ -165,6 +173,7 @@ Again, warm welcome to Admitted!`
                     <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
                 </div>
             </div> 
+            {triggerLoadComments && <Confirm closeModal={setTriggerLoadComments} submitEssays={loadComments} title="Hey there! Click now to view our editing tool."/>}    
         </div>
         </>
     ); 

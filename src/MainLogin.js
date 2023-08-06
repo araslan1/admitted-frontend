@@ -60,21 +60,21 @@ const MainLogin = () => {
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
                     <div>
                         <h3>Get Started Quickly</h3>
-                        <p>Get Your College Application Reviewed Within Days</p>
+                        <p style={{marginLeft:"25px"}}>Get Your College Application Reviewed Within Days</p>
                     </div>
                 </div>
                 <div className="label">
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
                     <div>
                         <h3>College Match Guarantee</h3>
-                        <p>Your Stanford Essays Reviewed by Stanford Students, USC Essays Reviewed By USC students<br></br>Harvard essays by Harvard students...</p>
+                        <p style={{marginLeft:"25px"}}>Your Stanford Essays Reviewed by Stanford Students, USC Essays Reviewed By USC students<br></br>Harvard essays by Harvard students...</p>
                     </div>
                 </div>
                 <div className="label">
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
                     <div>
                         <h3>Affordable</h3>
-                        <p>First One's On Us, Then Prices Range From 30-50$</p>
+                        <p style={{marginLeft:"25px"}}>First One's On Us, Then Prices Range From 30-50$</p>
                     </div>
                 </div>
                 
@@ -113,15 +113,14 @@ const MainLogin = () => {
                             setPassword(e.target.value); 
                         }}
                     />
-                    <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    <div className="terms_of_service_container">
                         <input
                             style={{display: 'inline'}}
                             type="checkbox"
                             className="terms_of_service"
                         />
-                        <p style={{display: 'inline', margin: "2px auto 20px 14px"}}>I agree to Admitted's <a href="/">Terms of Service</a></p>
+                        <p style={{display: 'inline'}}>I agree to Admitted's <a href="/">Terms of Service</a></p>
                     </div>
-    
                     <button>Create Account</button>
                     {/* {register ? (
                         <p className="text-success">You Are Registered Successfully</p>

@@ -14,7 +14,7 @@ import goal_icon from "./images/goal_icons.png";
 import support_icon from "./images/support_icon.png";
 import return_icon from "./images/return_icon.png";
 import person_icon from "./images/person_icon.png";
-import loading_while_matching from "./images/while_matching.png";
+import congrats_on_submitting from "./images/editingToolSubmitted4.png";
 const cookies = new Cookies(); 
 
 
@@ -37,7 +37,6 @@ const Editingtool = () => {
     const [comments, setComments] = useState([]); 
     const SAVE_INTERVAL_MS =  4000; 
     const commentsRef = useRef(); 
-    const el = useRef(null);
     let span_tracker = null;
     let span_tracker_comment = null;
     const clear_formatting = () => {
@@ -513,9 +512,9 @@ const Editingtool = () => {
             {!isReviewer && userHasSubmitted &&
             <>
             <div style ={{marginLeft: "150px", marginTop: "150px"}}>
-                <img src={loading_while_matching} style={{width:"350px"}} alt="matching essays"></img>
+                <img src={congrats_on_submitting} style={{width:"350px"}} alt="matching essays"></img>
                 <div>
-                <p style ={{width:"350px", marginLeft: "20px"}}><span ref = {el} >Congrats on submitting your essays. We are currently looking for a match!</span></p>
+                {/* <p style ={{width:"350px", marginLeft: "20px"}}><span ref = {el} >Congrats on submitting your essays. We are currently looking for a match!</span></p> */}
                 </div>
             </div>
             </>}

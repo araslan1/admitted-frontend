@@ -68,6 +68,21 @@
     width: 20px; 
 }
 
+.mainlogin .rightside .terms_of_service_container {
+ 
+}
+
+.mainlogin .rightside .terms_of_service_container p {
+    margin-left: 30px; 
+}
+
+.mainlogin .rightside .terms_of_service_container input {
+    position: relative; 
+    top: 15px; 
+    right: 0px; 
+}
+
+
 .mainlogin .rightside  button {
     display: block; 
     margin-top: 10px; 

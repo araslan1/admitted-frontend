@@ -1,6 +1,6 @@
 import "./Dashboard.css"
 import "./UserSideNav.css"
-import documenticon from "./images/dashboard_document.jpeg"
+import documenticon from "./images/dashboard_document3.jpeg"
 import React from 'react';
 import Typed from 'typed.js';
 import { useState, useRef, useEffect } from "react";
