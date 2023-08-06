@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import zoomIMG1 from "./images/IMG_1709.jpeg";
-import zoomImg2 from "./images/mailchimp-1.webp";
-import zoomImg3 from "./images/mailchimp-2.webp";
+import zoomImg2 from "./images/adam_aldahir.jpeg";
+import zoomImg3 from "./images/brown_alastair.jpeg";
 import zoomImg4 from "./images/mailchimp-3.webp";
 import './Home.css';
 import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
@@ -66,7 +66,7 @@ const Home = () => {
                 <div className='feature-cards'>
                     <div className="image-wrapper">
                         <Link to='/review-policy'><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></Link>
-                        <h2><Link to='/review-policy' className="top-left">College-Specific<br></br>Reviews</Link></h2>
+                        <h2><Link to='/review-policy' className="top-left">College Match<br></br>Guarantee</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>
                         <p className='card-info-blurb'>Receive feedback from someone who actually attends the university</p>
