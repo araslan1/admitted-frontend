@@ -16,7 +16,7 @@ const cookies = new Cookies();
 const Dashboard = () => {
     const token = cookies.get('TOKEN'); 
     const history = useHistory();
-    const [UserName, setUserName] = useState("Adam Raslan")
+    const [UserName, setUserName] = useState("")
     const [servicesRequested, setServicesRequested] = useState(null);
     const {id: dashboardId} = useParams(); 
     const [documentIds, setDocumentIds] = useState(null);
@@ -65,6 +65,9 @@ const Dashboard = () => {
     
     // Separate useEffect for UserName, documentIds, and servicesRequested
     useEffect(() => {
+        if (UserName === "" || !UserName){
+            return;
+        }
         const typed = new Typed(el.current, {
             strings: [`Hi ${UserName}`],
             typeSpeed: 70,
