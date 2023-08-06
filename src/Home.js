@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 import Navbar from "./Navbar";
 import zoomIMG1 from "./images/IMG_1709.jpeg";
 import zoomImg2 from "./images/adam_aldahir.jpeg";
@@ -22,9 +23,19 @@ const Home = () => {
     //     [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
     // ])
 
+    useEffect(() => {
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            document.getElementById('test-cover').style.opacity = '1';
+            document.getElementById('test-cover').style.pointerEvents = 'auto';
+          }
+    }, [])
+
 
     return (
         <>
+        <div id='test-cover'>
+            <p>THIS IS HERE</p>
+        </div>
         <div>
             <Navbar />
             <div className="free-trial-banner">
