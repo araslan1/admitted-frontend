@@ -163,7 +163,7 @@
   position: absolute;
   width: 8px;
   height: 12px;
-  background:currentColor;
+  background:#fc8eac;
   left:-16px;
   top:0;
   animation: 
@@ -177,7 +177,7 @@
   width:8px;
   height: 8px;
   border-radius: 50%;
-  background:currentColor; 
+  background: currentColor; 
   animation: db6-3 1.5s  linear infinite;
 }
 
