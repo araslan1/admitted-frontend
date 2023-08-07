@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuidV4 } from 'uuid';
 import admitted_logo from "./images/admittedLogo.png";
+import LoadingMessage from "./LoadingMessage"; 
 import checkmark from "./images/signup_checkmark.png"; 
 
 const MainLogin = () => {
@@ -11,13 +12,14 @@ const MainLogin = () => {
     const dashboardId = uuidV4();
     const [fullname, setName] = useState(""); 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");   
+    const [password, setPassword] = useState(""); 
+    const [creatingUser, setCreatingUser] = useState(false);   
     // const [register, setRegister] = useState(false); 
 
 
     const handleSubmit = (e) =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
-
+        setCreatingUser(true); 
         const configuration = {
             method: "post",
             url: `${process.env.REACT_APP_SERVER_URL}/register`,
@@ -32,13 +34,12 @@ const MainLogin = () => {
 
           axios(configuration)
             .then((result) => {
-                console.log(result); 
                 // setRegister(true); 
+                setCreatingUser(false); 
                 history.push('/login'); 
             })
             .catch((error) => {
-                console.log("FAILED"); 
-                console.log(error); 
+                setCreatingUser(false); 
                 if (error.response && error.response.status === 409) {
                     // Display the error message to the user if the email is already taken
                     window.alert(error.response.data.message);
@@ -53,6 +54,7 @@ const MainLogin = () => {
     return ( 
       <>
       <div className="mainlogin">
+        {creatingUser && <LoadingMessage title="Your Account Is Being Created!" />}
         <div className="leftside">
             <img style= {{marginTop: "15px"}}className="mainlogo"src={admitted_logo} alt="admitted logo" /> 
             <div className="checkbox">

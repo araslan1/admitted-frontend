@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import { useHistory } from 'react-router-dom';
+import LoadingMessage from "./LoadingMessage";
 
 
 const cookies = new Cookies();
@@ -16,6 +17,7 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
+    const [loggingIn, setLoggingIn] = useState(false); 
     // const [page, setPage] = useState('login'); 
     // const [OTP, setOTP] = useState(); 
     // const [isReviewer, setIsReviewer] = useState(false); 
@@ -64,7 +66,7 @@ const Login = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-
+        setLoggingIn(true); 
         const configuration = {
             method: "post",
             url:   `${process.env.REACT_APP_SERVER_URL}/login`,
@@ -78,6 +80,7 @@ const Login = (props) => {
         .then((result) => {
             //check if it was reviewer or not who logged in!
             setLogin(true);
+            setLoggingIn(false); 
             // setIsReviewer(result.data.isReviewer);
             cookies.set("TOKEN", result.data.token,{
                 path: '/',
@@ -91,14 +94,17 @@ const Login = (props) => {
             }
         })
         .catch((error) => {
+            setLoggingIn(false); 
             error = new Error();
             window.alert("This is the wrong password or email!")
         });
     };
 
     return (  
+        <>
         <div id="loginbody">
             <div className="login">
+            {!loggingIn && <LoadingMessage title="One moment. We Are Finding Your Dashboard Now."/>}
                     <h3>Log in to the WriteWay Dashboard</h3>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email Address:</label>
@@ -134,6 +140,7 @@ const Login = (props) => {
             </div>
             <button style={{width: "100px", textAlign: "center", marginLeft: "45%"}} onClick = {redirectToOTP}>Forgot your password?</button>
         </div>
+        </>
     );
 }
  

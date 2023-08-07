@@ -29,7 +29,7 @@ import Checkout2 from './Checkout2';
 import Logout from './Logout'; 
 import OTP from './Otp'; 
 import MainLogin from './MainLogin';
-
+import NotFound from './NotFound';
 
 function App() {
   useEffect(() => {
@@ -81,6 +81,7 @@ function App() {
           <ProtectedRoute path='/auth' component={AuthComponent} />
           <Route exact path = '/OTP' component={OTP}></Route>
           <Route exact path = '/mainlogin' component={MainLogin}></Route>
+          <Route path='*'><NotFound /></Route>
         </Switch>
         </div>
       </div>
