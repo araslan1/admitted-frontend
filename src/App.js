@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { useEffect } from 'react'
 // import Signup from './Signup';
 import Login from './Login';
 import Support from './Support';
@@ -29,10 +30,24 @@ import Logout from './Logout';
 import OTP from './Otp'; 
 import MainLogin from './MainLogin';
 
+
 function App() {
+  useEffect(() => {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        document.getElementById('mobile-cover').style.opacity = '1';
+        document.getElementById('mobile-cover').style.pointerEvents = 'auto';
+        document.getElementById('home-id').style.filter = 'blur(10px)'
+    }
+  }, []);
+
   return (
     <Router>
       <div className="App"> 
+        <div id='mobile-cover'>
+          <h3>Whoops!</h3>
+          <p>Unfortunately, Admitted isn't supported on mobile devices<br></br>yet. Feel free to visit us again on your computer or visit our<br></br>Instagram page!</p>
+        </div>
+        <div id='whole-app'>
         <Switch>
           <Route exact path="/"><Home /></Route>
           <Route path="/login"><Login /></Route>
@@ -67,6 +82,7 @@ function App() {
           <Route exact path = '/OTP' component={OTP}></Route>
           <Route exact path = '/mainlogin' component={MainLogin}></Route>
         </Switch>
+        </div>
       </div>
     </Router>
   );

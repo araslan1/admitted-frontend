@@ -8,6 +8,20 @@ body {
   font-family: "Quicksand";
   color: #333;
 }
+#mobile-cover {
+  position: absolute;
+  top: 200px;
+  left: 470px;
+  width: max-content;
+  height: max-content;
+  background-color: white;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  padding: 15px 30px;
+  box-shadow: black 0px 0px 10px -2px;
+}
 .navbar {
   padding: 20px;
   display: flex;

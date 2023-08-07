@@ -1,0 +1,7 @@
+.not-found div {
+    width: max-content;
+    margin: 60px auto 0px auto;
+}
+.not-found img {
+    height: 500px;
+}

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
 import Navbar from "./Navbar";
 import zoomIMG1 from "./images/IMG_1709.jpeg";
 import zoomImg2 from "./images/adam_aldahir.jpeg";
@@ -23,19 +22,9 @@ const Home = () => {
     //     [3, { name: 'Fiona Collins', school: 'USC', description: ['Fiona', 'Sophomore', 'Psychology'] }]
     // ])
 
-    useEffect(() => {
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
-            document.getElementById('test-cover').style.opacity = '1';
-            document.getElementById('test-cover').style.pointerEvents = 'auto';
-          }
-    }, [])
-
 
     return (
         <>
-        <div id='test-cover'>
-            <p>THIS IS HERE</p>
-        </div>
         <div>
             <Navbar />
             <div className="free-trial-banner">
@@ -53,7 +42,7 @@ const Home = () => {
             <div className="feature-card-section">
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/signup'><img src={zoomIMG1} className='zoom-imgs' alt="Zoom 1" /></Link>
+                        <Link to='/signup'><img src={zoomIMG1} className='zoom-imgs' alt="Odessa Deng stands in front of Quincy House during Harvard commencement. She is wearing her cap, gown, and the Harvard AAPI stole." /></Link>
                         <div className="text-overlay">
                             <h2><Link to='/signup' className="top-left">Get Into Your<br></br>Dream School!</Link></h2>
                         </div>
