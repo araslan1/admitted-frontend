@@ -36,7 +36,7 @@ function App() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         document.getElementById('mobile-cover').style.opacity = '1';
         document.getElementById('mobile-cover').style.pointerEvents = 'auto';
-        document.getElementById('home-id').style.filter = 'blur(10px)'
+        document.getElementById('whole-app').style.filter = 'blur(10px)'
     }
   }, []);
 
