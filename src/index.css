@@ -22,6 +22,9 @@ body {
   padding: 15px 30px;
   box-shadow: black 0px 0px 10px -2px;
 }
+#mobile-cover a {
+  color: #fc8eac;
+}
 .navbar {
   padding: 20px;
   display: flex;

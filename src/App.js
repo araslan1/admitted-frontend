@@ -45,7 +45,7 @@ function App() {
       <div className="App"> 
         <div id='mobile-cover'>
           <h3>Whoops!</h3>
-          <p>Unfortunately, Admitted isn't supported on mobile devices yet. Feel free to visit us again on your computer or visit ourInstagram page!</p>
+          <p>Unfortunately, Admitted isn't supported on mobile devices yet. Feel free to visit us again on your computer or visit our <a href='https://www.instagram.com/admitted_official/'>Instagram</a> page!</p>
         </div>
         <div id='whole-app'>
         <Switch>
