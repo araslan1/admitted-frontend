@@ -10,9 +10,9 @@ body {
 }
 #mobile-cover {
   position: absolute;
-  top: 200px;
-  left: 470px;
-  width: max-content;
+  top: 25%;
+  left: 25%;
+  width: 50%;
   height: max-content;
   background-color: white;
   z-index: 3;
