@@ -104,7 +104,7 @@ const Login = (props) => {
         <>
         <div id="loginbody">
             <div className="login">
-            {!loggingIn && <LoadingMessage title="One moment. We Are Finding Your Dashboard Now."/>}
+            {loggingIn && <LoadingMessage title="One moment. We Are Finding Your Dashboard Now."/>}
                     <h3>Log in to the WriteWay Dashboard</h3>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email Address:</label>
