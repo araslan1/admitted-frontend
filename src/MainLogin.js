@@ -6,7 +6,6 @@ import { v4 as uuidV4 } from 'uuid';
 import admitted_logo from "./images/admittedLogo.png";
 import LoadingMessage from "./LoadingMessage"; 
 import checkmark from "./images/signup_checkmark.png"; 
-import google_icon from "./images/google_icon.png"; 
 import google_icon2 from "./images/google_icon2.png"; 
 
 const MainLogin = () => {
