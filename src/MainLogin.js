@@ -6,6 +6,8 @@ import { v4 as uuidV4 } from 'uuid';
 import admitted_logo from "./images/admittedLogo.png";
 import LoadingMessage from "./LoadingMessage"; 
 import checkmark from "./images/signup_checkmark.png"; 
+import google_icon from "./images/google_icon.png"; 
+import google_icon2 from "./images/google_icon2.png"; 
 
 const MainLogin = () => {
     const history = useHistory();
@@ -115,6 +117,14 @@ const MainLogin = () => {
                             setPassword(e.target.value); 
                         }}
                     />
+                    <div className = "sign_up_with_google_container">
+                        <hr style={{width:"40%", marginRight:"50px",}}></hr>
+                        <hr style={{width:"40%"}}></hr>
+                    </div>
+        
+                    <p className="ormessage">or</p>
+
+                    <button className="sign_up_with_google_button"><img src={google_icon2}></img><span>Sign Up With Google</span></button>
                     <div className="terms_of_service_container">
                         <input
                             style={{display: 'inline'}}
@@ -123,7 +133,7 @@ const MainLogin = () => {
                         />
                         <p style={{display: 'inline'}}>I agree to Admitted's <a href="/">Terms of Service</a></p>
                     </div>
-                    <button>Create Account</button>
+                    <button id="create_account_button">Create Account</button>
                     {/* {register ? (
                         <p className="text-success">You Are Registered Successfully</p>
                     ) : (

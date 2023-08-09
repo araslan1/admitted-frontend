@@ -83,7 +83,7 @@
 }
 
 
-.mainlogin .rightside  button {
+.mainlogin .rightside  #create_account_button {
     display: block; 
     margin-top: 10px; 
     margin-left: 10px; 
@@ -100,7 +100,7 @@
 	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 } 
 
-.mainlogin .rightside button:hover {
+.mainlogin .rightside #create_account_button:hover {
     transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
       box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
       transform: translateY(-3px); 
@@ -152,4 +152,68 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 40px; 
+}
+
+.mainlogin .rightside .sign_up_with_google_container{
+    display: flex; 
+    justify-content: space-between;
+    margin-top:20px; 
+}
+
+.mainlogin .rightside .ormessage {
+    position: fixed; 
+    right: 293px; 
+    bottom: 280px; 
+    color: rgb(156 163 175); 
+}
+
+.mainlogin .rightside hr {
+    color: rgb(156 163 175); 
+}
+
+.mainlogin .rightside .sign_up_with_google_button{
+	/* Font & Text */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
+	text-decoration: none solid rgb(0, 0, 0);
+	text-align: center;
+
+	background-color: rgba(0, 0, 0, 0);
+	
+	color: rgb(0, 0, 0);
+
+	/* Box */
+	height: 55px;
+	width: 326.633px;
+	border: 1px solid rgb(0, 0, 0);
+
+	padding: 0px 22px;
+	min-height: 55px;
+	
+	
+	cursor: pointer;
+
+    margin-top: 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-left: 20px; 
+}
+
+
+.mainlogin .rightside .sign_up_with_google_button span  {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+    margin-right: 70px; 
+}
+
+.mainlogin .rightside .sign_up_with_google_button img {
+    width: 20px; 
+}
+
+.mainlogin .rightside .sign_up_with_google_button:hover {
+    background-color: whitesmoke; 
 }
