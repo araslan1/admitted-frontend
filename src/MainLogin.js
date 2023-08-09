@@ -123,7 +123,7 @@ const MainLogin = () => {
         
                     <p className="ormessage">or</p>
 
-                    <button className="sign_up_with_google_button"><img src={google_icon2}></img><span>Sign Up With Google</span></button>
+                    <button className="sign_up_with_google_button"><img src={google_icon2} alt="google icon"></img><span>Sign Up With Google</span></button>
                     <div className="terms_of_service_container">
                         <input
                             style={{display: 'inline'}}
