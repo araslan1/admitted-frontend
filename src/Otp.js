@@ -47,7 +47,7 @@ const OTP = () => {
     const enterCode = () => {
         const receivedData = location.state; 
         const OTP = receivedData.OTP; 
-        const email = receivedData.email; 
+        // const email = receivedData.email; 
         const entered_number = combineValues(); 
         if (entered_number < 1000){
             window.alert("You entered an invalid number"); 
