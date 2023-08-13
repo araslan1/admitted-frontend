@@ -69,7 +69,7 @@ const Login = (props) => {
         setLoggingIn(true); 
         const configuration = {
             method: "post",
-            url:   `${process.env.REACT_APP_SERVER_URL}/login`,
+            url:   `${process.env.REACT_APP_SERVER_URL}/login?isGoogleAuth=false`,
             data: {
                 email,
                 password,

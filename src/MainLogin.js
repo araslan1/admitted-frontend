@@ -17,6 +17,18 @@ const MainLogin = () => {
     const [creatingUser, setCreatingUser] = useState(false);   
     // const [register, setRegister] = useState(false); 
 
+    const navigate = (url) => {
+        window.location.href = url; 
+    }
+
+    const auth = async () => {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/request`, {method: 'post'});
+        const data = await response.json(); 
+        console.log(data); 
+        navigate(data.url);  
+
+    }
+
 
     const handleSubmit = (e) =>{
         e.preventDefault(); // to stop the page from refreshing and losing data
@@ -123,7 +135,11 @@ const MainLogin = () => {
         
                     <p className="ormessage">or</p>
 
-                    <button className="sign_up_with_google_button"><img src={google_icon2} alt="google icon"></img><span>Sign Up With Google</span></button>
+                    <button onClick = {(e) => {
+                        e.preventDefault(); 
+                        auth(); 
+                    }} 
+                    className="sign_up_with_google_button"><img src={google_icon2} alt="google icon"></img><span>Sign Up With Google</span></button>
                     <div className="terms_of_service_container">
                         <input
                             style={{display: 'inline'}}

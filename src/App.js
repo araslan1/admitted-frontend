@@ -30,6 +30,7 @@ import Logout from './Logout';
 import OTP from './Otp'; 
 import MainLogin from './MainLogin';
 import NotFound from './NotFound';
+import GoogleAuth from './GoogleAuth'; 
 
 function App() {
   useEffect(() => {
@@ -81,7 +82,9 @@ function App() {
           <ProtectedRoute path='/auth' component={AuthComponent} />
           <Route exact path = '/OTP' component={OTP}></Route>
           <Route exact path = '/mainlogin' component={MainLogin}></Route>
+          <Route exact path = '/googleAuth' component={GoogleAuth}></Route>
           <Route path='*'><NotFound /></Route>
+    
         </Switch>
         </div>
       </div>
