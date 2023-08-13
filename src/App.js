@@ -29,6 +29,8 @@ import Checkout2 from './Checkout2';
 import Logout from './Logout'; 
 import OTP from './Otp'; 
 import MainLogin from './MainLogin';
+import PrivacyPolicy from './PrivacyPolicy'; 
+import TOS from './TOS'; 
 import NotFound from './NotFound';
 import GoogleAuth from './GoogleAuth'; 
 
@@ -83,8 +85,9 @@ function App() {
           <Route exact path = '/OTP' component={OTP}></Route>
           <Route exact path = '/mainlogin' component={MainLogin}></Route>
           <Route exact path = '/googleAuth' component={GoogleAuth}></Route>
+          <Route path='/terms-of-service'><TOS /></Route>
+          <Route path='/privacy-policy'><PrivacyPolicy /></Route>
           <Route path='*'><NotFound /></Route>
-    
         </Switch>
         </div>
       </div>

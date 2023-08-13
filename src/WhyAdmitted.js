@@ -1,12 +1,13 @@
+//image import
 import './WhyAdmitted.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import circlePlaceholder from './images/IMG_0101.jpg';
-import circle1 from './images/whyCircleIMG1.jpg'
-import circle2 from './images/whyCircleIMG2.jpg'
-import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
+import circle1 from './images/circle1.webp'
+import circle2 from './images/circle2.webp'
+import admittedStudentReviewer1 from './images/profile1.webp'
 import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
-import headImg from './images/whyAdmittedHead.jpeg'
+import headImg from './images/whyAdmittedHead.webp'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const WhyAdmitted = () => {
@@ -101,7 +102,6 @@ const WhyAdmitted = () => {
                         </div>
                     </div>
                 </div>
-    
             </div>
 
             <div className="admitted-next-btn-wrap">

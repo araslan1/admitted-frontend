@@ -7,6 +7,7 @@ import admitted_logo from "./images/admittedLogo.png";
 import LoadingMessage from "./LoadingMessage"; 
 import checkmark from "./images/signup_checkmark.png"; 
 import google_icon2 from "./images/google_icon2.png"; 
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const MainLogin = () => {
     const history = useHistory();
@@ -146,66 +147,11 @@ const MainLogin = () => {
                             type="checkbox"
                             className="terms_of_service"
                         />
-                        <p style={{display: 'inline'}}>I agree to Admitted's <a href="/">Terms of Service</a></p>
+                        <p style={{display: 'inline'}}>I agree to Admitted's <Link to="/terms-of-service">Terms of Service</Link></p>
                     </div>
                     <button id="create_account_button">Create Account</button>
-                    {/* {register ? (
-                        <p className="text-success">You Are Registered Successfully</p>
-                    ) : (
-                        <p className="text-danger">You Are Not Registered</p>
-                    )} */}
                 </form>
-
         </div>
-        {/* <div className="rightside">
-            <div>
-                <h2>Create an Account</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>Full Name:</label>
-                    <input
-                        placeholder='First Last'
-                        type="text"
-                        required
-                        value={fullname}
-                        onChange = {(e)=>{
-                            setName(e.target.value); 
-                        }}
-                    />
-                    <label>Email:</label>
-                    <input 
-                        type="email"
-                        placeholder='Email Address'
-                        required
-                        value={email}
-                        onChange = {(e) => {
-                            setEmail(e.target.value); 
-                        }}
-                    />
-                    <label>Password:</label>
-                    <input 
-                        type="password" 
-                        placeholder='Password'
-                        required
-                        value={password}
-                        onChange = {(e) =>{
-                            setPassword(e.target.value); 
-                        }}
-                    />
-                    <label>I am looking to: </label>
-                    <select>
-                        <option style={{display: "none"}}></option>
-                        <option>have my college essay(s) reviewed</option>
-                        <option>be an essay reviewer who attends a target university</option>
-                    </select>
-                    <button>Create Account</button>
-                    {register ? (
-                        <p className="text-success">You Are Registered Successfully</p>
-                    ) : (
-                        <p className="text-danger">You Are Not Registered</p>
-                    )}
-                </form>
-            </div>
-        </div> */}
       </div>
       </>
     );

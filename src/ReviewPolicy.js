@@ -1,11 +1,12 @@
+//image imports
 import './ReviewPolicy.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
-import essay from './images/placeholderEssay.jpeg'
-import resume from './images/placeholderResume.jpeg'
-import honorsActivities from './images/honorsActivitiesPlaceholder.jpeg'
-import interview from './images/interviewPlaceholder.jpeg'
+import essay from './images/placeholderEssay.webp'
+import resume from './images/placeholderResume.webp'
+import honorsActivities from './images/honorsActivitiesPlaceholder.webp'
+import interview from './images/interviewPlaceholder.webp'
 
 const ReviewPolicy = () => {
     return (

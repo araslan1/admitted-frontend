@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import zoomIMG1 from "./images/IMG_1709.jpeg";
-import zoomImg2 from "./images/adam_aldahir.jpeg";
-import zoomImg3 from "./images/brown_alastair.jpeg";
-import zoomImg4 from "./images/mailchimp-3.webp";
+import zoomIMG1 from "./images/zoom1.webp";
+import zoomIMG2 from "./images/zoom2.webp";
+import zoomIMG3 from "./images/zoom3.webp";
+import zoomImg4 from "./images/zoom4.webp";
 import './Home.css';
 import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
 import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
@@ -56,7 +56,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/inspiration'><img src={zoomImg2} className='zoom-imgs' alt="Zoom 2" /></Link>
+                        <Link to='/inspiration'><img src={zoomIMG2} className='zoom-imgs' alt="Zoom 2" /></Link>
                         <h2><Link to='/inspiration' className="top-left">Made By Students<br></br>For Students</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-1'>
@@ -66,7 +66,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/review-policy'><img src={zoomImg3} className='zoom-imgs' alt="Zoom 3" /></Link>
+                        <Link to='/review-policy'><img src={zoomIMG3} className='zoom-imgs' alt="Zoom 3" /></Link>
                         <h2><Link to='/review-policy' className="top-left">College Match<br></br>Guarantee</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>

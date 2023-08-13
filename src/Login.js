@@ -12,7 +12,7 @@ const cookies = new Cookies();
 
 export const RecoveryContext = createContext(); 
 
-const Login = (props) => {
+const Login = () => {
     const history = useHistory(); 
     const [email, setEmail] = useState('');
     const [password, setPass] = useState(''); 

@@ -1,9 +1,9 @@
 import Footer from './Footer';
 import './Inspiration.css';
 import Navbar from './Navbar';
-import placeholder1 from './images/IMG_0101.jpg';
-import placeholder2 from './images/IMG_1861.jpg';
-import placeholder3 from './images/IMG_6420.jpg';
+import insp1 from './images/insp1.webp';
+import insp2 from './images/insp2.webp';
+import insp3 from './images/insp3.webp';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
@@ -15,7 +15,7 @@ const Inspiration = () => {
             <h1 id='insp-header'>Made By Students For Students</h1>
             <div className="insp-sec">
                 <div className="insp-img-wrapper">
-                    <img className='insp-photo' src={placeholder1} alt="..." />
+                    <img className='insp-photo' src={insp1} alt="..." />
                 </div>
                 <div className="insp-photo-text">
                     <div className="insp-photo-text-header">
@@ -30,7 +30,7 @@ const Inspiration = () => {
             </div>
             <div className="insp-sec">
                 <div className="insp-img-wrapper" id='insp-img-wrapper2'>
-                    <img className='insp-photo' src={placeholder2} alt="..." />
+                    <img className='insp-photo-2' src={insp2} alt="..." />
                 </div>
                 <div className="insp-photo-text-2">
                     <div className="insp-photo-text-header">
@@ -45,7 +45,7 @@ const Inspiration = () => {
             </div>
             <div className="insp-sec">
                 <div className="insp-img-wrapper">
-                    <img className='insp-photo' src={placeholder3} alt="..." />
+                    <img className='insp-photo' src={insp3} alt="..." />
                 </div>
                 <div className="insp-photo-text">
                     <div className="insp-photo-text-header">
