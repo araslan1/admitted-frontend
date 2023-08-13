@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Cookies from "universal-cookie";
 import { useHistory } from 'react-router-dom';
-import { useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 const cookies = new Cookies();
 
