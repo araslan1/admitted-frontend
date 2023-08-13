@@ -18,6 +18,7 @@ const Login = () => {
     const [password, setPass] = useState(''); 
     const [login, setLogin] = useState(false); 
     const [loggingIn, setLoggingIn] = useState(false); 
+    const [resettingPassword, setResettingPassword] = useState(false); 
     // const [page, setPage] = useState('login'); 
     // const [OTP, setOTP] = useState(); 
     // const [isReviewer, setIsReviewer] = useState(false); 
@@ -30,6 +31,7 @@ const Login = () => {
     
     const redirectToOTP = () => {
         if (email){
+            setResettingPassword(true); 
             const newOTP = Math.floor(Math.random() * 9000 + 1000);
             const new_data = {
                 email: email, 
@@ -49,6 +51,7 @@ const Login = () => {
 
             axios(configuration)
                 .then(() => {
+                    setResettingPassword(false); 
                     history.push({
                         pathname: '/OTP',
                         search: `?email=${email}OTP=OTP`,
@@ -56,6 +59,7 @@ const Login = () => {
                     })
                 })
                 .catch(() => {
+                    setResettingPassword(false); 
                     window.alert("I'm sorry we're having trouble connecting to the server")
                     return; 
                 })
@@ -104,6 +108,7 @@ const Login = () => {
         <>
         <div id="loginbody">
             <div className="login">
+            {resettingPassword && <LoadingMessage title="Sending you a reset code now..."/>}
             {loggingIn && <LoadingMessage title="One moment. We Are Finding Your Dashboard Now."/>}
                     <h3>Log in to the WriteWay Dashboard</h3>
                     <form onSubmit={handleSubmit}>

@@ -5,8 +5,8 @@ import zoomIMG2 from "./images/zoom2.webp";
 import zoomIMG3 from "./images/zoom3.webp";
 import zoomImg4 from "./images/zoom4.webp";
 import './Home.css';
-import admittedStudentReviewer1 from './images/IMG_4695.jpeg'
-import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
+import admittedStudentReviewer1 from './images/profile1.webp';
+import admittedStudentReviewer2 from './images/IMG_FIONA.jpg';
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
 // import ReviewerProfile from "./ReviewerProfile";

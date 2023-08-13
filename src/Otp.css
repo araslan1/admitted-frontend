@@ -1,0 +1,71 @@
+.otp {
+    font-family: 'Inter', sans-serif; 
+    font-weight: 700; 
+    width: 500px; 
+    height: 500px; 
+    margin-left:auto; 
+    margin-right: auto; 
+    background-color: rgb(31 41 55); 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-around; 
+    margin-top: 10%; 
+    border-radius: 30px; 
+}
+
+.otp .numberinput::-webkit-inner-spin-button,
+.otp .numberinput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.otp h1 {
+    font-family: 'Inter', sans-serif; 
+    font-weight: 700; 
+    color: white; 
+    
+}
+
+.otp .numberinput {
+    width: 50px; 
+    height: 80px; 
+    appearance: none;
+    -moz-appearance: textfield; 
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    margin-top: 50px; 
+    border: 1px solid rgba(198, 203, 222, 0.7);
+    text-align: center;
+    font-family: 'Inter', sans-serif; 
+    font-size: 30px;
+    font-weight: 700; 
+}
+
+
+.otp button {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    font-weight: 500; 
+    display: block; 
+    font-size: 13px;
+    margin-top: 10px; 
+    margin-left: 180px; 
+    background: #fc8eac;
+    font-size: 20px; 
+    /* background: #ffe01b; */
+    color: black;
+    border: 0;
+    border-radius: 15px; 
+    height: 43.5px;
+	width: 138.305px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s, -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7) 0s;
+	box-sizing: border-box;
+	box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+} 
+
+.otp button:hover {
+    transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7), -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+      box-shadow: rgb(36, 28, 21) 0px 0px 0px 1px, rgb(36, 28, 21) 0px 5.25008px 0px 0px;
+      transform: translateY(-3px); 
+    }
