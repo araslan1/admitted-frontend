@@ -1,0 +1,236 @@
+.testlogincontainer {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    margin: 0; 
+    background-color: white;
+}
+
+
+
+.testlogincontainer .centerspace {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 100px; 
+}
+
+.testlogincontainer .centerspace .verticalrowcontainer {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.testlogincontainer .centerspace .verticalrowcontainer img {
+    width: 30px; 
+}
+
+.testlogincontainer .centerspace .verticalrowcontainer .verticalrow {
+    width: 1.5px; 
+    height: 85px; 
+    background-color: grey; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
+.testlogincontainer .centerspace .anothercontainer {
+    display: flex; 
+    justify-content: center; 
+}
+
+.testlogincontainer .centerspace .login_ormessage_container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 45px; 
+}
+
+.testlogincontainer .centerspace .login_ormessage_container .horizontalrow{
+    height: 1.5px; 
+    width: 100px; 
+    background: rgb(156 163 175); 
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+
+.testlogincontainer .centerspace .login_ormessage {
+   
+}
+
+.testlogincontainer .centerspace .sign_up_with_google_button{
+	/* Font & Text */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
+	text-decoration: none solid rgb(0, 0, 0);
+	text-align: center;
+
+	background-color: rgba(0, 0, 0, 0);
+	
+	color: rgb(0, 0, 0);
+
+	/* Box */
+	height: 55px;
+	width: 326.633px;
+	border: 1px solid rgb(0, 0, 0);
+
+	padding: 0px 22px;
+	min-height: 55px;
+	
+	margin-left: 14px; 
+	cursor: pointer;
+
+    margin-top: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    /* margin-right: 40px;  */
+}
+
+.testlogincontainer .centerspace .sign_up_with_google_button span  {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+    margin-right: 70px; 
+}
+
+.testlogincontainer .centerspace .sign_up_with_google_button img {
+    width: 20px; 
+}
+
+.testlogincontainer .centerspace .sign_up_with_google_button:hover {
+    background-color: whitesmoke; 
+}
+
+.testlogincontainer .centerspace .fillloginform {
+    margin-left: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-top: 20px; 
+}
+
+.testlogincontainer .centerspace .fillloginform form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.testlogincontainer  .centerspace .fillloginform form label{
+    display: block; 
+    margin-top: 10px; 
+}
+
+.testlogincontainer .fillloginform form input {
+    font-family: 'Inter', "helvetica neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    background-color: white;
+    width: 352px; 
+    background: right -10px center #fff;
+    background-size: 20px;
+    border: 1px solid #c9cbd4;
+    border-radius: 6px;
+    color: #3f4450;
+    padding: 9px 8px 7px;
+    margin: 2px auto 20px auto;
+    display: block;
+    cursor: text;
+    position: relative;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+
+.testlogincontainer .fillloginform form button {
+    display: inline; 
+    width: 35px; 
+    height: 35px; 
+    margin-left: 10px; 
+    margin-top: 5px; 
+    cursor: pointer; 
+    background-color: white;
+    text-align: center;
+}
+
+
+.testlogincontainer .fillloginform form img {
+    width: 38px; 
+    height: 38px; 
+    /* border: 1.5px solid black;  */
+    margin-left: 10px; 
+    margin-top: 3px; 
+    cursor: pointer;
+
+
+}
+
+
+
+.testlogincontainer .centerspace .anothercontainer .loginmessages {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-right: 60px; 
+}
+
+
+.testlogincontainer .centerspace .anothercontainer .loginmessages a {
+    font-family: 'Inter', sans-serif; 
+    font-size: 18px; 
+    font-weight: black; 
+    display: block; 
+    line-height: 30px; 
+    color: rgb(123, 118, 118); 
+    text-decoration: none;
+    border-bottom: 1px solid rgb(123, 118, 118); 
+    margin-top: 50px;
+}
+
+.testlogincontainer .centerspace .anothercontainer .loginmessages button {
+    display: block; 
+    background-color: white; 
+    border: none; 
+    font-family: 'Inter', sans-serif; 
+    font-weight: black; 
+    color: rgb(123, 118, 118); 
+    line-height: 30px; 
+    font-size: 18px; 
+    cursor: pointer; 
+    border-bottom: 1px solid rgb(123, 118, 118); 
+    margin-top: 40px;
+}
+
+.testlogincontainer .centerspace .anothercontainer .loginmessages a:hover {
+    color: rgb(91, 89, 89); 
+    border-bottom: 1px solid rgb(91, 89, 89); 
+}
+
+.testlogincontainer .centerspace .anothercontainer .loginmessages button:hover {
+    color: rgb(91, 89, 89); 
+    border-bottom: 1px solid rgb(91, 89, 89); 
+}
+
+.testlogincontainer .centerspace .termsandconditions {
+    display: flex; 
+    justify-content: center;
+}
+
+
+.testlogincontainer .centerspace .termsandconditions a{
+    display: block; 
+    font-family: 'Inter', "helvetica neue", Helvetica, Arial, sans-serif;
+    color: rgb(91, 89, 89); 
+    margin-left: 100px; 
+    margin-right: 150px; 
+    margin-top: 170px; 
+    text-decoration: none;
+    border-bottom: 1px solid rgb(91, 89, 89);  
+}
+
+.testlogincontainer .centerspace .termsandconditions a:hover {
+    color: rgb(66, 65, 65); 
+    border-bottom: 1px solid rgb(66, 65, 65); 
+}

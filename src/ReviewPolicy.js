@@ -9,6 +9,11 @@ import honorsActivities from './images/honorsActivitiesPlaceholder.webp'
 import interview from './images/interviewPlaceholder.webp'
 
 const ReviewPolicy = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
+
     return (
         <>
         <Navbar />
@@ -27,22 +32,22 @@ const ReviewPolicy = () => {
                     <td>
                         <h2 className='policy-table-header'>Free</h2>
                         <p>A sample essay review for either Stanford or USC; limited to one of the short essays.</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEDEE7'}}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEDEE7'}} onClick={handleClick}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Essentials</h2>
                         <p>An extensive review of every application essay, suited for those who solely want essay feedback..</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEC6D5'}}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEC6D5'}} onClick={handleClick}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Premium</h2>
                         <p>A comprehensive review of the Common Application, ideal for those applying to mutliple schools.</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FDADC3'}}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FDADC3'}} onClick={handleClick}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Premium+</h2>
                         <p>Our most complete service, with everything from practice interviews to resume review included.</p>
-                        <Link to='/signup' className='policy-table-button'>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button' onClick={handleClick}>Get Started!</Link>
                     </td>
                 </tr>
                 <tr className='row-colored'>
@@ -97,7 +102,7 @@ const ReviewPolicy = () => {
             </table>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/cost-calculator' className='admitted-next-btn'>Next: Determine the Exact Price with Our Cost Calculator</Link>
+                <Link to='/cost-calculator' className='admitted-next-btn' onClick={handleClick}>Next: Determine the Exact Price with Our Cost Calculator</Link>
             </div>
 
             <div className="review-sec-section">
@@ -169,7 +174,7 @@ const ReviewPolicy = () => {
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/contact-us' className='admitted-next-btn'>Still have questions?</Link>
+                <Link to='/contact-us' className='admitted-next-btn' onClick={handleClick}>Still have questions?</Link>
             </div>
         </div>
         <Footer />

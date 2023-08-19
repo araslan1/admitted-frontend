@@ -15,6 +15,10 @@ import Footer from "./Footer";
 // import reviewerIMG3 from './images/IMG_FIONA2.jpeg';
 
 const Home = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
 
     // const profiles = new Map([
     //     [1, { name: 'Adam Aladahir', school: 'Tulane', description: ['Adam', 'Junior', 'Biology'] }],
@@ -56,28 +60,28 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/inspiration'><img src={zoomIMG2} className='zoom-imgs' alt="Zoom 2" /></Link>
+                        <Link to='/inspiration' onClick={handleClick}><img src={zoomIMG2} className='zoom-imgs' alt="Zoom 2" /></Link>
                         <h2><Link to='/inspiration' className="top-left">Made By Students<br></br>For Students</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-1'>
                         <p className='card-info-blurb'>We've already gone through the process!</p>
-                        <Link to='/inspiration' className="mainbutton" id='card-info-1-button'>Our Story</Link>
+                        <Link to='/inspiration' className="mainbutton" id='card-info-1-button' onClick={handleClick}>Our Story</Link>
                     </div>
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/review-policy'><img src={zoomIMG3} className='zoom-imgs' alt="Zoom 3" /></Link>
-                        <h2><Link to='/review-policy' className="top-left">College Match<br></br>Guarantee</Link></h2>
+                        <Link to='/review-policy'><img src={zoomIMG3} className='zoom-imgs' alt="Zoom 3" onClick={handleClick}/></Link>
+                        <h2><Link to='/review-policy' className="top-left" onClick={handleClick}>College Match<br></br>Guarantee</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>
                         <p className='card-info-blurb'>Receive feedback from someone who actually attends the university</p>
-                        <Link to='/review-policy' className="mainbutton" id='card-info-2-button'>Review Policy</Link>
+                        <Link to='/review-policy' className="mainbutton" id='card-info-2-button' onClick={handleClick}>Review Policy</Link>
                     </div>
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" /></Link>
-                        <h2><Link to='/why-admitted' className="top-left">College Counseling<br></br>Made Affordable</Link></h2>
+                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" onClick={handleClick} /></Link>
+                        <h2><Link to='/why-admitted' className="top-left" onClick={handleClick}>College Counseling<br></br>Made Affordable</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-3'>
                         <p className='card-info-blurb'>Don't pay thousands for an advisor who applied to colleges last century!</p>
@@ -139,7 +143,7 @@ const Home = () => {
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/about-us' className='admitted-next-btn'>More Reviewers</Link>
+                <Link to='/about-us' className='admitted-next-btn' onClick={handleClick}>More Reviewers</Link>
             </div>
 
 

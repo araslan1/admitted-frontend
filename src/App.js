@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { useEffect } from 'react'
 // import Signup from './Signup';
-import Login from './Login';
+// import Login from './Login';
 import Support from './Support';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -27,6 +27,7 @@ import ReviewerDashboard from './ReviewerDashboard';
 import ReviewerSignup from './ReviewerSignup'; 
 import Checkout2 from './Checkout2'; 
 import Logout from './Logout'; 
+import TestLogin from './TestLogin'; 
 import OTP from './Otp'; 
 import MainLogin from './MainLogin';
 import PrivacyPolicy from './PrivacyPolicy'; 
@@ -53,7 +54,7 @@ function App() {
         <div id='whole-app'>
         <Switch>
           <Route exact path="/"><Home /></Route>
-          <Route path="/login"><Login /></Route>
+          <Route path="/login"><TestLogin /></Route>
           <Route path="/signup"><MainLogin /></Route>
           <ProtectedRoute exact path="/dashboard" component={RedirectDashboard}></ProtectedRoute>
           <ProtectedRoute exact path="/dashboard/:id" component={Dashboard}/>
@@ -87,6 +88,7 @@ function App() {
           <Route exact path = '/googleAuth' component={GoogleAuth}></Route>
           <Route path='/terms-of-service'><TOS /></Route>
           <Route path='/privacy-policy'><PrivacyPolicy /></Route>
+          <Route path='/testlogin'><TestLogin /></Route>
           <Route path='*'><NotFound /></Route>
         </Switch>
         </div>

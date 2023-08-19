@@ -1,4 +1,5 @@
-
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const TOS = () => {
 
@@ -90,9 +91,13 @@ const TOS = () => {
         </div>`;
 
     return (
+        <>
+        <Navbar />
         <div className="tos" style={{margin: '20px'}}>
             <div dangerouslySetInnerHTML={{ __html: htmlSnippet }} />
         </div>
+        <Footer />
+        </>
 
 
     );

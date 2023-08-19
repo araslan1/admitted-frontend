@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import './Otp.css'
+import ResetPassword from './ResetPassword'; 
+
 
 const OTP = () => {
+    const history = useHistory(); 
     const location = useLocation();
     const [numberValue1, setNumberValue1] = useState('');
     const [numberValue2, setNumberValue2] = useState('');
     const [numberValue3, setNumberValue3] = useState('');
     const [numberValue4, setNumberValue4] = useState('');
+    const [validOTP, setValidOTP] = useState(false); 
 
     const combineValues = () => {
         const combinedValue = parseInt(numberValue1 + numberValue2 + numberValue3 + numberValue4, 10);
@@ -46,8 +50,20 @@ const OTP = () => {
 
     const enterCode = () => {
         const receivedData = location.state; 
+        if (!receivedData){
+            history.push('/login'); 
+            return; 
+        }
+        if (!receivedData.OTP) {
+            history.push('/login'); 
+            return; 
+        }
         const OTP = receivedData.OTP; 
         // const email = receivedData.email; 
+        if (!OTP) {
+            history.push('/login'); 
+            return; 
+        }
         const entered_number = combineValues(); 
         if (entered_number < 1000){
             window.alert("You entered an invalid number"); 
@@ -55,7 +71,7 @@ const OTP = () => {
         }
         if (entered_number === OTP){
             // valid input, send to reset password page
-            console.log("valid otp");
+            setValidOTP(true); 
         }else{
             //invalid input
             window.alert("This was the incorrect code, return to our login page and try clicking reset password again!")
@@ -99,6 +115,7 @@ const OTP = () => {
             </div>
 
             <button onClick={enterCode}>Enter Code</button>
+            {validOTP && <ResetPassword />}
         </div>
     );
 }

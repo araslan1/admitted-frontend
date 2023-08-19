@@ -4,6 +4,10 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 
 const Colleges = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
     return (
         <>
         <Navbar />
@@ -37,7 +41,7 @@ const Colleges = () => {
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/review-policy' className='admitted-next-btn'>Next: How do our reviews work?</Link>
+                <Link to='/review-policy' className='admitted-next-btn' onClick ={handleClick}>Next: How do our reviews work?</Link>
             </div>
 
             <p className='colleges-disclaimer'>*Admitted is not officially affiliated or endorsed by any of the above universities</p>

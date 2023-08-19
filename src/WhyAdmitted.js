@@ -11,6 +11,10 @@ import headImg from './images/whyAdmittedHead.webp'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const WhyAdmitted = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
     return (
         <>
         <Navbar />
@@ -105,7 +109,7 @@ const WhyAdmitted = () => {
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/colleges' className='admitted-next-btn'>Next: What college applications do we offer review for?</Link>
+                <Link to='/colleges' className='admitted-next-btn' onClick={handleClick}>Next: What college applications do we offer review for?</Link>
             </div>
 
         </div>

@@ -1,3 +1,6 @@
+import Footer from './Footer';
+import Navbar from './Navbar';
+
 const PrivacyPolicy = () => {
 
     const htmlSnippet = `<h1>Privacy Policy</h1>
@@ -178,9 +181,13 @@ const PrivacyPolicy = () => {
     </ul>`;
 
     return (
+        <>
+        <Navbar />
         <div className="privacy-policy" style={{margin: '20px'}}>
             <div dangerouslySetInnerHTML={{ __html: htmlSnippet }} />
         </div>
+        <Footer />
+        </>
     );
 }
  
