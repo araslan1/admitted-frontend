@@ -19,10 +19,12 @@ const MainLogin = () => {
     // const [register, setRegister] = useState(false); 
 
     const navigate = (url) => {
+        setCreatingUser(false); 
         window.location.href = url; 
     }
 
     const auth = async () => {
+        setCreatingUser(true); 
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/request`, {method: 'post'});
         const data = await response.json(); 
         console.log(data); 

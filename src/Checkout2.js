@@ -1,7 +1,10 @@
+import { useState } from 'react';
+import LoadingMessage from "./LoadingMessage";
 import './Checkout2.css';
 
 const Checkout2 = () => {
-
+    
+    const [loadingPayment, setLoadingPayment] = useState(false); 
    const plans = [false, false, false, false];
    const selectedColleges = [false, false, false, false, false, false, false, false, false, false, false]
 
@@ -36,6 +39,7 @@ const Checkout2 = () => {
    }
 
     const proceedToPayment = () => {
+        setLoadingPayment(true); 
         let oneAnswered = false;
         for (let i = 0; i < plans.length; i++) {
             if (plans[i]) {
@@ -74,14 +78,17 @@ const Checkout2 = () => {
                     if (res.ok) return res.json()
                     return res.json().then(json => Promise.reject(json))
                 }).then(({ url }) => {
+                    setLoadingPayment(false); 
                     window.location = url
                     console.log(url)
                 }).catch(e => {
+                    setLoadingPayment(false); 
                     console.error(e.error)
                 })
             }
         }
         else {
+            setLoadingPayment(false); 
             if (!oneAnswered || !twoAnswered) {
                 document.getElementById('proceed-to-payment-error').innerHTML = 'Please select a plan and at least one university'
             }
@@ -89,6 +96,7 @@ const Checkout2 = () => {
                 document.getElementById('proceed-to-payment-error').innerHTML = 'Free trial only allows for one college review'
             }
         }
+        setLoadingPayment(false); 
     }
 
     const handlePlanSelect = (id) => {
@@ -152,6 +160,7 @@ const Checkout2 = () => {
 
     return (
         <div className="checkout-2">
+            {loadingPayment && <LoadingMessage title="Sending you to checkout"/>}
             <div className="checkout-banner-launch">
                 <p>Admitted officially launches in September 2023! In the meantime, see how our service works with our <span>Free Trial</span></p>
             </div>

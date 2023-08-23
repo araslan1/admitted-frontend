@@ -136,7 +136,7 @@ const Dashboard = () => {
                             </div>
                         ))
                         }
-                        <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
+                        <img onClick = {() => {history.push("/checkout2")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
                     </div>
     
                     <div id="checklist-container">

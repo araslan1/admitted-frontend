@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import './Otp.css'
+import './Otp.css';
 import ResetPassword from './ResetPassword'; 
+
 
 
 const OTP = () => {
     const history = useHistory(); 
     const location = useLocation();
+    const receivedData = location.state; 
+    const [email, setEmail] = useState("a"); 
     const [numberValue1, setNumberValue1] = useState('');
     const [numberValue2, setNumberValue2] = useState('');
     const [numberValue3, setNumberValue3] = useState('');
@@ -17,6 +20,14 @@ const OTP = () => {
         const combinedValue = parseInt(numberValue1 + numberValue2 + numberValue3 + numberValue4, 10);
         return isNaN(combinedValue) ? 0 : combinedValue;
     };
+
+    useEffect(() => {
+        if (!receivedData || !receivedData.email) {
+            history.push('/login'); 
+        }else{
+            setEmail(receivedData.email);
+        }
+    }, [receivedData, history])
 
 
     const handleNumberChange1 = (event) => {
@@ -49,7 +60,6 @@ const OTP = () => {
     };
 
     const enterCode = () => {
-        const receivedData = location.state; 
         if (!receivedData){
             history.push('/login'); 
             return; 
@@ -58,6 +68,7 @@ const OTP = () => {
             history.push('/login'); 
             return; 
         }
+
         const OTP = receivedData.OTP; 
         // const email = receivedData.email; 
         if (!OTP) {
@@ -81,8 +92,11 @@ const OTP = () => {
 
     return (
         <div className="otp">
+            {
+            !validOTP &&
+            <>
             <h1>
-                We have sent a code to your email!
+                We have sent a code to {email}!
             </h1>
             <div className="OTPcontainer">
                 <input type="number" 
@@ -115,7 +129,9 @@ const OTP = () => {
             </div>
 
             <button onClick={enterCode}>Enter Code</button>
-            {validOTP && <ResetPassword />}
+            </>
+            }
+            {validOTP && <ResetPassword email ={email}/>}
         </div>
     );
 }
