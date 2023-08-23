@@ -4,6 +4,9 @@ import login_arrow from './images/icons8-back-arrow-50.png';
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import LoadingMessage from "./LoadingMessage";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+import { ToastContainer } from 'react-toastify';
 
 
 const ResetPassword = ({ email }) => {
@@ -19,13 +22,16 @@ const ResetPassword = ({ email }) => {
             setNotPasswordMatch(true); 
             return; 
         }else{
+            console.log(email); 
+            console.log(password); 
             if (!email){
+                console.log("email not found!")
                 history.push('/login'); 
             }
             setConnectingToServer(true); 
             const configuration = {
                 method: 'post', 
-                url: `${process.env.SERVER_URL}/resetpassword`, 
+                url: `${process.env.REACT_APP_SERVER_URL}/resetpassword`, 
                 data: {
                     newPassword: password, 
                     emailToUpdate: email,
@@ -37,17 +43,26 @@ const ResetPassword = ({ email }) => {
                     history.push('/login'); 
                 })
                 .catch((error) => {
-                    setConnectingToServer(false); 
-                    window.alert(`${error}, you are being redirected to login page `); 
-                    history.push('/login'); 
+                    const errorMessage = error.response.data.message;
+                    toast.error(`${errorMessage}, you are being redirected to the login page`, {
+                        // position: toast.POSITION.TOP_CENTER,
+                        className:'custom-toast', 
+                        onClose: () => {
+                          history.push('/login'); // Redirect after the toast is closed
+                        },
+                      });
                 })
         }
     }
 
 
     return (
-        <div className="resetPassword">
+        <>
+        <div className="bigResetPassword">
             {connectingToServer && <LoadingMessage title="Resetting Your Password Now!"/>}
+            <ToastContainer />
+        </div>
+        {!connectingToServer && <div className="resetPassword">
             <h1>Your code has been verified! Please enter your new password below!</h1>
             <div className="fillloginform">
                 <form >
@@ -73,14 +88,15 @@ const ResetPassword = ({ email }) => {
                                 setConfirmPassword(e.target.value); 
                             }}
                         />
-                        <img src={login_arrow} onClick={handleSubmit} alt="This is a log in icon"></img>
+                        <img src={login_arrow} style={{zIndex: "5"}}onClick={handleSubmit} alt="This is a log in icon"></img>
 
                     </div>
                     
                     {notPasswordMatch && <p>The passwords do not match!</p>}
                 </form>
             </div>
-        </div>
+        </div>}
+        </>
     );
 }
  
