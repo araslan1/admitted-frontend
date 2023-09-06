@@ -13,7 +13,6 @@ import Colleges from './Colleges';
 import ReviewPolicy from './ReviewPolicy';
 import CostCalculator from './CostCalculator';
 import Testeditingtool from "./Testeditingtool"; 
-import Checkout from "./Checkout"
 import Cancel from "./Cancel"
 import Success from "./Success"
 import ProtectedRoute from './ProtectedRoute';
@@ -34,6 +33,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import TOS from './TOS'; 
 import NotFound from './NotFound';
 import GoogleAuth from './GoogleAuth'; 
+import EnterEmail from './EnterEmail';
 
 function App() {
   useEffect(() => {
@@ -76,8 +76,7 @@ function App() {
           <Route path='/cost-calculator'><CostCalculator /></Route>
           <Route path='/cancel'><Cancel /></Route>
           <Route path='/success'><Success /></Route>
-          <Route exact path='/checkout'><Checkout /></Route>
-          <Route exact path='/checkout2' component={Checkout2}></Route>
+          <Route exact path='/checkout' component={Checkout2}></Route>
           <Route path='/reviewersignup'><ReviewerSignup /></Route>
           <Route path='/account' component={Account}></Route>
           <Route path='/free' component={FreeComponent}></Route>
@@ -89,6 +88,7 @@ function App() {
           <Route path='/terms-of-service'><TOS /></Route>
           <Route path='/privacy-policy'><PrivacyPolicy /></Route>
           <Route path='/testlogin'><TestLogin /></Route>
+          <Route path='/enteremail'><EnterEmail /></Route>
           <Route path='*'><NotFound /></Route>
         </Switch>
         </div>

@@ -1,12 +1,17 @@
+
 import './AboutUs.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import personPhoto from './images/IMG_6420.jpg';
+import personPhoto from './images/team1.webp';
 import personPhoto2 from './images/IMG_0101.jpg';
-import personPhoto3 from './images/IMG_1861.jpg';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const AboutUs = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
+    
     return (
         <>
         <Navbar />
@@ -15,7 +20,7 @@ const AboutUs = () => {
                 <div className="person-boxes-row">
                     <div className="person-box">
                         <div className="person-image-wrapper">
-                            <img src={personPhoto} className='person-img' alt="profile for Admitted co-founder Alastair Deng" />
+                            <img src={personPhoto} className='person-img' alt="Co-Founder of Admitted, Alastair Deng, wearing a tuxedo and smiling." />
                         </div>
                         <div className="person-img-info">
                             <div className="person-img-name">
@@ -40,25 +45,10 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className="person-boxes-row">
-                    <div className="person-box">
-                        <div className="person-image-wrapper">
-                            <img src={personPhoto3} className='person-img' alt="profile for Admitted advisor Fiona Collins" />
-                        </div>
-                        <div className="person-img-info">
-                            <div className="person-img-name">
-                                <p>Fiona Collins</p>
-                            </div>
-                            <div className="person-img-position">
-                                <p>Advisor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/inspiration' className='admitted-next-btn'>Next: Our Story!</Link>
+                <Link to='/inspiration'  onClick={handleClick} className='admitted-next-btn'>Next: Our Story!</Link>
             </div>
         </div>
         <Footer />

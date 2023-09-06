@@ -9,6 +9,7 @@ import Cookies from "universal-cookie";
 import axios from 'axios'; 
 import { useHistory } from "react-router-dom";
 import new_document_icon from "./images/new_document.png";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const cookies = new Cookies(); 
 
 
@@ -33,7 +34,7 @@ const Dashboard = () => {
     }
 
 
-    
+   
 
     useEffect(() => {
         const configuration = {
@@ -89,11 +90,12 @@ const Dashboard = () => {
                         &times;
                     </button>
                     <div className="linksdiv">
-                        <a href="/">About</a>
-                        <a href="/">Services</a>
-                        <a href="/">Clients</a>
-                        <a href="/">Contact</a>
-                        <a href="/logout">Log Out</a>
+                        <Link to='/inspiration'>Our Story</Link>
+                        <Link to='/review-policy'>Review Policy</Link>
+                        <Link to='/cost-calculator'>Cost Calculator</Link>
+                        <Link to='/colleges'>Colleges</Link>
+                        <Link to='/contact-us'>Contact Us</Link>
+                        <Link to='/logout'>Log Out</Link>
                     </div>
                 </div>
 
@@ -136,7 +138,7 @@ const Dashboard = () => {
                             </div>
                         ))
                         }
-                        <img onClick = {() => {history.push("/checkout2")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
+                        <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
                     </div>
     
                     <div id="checklist-container">

@@ -1,20 +1,20 @@
-//image import
 import './WhyAdmitted.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import circlePlaceholder from './images/IMG_0101.jpg';
 import circle1 from './images/circle1.webp'
 import circle2 from './images/circle2.webp'
+import circle3 from './images/circle3.webp'
 import admittedStudentReviewer1 from './images/profile1.webp'
-import admittedStudentReviewer2 from './images/IMG_FIONA.jpg'
-import headImg from './images/whyAdmittedHead.webp'
+import admittedStudentReviewer2 from './images/profile2.webp'
+import headImg from './images/admittedALogo-enlarged.png'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const WhyAdmitted = () => {
     const handleClick = () => {
         // Scroll to the top of the page
         window.scrollTo(0, 0);
-      };
+     };
+
     return (
         <>
         <Navbar />
@@ -29,10 +29,10 @@ const WhyAdmitted = () => {
                         <p className='why-main-text-bot'>
                             With hundreds of thousands of students applying to elite universities each year, the college application process is extremely competitive. As such, a growing number of college "counselors" and "gurus" are claiming that they know the secret to get into top colleges. Yet, their services are both expensive and not effective! Here at Admitted, our College Match Guarantee ensures that your application is being reviewed by current or recent students from each school you are applying to. These students know what it takes to be accepted into their respective universities and they're ready to help you be admitted too!
                         </p>
-                        <Link to='/signup' className='why-button'>Get Started!</Link>
+                        <Link to='/signup' onClick={handleClick} className='why-button'>Get Started!</Link>
                     </div>
                     <div className="why-main-img-wrapper">
-                        <img className='why-main-img' src={headImg} alt='Generic college acceptance letter. The letter reads: "Your Admitted! Dear XXXX, you have been admitted into the class of 20XX!"' />
+                        <img className='why-main-img' src={headImg} alt='Enlarged version of the Admitted A logo' />
                     </div>
                 </div>
             </div>
@@ -52,13 +52,13 @@ const WhyAdmitted = () => {
                 </div>
                 <div className="why-ind-circle">
                     <div className="why-circle-img-wrapper">
-                        <img className='why-circle-img' src={circlePlaceholder} alt="..." />
+                        <img className='why-circle-img' src={circle3} alt="Someone reviews the feedback they received on their college application essay through Admitted’s Editing Tool." />
                     </div>
                     <div className="why-circle-text">
-                        <p className='circle-text-head'>Affordable</p>
+                        <p className='circle-text-head'>Affordable AND Comprehensive</p>
                         <p>
                             Other college counseling services can cost from $850 at the lowest to over $10,000. 
-                            A college application review from Admitted costs as little as $55.
+                            A college application review from Admitted costs as little as $45.
                         </p>
                     </div>
                 </div>
@@ -67,10 +67,10 @@ const WhyAdmitted = () => {
                         <img className='why-circle-img' src={circle2} alt="USC students Adam Raslan and Fiona Collins review college essays together on their laptops." />
                     </div>
                     <div className="why-circle-text">
-                    <p className='circle-text-head'>Comprehensive</p>
+                    <p className='circle-text-head'>Real-Time Feedback</p>
                         <p>
-                            Alongside offering essay feedback and practice interviews, Admitted also reviews resumes and the Common Application's 
-                            Activities & Academic Honors sections. 
+                            Essay reviews happen live over Zoom! 
+                            Reviewers will answer questions, tailor advice, and personalize a plan for you through Admitted's Editing Tool!
                         </p>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const WhyAdmitted = () => {
                     </div>
                     <div className="why-profile-ind">
                         <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="..." />
+                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="Fiona Collins poses in front of a mountain valley." />
                         </div>
                         <div className="why-profile-text">
                             <p className='why-profile-text-meet'>Meet Fiona</p>

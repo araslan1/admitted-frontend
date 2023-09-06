@@ -1,4 +1,3 @@
-//image imports
 import './ReviewPolicy.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -14,6 +13,7 @@ const ReviewPolicy = () => {
         window.scrollTo(0, 0);
       };
 
+    
     return (
         <>
         <Navbar />
@@ -27,27 +27,27 @@ const ReviewPolicy = () => {
                 <tr>
                     <td>
                         <h2>Not sure<br></br> which plan you want?</h2>
-                        <p>Take a look at the different features each plan offers and choose the one that fits you best.</p>
+                        <p>Take a look at the different features each plan offers and choose the one that fits you best</p>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Free</h2>
                         <p>A sample essay review for either Stanford or USC; limited to one of the short essays.</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEDEE7'}} onClick={handleClick}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button'   onClick={handleClick} style={{backgroundColor: '#FEDEE7'}}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Essentials</h2>
                         <p>An extensive review of every application essay, suited for those who solely want essay feedback..</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FEC6D5'}} onClick={handleClick}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button'   onClick={handleClick} style={{backgroundColor: '#FEC6D5'}}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Premium</h2>
                         <p>A comprehensive review of the Common Application, ideal for those applying to mutliple schools.</p>
-                        <Link to='/signup' className='policy-table-button' style={{backgroundColor: '#FDADC3'}} onClick={handleClick}>Get Started!</Link>
+                        <Link to='/signup' className='policy-table-button'   onClick={handleClick} style={{backgroundColor: '#FDADC3'}}>Get Started!</Link>
                     </td>
                     <td>
                         <h2 className='policy-table-header'>Premium+</h2>
                         <p>Our most complete service, with everything from practice interviews to resume review included.</p>
-                        <Link to='/signup' className='policy-table-button' onClick={handleClick}>Get Started!</Link>
+                        <Link to='/signup'   onClick={handleClick} className='policy-table-button'>Get Started!</Link>
                     </td>
                 </tr>
                 <tr className='row-colored'>
@@ -58,51 +58,58 @@ const ReviewPolicy = () => {
                     <td>&#x2713;</td>
                 </tr>
                 <tr>
+                    <td>Live Essay Review</td>
+                    <td>One 10-Minute Session</td>
+                    <td>20-Minute Session / College</td>
+                    <td>25-Minute Session / College</td>
+                    <td>30-Minute Session / College</td>
+                </tr>
+                <tr className='row-colored'>
                     <td>Common App Essay Review</td>
                     <td>&#x2717;</td>
                     <td>&#x2713;</td>
                     <td>&#x2713;</td>
                     <td>&#x2713;</td>
                 </tr>
-                <tr className='row-colored'>
+                <tr>
                     <td>Price / College Reviewed (All supplementals)</td>
                     <td>Free</td>
                     <td>$45</td>
                     <td>$50</td>
                     <td>$55</td>
                 </tr>
-                <tr>
+                <tr className='row-colored'>
                     <td>Resume Review</td>
                     <td>&#x2717;</td>
                     <td>&#x2717;</td>
                     <td>&#x2713;</td>
                     <td>&#x2713;</td>
                 </tr>
-                <tr className='row-colored'>
+                <tr>
                     <td>Activities/Academic Honors Review</td>
                     <td>&#x2717;</td>
                     <td>&#x2717;</td>
                     <td>&#x2713;</td>
                     <td>&#x2713;</td>
                 </tr>
-                <tr>
+                <tr className='row-colored'>
                     <td>Practice Interview</td>
                     <td>&#x2717;</td>
                     <td>&#x2717;</td>
                     <td>&#x2717;</td>
                     <td>&#x2713;</td>
                 </tr>
-                <tr className='row-colored'>
+                <tr>
                     <td>Base Price:</td>
                     <td>Free</td>
-                    <td>$0 + $55/College Selected</td>
+                    <td>$0 + $45/College Selected</td>
                     <td>$50 + $50/College Selected</td>
-                    <td>$100 + $45/College Selected</td>
+                    <td>$100 + $55/College Selected</td>
                 </tr>
             </table>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/cost-calculator' className='admitted-next-btn' onClick={handleClick}>Next: Determine the Exact Price with Our Cost Calculator</Link>
+                <Link to='/cost-calculator' onClick={handleClick} className='admitted-next-btn'>Next: Determine the Exact Price with Our Cost Calculator</Link>
             </div>
 
             <div className="review-sec-section">
@@ -117,9 +124,9 @@ const ReviewPolicy = () => {
                             <ul>
                                 <li>College-specific essays will be reviewed by an Admitted student-reviewer from that specific university</li>
                                 <li>The Common Application essay will be reviewed by the Admitted student-reviewer from the college you designate as your 'Primary University'</li>
-                                <li>Essays will be reviewed within 3-7 days of submission</li>
-                                <li>Essay feedback may include: content suggestions (tone, wording, etc.), grammar corrections, readability & structure advice, and more</li>
-                                <li>Essays will only be reviewed once</li>
+                                <li>Reviewers will read essays prior to Live Review Sessions</li>
+                                <li>Following the Live Review Session, formal comments and feedback will be provided through Admitted's Editing Tool</li>
+                                <li>Live Review Sessions are held over Zoom</li>
                             </ul>
                         </div>
                     </div>
@@ -132,7 +139,7 @@ const ReviewPolicy = () => {
                             <h3 className='review-sec-ind-text-header'>Interviews</h3>
                             <ul>
                                 <li>Practice interviews will last 30 minutes and will be conducted over Zoom</li>
-                                <li>The interviewer will be Admitted student-reviewer from the college you designate as your 'Primary University'</li>
+                                <li>The interviewer will be an Admitted student-reviewer from the college you designate as your 'Primary University'</li>
                                 <li>The interviewer will spend 25-minutes conducting an interview similar to the one they recieved during their admissions process</li>
                                 <li>After the interview, the interviewer will spend 5+ minutes giving feedback</li>
                             </ul>
@@ -149,9 +156,8 @@ const ReviewPolicy = () => {
                             <ul>
                                 <li>Review of the Common Application's 10 Activities and 5 Academic Honors section</li>
                                 <li>Activites & Academic Honors will be reviewed by an Admitted student-reviewer from the college you designate as your 'Primary University'</li>
-                                <li>Feedback may include: strategies to reduce character-count, content suggestions, grammar corrections, and more</li>
+                                <li>Feedback will be provided through Admitted's Editing Tool</li>
                                 <li>Activities & Academic Honors will be reviewed within 3-7 days of submission</li>
-                                <li>Activities & Academic Honors will only be reviewed once</li>
                             </ul>
                         </div>
                     </div>
@@ -164,7 +170,7 @@ const ReviewPolicy = () => {
                             <ul>
                                 <li>Purchasing the Premium or Premium+ plans grants access to Admitted's resume-building tool and template</li>
                                 <li>The submitted resume will be reviewed by an an Admitted student-reviewer from the college you designate as your 'Primary University'</li>
-                                <li>Feedback may include: content & design suggestions, grammar corrections, readability & structure advice, and more</li>
+                                <li>Feedback will be provided through Admitted's Editing Tool</li>
                                 <li>Resumes will be reviewed within 3-7 days of submission</li>
                                 <li>Resumes will only be reviewed once</li>
                             </ul>
@@ -174,7 +180,7 @@ const ReviewPolicy = () => {
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/contact-us' className='admitted-next-btn' onClick={handleClick}>Still have questions?</Link>
+                <Link to='/contact-us'  onClick={handleClick} className='admitted-next-btn'>Still have questions?</Link>
             </div>
         </div>
         <Footer />

@@ -1,3 +1,4 @@
+
 import Footer from './Footer';
 import './Inspiration.css';
 import Navbar from './Navbar';
@@ -8,6 +9,11 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const Inspiration = () => {
+    const handleClick = () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      };
+
     return (
         <>
         <Navbar />
@@ -59,7 +65,7 @@ const Inspiration = () => {
                 </div>
             </div>
             <div className="admitted-next-btn-wrap">
-                <Link to='/why-admitted' className="admitted-next-btn">Next: Why choose us?</Link>
+                <Link to='/why-admitted' onClick={handleClick} className="admitted-next-btn">Next: Why choose us?</Link>
             </div>
         </div>
         <Footer />

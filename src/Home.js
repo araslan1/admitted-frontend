@@ -32,7 +32,7 @@ const Home = () => {
         <div>
             <Navbar />
             <div className="free-trial-banner">
-                <p>Admitted officially launches in September 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
+                <p>Admitted officially launches in October 2023! In the meantime, see how our service works with our <Link to='/review-policy'>Free Trial</Link></p>
             </div>
         </div>
         <div className="home">

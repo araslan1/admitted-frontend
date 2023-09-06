@@ -15,7 +15,7 @@ const ContactUs = () => {
                 <p>Admitted is an all-in-one platform for students to improve their college applications. Below are a few FAQs, but if you still have questions about what our service can do for you, please contact us at:</p>
             </div>
             <div className="contact-us-email">
-                <p>araslan@usc.edu</p>
+                <p>admitted.team@gmail.com</p>
             </div>
             <div className="faq-header">
                 <h2>Frequently Asked Questions:</h2>
@@ -24,13 +24,13 @@ const ContactUs = () => {
                 <div className="faq-col">
                     <div className="ind-faq">
                         <p className='faq-question'>How long will it take for me to get my application reviewed?</p>
-                        <p className='faq-answer'>Reviews will take between 3-7 days to complete.</p>
+                        <p className='faq-answer'>A Live Review session will typically be scheduled within 3-7 days of submission.</p>
                     </div>
                     <div className="ind-faq">
                         <p className='faq-question'>How will feedback be given?</p>
-                        <p className='faq-answer'>Visit our <Link to='/review-policy'>Review Policy</Link> page to see specific feedback guidelines for each plan.
+                        <p className='faq-answer'>Advice is provided in a Live Review session & documented using Admitted's Editing Tool.
                         <br></br>
-                        You can also try out our essay review service with a <Link to='/review-policy'>Free Trial</Link>!</p>
+                        Visit our <Link to='/review-policy'>Review Policy</Link> page for more details!</p>
                     </div>
                     <div className="ind-faq">
                         <p className='faq-question'>What colleges does Admitted offer reviews for?</p>
@@ -40,7 +40,7 @@ const ContactUs = () => {
                 <div className="faq-col">
                     <div className="ind-faq">
                         <p className='faq-question'>When will Admitted officially launch?</p>
-                        <p className='faq-answer'>The Premium+, Premium, & Essentials plans will offically open in August 2023.
+                        <p className='faq-answer'>The Essentials, Premium, & Premium+ plans offically open in October 2023.
                         <br></br>
                         For now, see how our service works with our <Link to='/review-policy'>Free Trial</Link>!</p>
                     </div>

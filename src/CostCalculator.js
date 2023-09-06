@@ -35,12 +35,12 @@ const CostCalculator = () => {
         }
         if (packages[0]) {
             temp *= 4500;
-            temp += 10000
         } else if (packages[1]) {
-            temp *= 5000
-            temp += 5000
+            temp *= 5000;
+            temp += 5000;
         } else if (packages[2]) {
-            temp *= 5500
+            temp *= 5500;
+            temp += 10000;
         }
 
         temp /= 100;
@@ -59,7 +59,7 @@ const CostCalculator = () => {
         }
     }
 
-    const handleClickQuestion1 = (pricePerWord, id) => {
+    const handleClickQuestion1 = (id) => {
         if (packages[id - 1]) {
             colorSwap('calc-1-' + id, false);
             packages[id - 1] = false;
@@ -75,9 +75,9 @@ const CostCalculator = () => {
         }
     }
 
-    const handleClickQuestion2 = (maxWordCount, id) => {
+    const handleClickQuestion2 = (id) => {
         if (!(packages[0] || packages[1] || packages[2])) {
-            handleClickQuestion1(3.0, 3)
+            handleClickQuestion1(1)
         }
 
         if (!collegeArr[id - 1]) {
@@ -105,15 +105,16 @@ const CostCalculator = () => {
                             <p className='calc-popout-info-header'>Plan</p>
                             <p className='calc-popout-info-text'>Each Admitted service plan includes different features. 
                             To see the exact details please visit our <Link to='/review-policy'>Review Policy</Link> page. 
-                            In general, the <span>Premium+</span> plan is our most comprehensive service that includes all of our available features. 
-                            The <span>Premium</span> plan includes all features except a practice interview, and the <span>Essentials</span> plan only includes our essay review feature. 
-                            Our <span>Free Trial</span> is comprised of one example review of a short supplemental essay from Stanford University or USC.</p>
+                            In general, the <span>Premium+</span> plan is our most comprehensive service that includes all available features. 
+                            Our <span>Premium</span> plan includes all features except a practice interview, though Live Review sessions are shorter than with the Premium+ plan. 
+                            The <span>Essentials</span> plan covers every essay in your application, but each Live Review session is constrained to 20 minutes. 
+                            Finally, our <span>Free Trial</span> is comprised of one 10-minute Live Review of a short essay for Stanford or USC.</p>
                         </div>
                     </div>
                     <div className="calc-answers">
-                        <button className='calc-answer-button' id='calc-1-1' onClick={() => handleClickQuestion1(2.5, 1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+ &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button' id='calc-1-2' onClick={() => handleClickQuestion1(2.75, 2)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium &nbsp;|&nbsp; &#x2715;</button>
-                        <button className='calc-answer-button' id='calc-1-3' onClick={() => handleClickQuestion1(3.0, 3)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Essentials &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-1' onClick={() => handleClickQuestion1(1)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Essentials &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-2' onClick={() => handleClickQuestion1(2)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium &nbsp;|&nbsp; &#x2715;</button>
+                        <button className='calc-answer-button' id='calc-1-3' onClick={() => handleClickQuestion1(3)} style={{backgroundColor: '#fc8eac', color: 'black'}}>Premium+ &nbsp;|&nbsp; &#x2715;</button>
                     </div>
                 </div>
                 <div className="calc-questions-ind">
@@ -129,23 +130,23 @@ const CostCalculator = () => {
                     </div>
                     <div className="calc-answers-2">
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(100, 1)} style={{backgroundColor: '#FB7196', color: 'black'}}>Stanford &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(100, 2)} style={{backgroundColor: '#FB7196', color: 'black'}}>USC &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(100, 3)} style={{backgroundColor: '#FB7196', color: 'black'}}>Yale &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-1' onClick={() => handleClickQuestion2(1)} style={{backgroundColor: '#FB7196', color: 'black'}}>Stanford &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-2' onClick={() => handleClickQuestion2(2)} style={{backgroundColor: '#FB7196', color: 'black'}}>USC &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-3' onClick={() => handleClickQuestion2(3)} style={{backgroundColor: '#FB7196', color: 'black'}}>Yale &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(100, 4)} style={{backgroundColor: '#FB5682', color: 'black'}}>Harvard &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(100, 5)} style={{backgroundColor: '#FB5682', color: 'black'}}>Princeton &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(100, 6)} style={{backgroundColor: '#FB5682', color: 'black'}}>Columbia &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-4' onClick={() => handleClickQuestion2(4)} style={{backgroundColor: '#FB5682', color: 'black'}}>Harvard &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-5' onClick={() => handleClickQuestion2(5)} style={{backgroundColor: '#FB5682', color: 'black'}}>Princeton &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-6' onClick={() => handleClickQuestion2(6)} style={{backgroundColor: '#FB5682', color: 'black'}}>Columbia &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(100, 7)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Dartmouth &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(100, 8)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Brown &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(100, 9)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Cornell &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-7' onClick={() => handleClickQuestion2(7)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Dartmouth &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-8' onClick={() => handleClickQuestion2(8)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Brown &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-9' onClick={() => handleClickQuestion2(9)} style={{backgroundColor: '#FA3B6E', color: 'black'}}>Cornell &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                         <div className="calc-answers-row">
-                            <button className='calc-answer-button-2' id='calc-2-10' onClick={() => handleClickQuestion2(100, 10)} style={{backgroundColor: '#F91F59', color: 'black'}}>UPenn &nbsp;|&nbsp; &#x2715;</button>
-                            <button className='calc-answer-button-2' id='calc-2-11' onClick={() => handleClickQuestion2(100, 11)} style={{backgroundColor: '#F91F59', color: 'black'}}>Tulane &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-10' onClick={() => handleClickQuestion2(10)} style={{backgroundColor: '#F91F59', color: 'black'}}>UPenn &nbsp;|&nbsp; &#x2715;</button>
+                            <button className='calc-answer-button-2' id='calc-2-11' onClick={() => handleClickQuestion2(11)} style={{backgroundColor: '#F91F59', color: 'black'}}>Tulane &nbsp;|&nbsp; &#x2715;</button>
                         </div>
                     </div>
                 </div>

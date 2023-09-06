@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import './Colleges.css'
 import Footer from './Footer';
@@ -8,6 +9,7 @@ const Colleges = () => {
         // Scroll to the top of the page
         window.scrollTo(0, 0);
       };
+
     return (
         <>
         <Navbar />
@@ -37,11 +39,11 @@ const Colleges = () => {
                 <p>
                     We are doing our best to find reviewers at every elite instition. If there is one school in particular that you want reviewed by a current student, email the address listed below to let us know. If we find reviewers, we'll email you back!
                 </p>
-                <p className='colleges-email'>araslan@usc.edu</p>
+                <p className='colleges-email'>admitted.team@gmail.com</p>
             </div>
 
             <div className="admitted-next-btn-wrap">
-                <Link to='/review-policy' className='admitted-next-btn' onClick ={handleClick}>Next: How do our reviews work?</Link>
+                <Link to='/review-policy' onClick={handleClick} className='admitted-next-btn'>Next: How do our reviews work?</Link>
             </div>
 
             <p className='colleges-disclaimer'>*Admitted is not officially affiliated or endorsed by any of the above universities</p>
