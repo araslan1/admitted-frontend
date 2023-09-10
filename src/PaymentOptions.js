@@ -1,16 +1,21 @@
+
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './PaymentOptions.css';
 
 const PaymentOptions = () => {
 
+    const handleClick = () => {
+        window.scrollTo(0, 0);
+     };
+
     return (
         <div className="payment-options">
             <h2>Get your application reviewed today</h2>
                 <div className="pay-options-all-boxes">
-                    <Link to='/review-policy'>
+                    <Link to='/review-policy' onClick={handleClick}>
                         <div className="pay-options-box">
                             <div className="individual-box">
-                                <h3 className="pay-options-header">Free Trial</h3>
+                                <h3 className="pay-options-header">Free</h3>
                                 <p className='pay-options-blurb'>One sample essay review for one<br></br>of either USC or Stanford's short<br></br>supplemental essays</p>
                                 <p className='pay-options-features'>
                                     <span className='pay-options-features-line'>&#x2713; Sample Essay Analysis<br></br></span>
@@ -23,7 +28,7 @@ const PaymentOptions = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to='/review-policy'>
+                    <Link to='/review-policy' onClick={handleClick}>
                         <div className="pay-options-box">
                             <div className="individual-box">
                                 <h3 className="pay-options-header">Essentials</h3>
@@ -39,7 +44,7 @@ const PaymentOptions = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to='/review-policy'>
+                    <Link to='/review-policy' onClick={handleClick}>
                         <div className="pay-options-box">
                             <div className="individual-box">
                                 <h3 className="pay-options-header">Premium</h3>
@@ -55,7 +60,7 @@ const PaymentOptions = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to='/review-policy'>
+                    <Link to='/review-policy' onClick={handleClick}>
                         <div className="pay-options-box">
                             <div className="individual-box">
                                 <h3 className="pay-options-header">Premium+</h3>
@@ -73,7 +78,7 @@ const PaymentOptions = () => {
                     </Link>
                 </div>
             <div className="admitted-next-btn-wrap">
-                <Link to='/why-admitted' className='admitted-next-btn'>Next: How Admitted Can Help You!</Link>
+                <Link to='/why-admitted' className='admitted-next-btn' onClick={handleClick}>Next: How Admitted Can Help You!</Link>
             </div>
         </div>
     );

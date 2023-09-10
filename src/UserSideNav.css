@@ -1,116 +1,129 @@
-/* The side navigation menu */
 .usersidenav .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: white; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start;
-  }
-  
-  /* The navigation menu links */
-.usersidenav .sidenav a {
-    text-decoration: none; 
-    font-size: 17px;
-    font-weight: black;
-    color: 	#787878; 
-    margin-top: 20px; 
-    width: 280px;
-    height: 51px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    display: block;
-    transition: 0.3s;
-  }
-
-
-
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start;
+}
+.usersidenav .sidenav .linksdiv a {
+  text-decoration: none; 
+  font-size: 17px;
+  font-weight: black;
+  color: 	#787878; 
+  margin-top: 20px; 
+  width: 280px;
+  height: 51px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  display: block;
+  transition: 0.3s;
+}
 .sidenav .linksdiv a {
-    padding-left: 1.5rem;
-    padding-top: 17px;
+  padding-left: 1.5rem;
+  padding-top: 17px;
 }
-  
-  /* When you mouse over the navigation links, change their color */
-.usersidenav .sidenav a:hover {
-    color: rgb(144, 144, 144);
-    background-color: rgb(244, 244, 244);
-    border-left: 10px solid #fc8eac;
+/* When you mouse over the navigation links, change their color */
+.usersidenav .sidenav .linksdiv a:hover {
+  color: rgb(144, 144, 144);
+  background-color: rgb(244, 244, 244);
+  border-left: 10px solid #fc8eac;
+}
+.usersidenav .sidenav .sidenav-logo img {
+max-width: 25%;
+position: absolute;
+bottom: 75px;
+left: 37.5%;
+}
+.usersidenav .sidenav .sidenav-logo p {
+position: absolute;
+width: max-content;
+bottom: 15px;
+left: 14%;
+}
+.usersidenav .sidenav .sidenav-logo a {
+color: black;
+text-decoration: none;
+font-size: 12px;
+padding: 4px;
+border-radius: 4px;
+}
+.usersidenav .sidenav .sidenav-logo a:hover {
+background-color: #FECEDB;
+}
+.usersidenav .sidenav .linksdiv {
+  display:flex; 
+  flex-direction: column; 
 }
 
-.usersidenav .sidenav .linksdiv {
-    display:flex; 
-    flex-direction: column; 
-}
-  
-  /* Position and style the close button (top right corner) */
+/* Position and style the close button (top right corner) */
 .usersidenav .sidenav .closebtn {
-    position: absolute;
-    background-color: white; 
-    top: 10px;
-    left: 15px; 
-    
-    border: none; 
-    cursor: pointer; 
-    font-size: 36px;
+  position: absolute;
+  background-color: white; 
+  top: 10px;
+  left: 15px; 
+  
+  border: none; 
+  cursor: pointer; 
+  font-size: 36px;
 }
 
 .usersidenav .sidenav .closebtn:hover {
-  transform: translateY(1px)
+transform: translateY(1px)
 }
-  
+
 
 
 
 
 
 .usersidenav span {
-    top:10px; 
-    left: 10px; 
-    width: 40px; 
-    height: 40px;
-    background-color: #474C5F;
-    display: flex; 
-    position: relative; 
-    flex-direction: column; 
-    justify-content: center; 
-    z-index: 1; 
-    border-radius: 10px; 
-  
+  top:10px; 
+  left: 10px; 
+  width: 40px; 
+  height: 40px;
+  background-color: #474C5F;
+  display: flex; 
+  position: relative; 
+  flex-direction: column; 
+  justify-content: center; 
+  z-index: 1; 
+  border-radius: 10px; 
+
 }
 
 .usersidenav span .linesdiv { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .usersidenav span .linesdiv .topline {
-    width: 10px;
-    height: 3px;
-    margin-bottom: 4px; 
-    margin-left: 10px; 
-    background: white;
+  width: 10px;
+  height: 3px;
+  margin-bottom: 4px; 
+  margin-left: 10px; 
+  background: white;
 }
 
 .usersidenav span .linesdiv .line {
-    width: 20px;
-    height: 3px;
-    margin-bottom: 4px; 
-    background: white;
+  width: 20px;
+  height: 3px;
+  margin-bottom: 4px; 
+  background: white;
 }
 .usersidenav span .linesdiv .bottomline {
-    width: 10px;
-    height: 3px;
-    margin-bottom: 4px; 
-    margin-right: 10px; 
-    background: white;
+  width: 10px;
+  height: 3px;
+  margin-bottom: 4px; 
+  margin-right: 10px; 
+  background: white;
 }
-  

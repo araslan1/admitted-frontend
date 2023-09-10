@@ -91,6 +91,14 @@
     margin-top: 20px; 
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer; 
+
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+#upload:hover {
+    transform: translateY(-8px);
+    border: 1px solid #fc8eac;
 }
 
 #right-side #essays #upload img{
@@ -169,5 +177,27 @@
 
 .button-55:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+#new-application-btn {
+    width: max-content;
+    background-color: #252A41;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    height: 50px;
+    margin: 80px 30px;
+
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#new-application-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    color: #fc8eac;
 }
 

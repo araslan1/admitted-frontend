@@ -5,10 +5,15 @@ import Cookies from "universal-cookie";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import EnterEmail from "./EnterEmail"; 
 import axios from 'axios';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const cookies = new Cookies();
 
 const Checkout2 = () => {
+    const handleClick = () => {
+        window.scrollTo(0, 0);
+    };
+
     const [loadingMessage, setLoadingMessage] = useState(false); 
     const token = cookies.get('TOKEN'); 
     const [loadingPayment, setLoadingPayment] = useState(false); 
@@ -242,7 +247,7 @@ const Checkout2 = () => {
             {loadingPayment && <LoadingMessage title="Sending you to checkout"/>}
             {loadingMessage && <LoadingMessage title="Creating a New Document"/>}
             <div className="checkout-banner-launch">
-                <p>Admitted officially launches in September 2023! In the meantime, see how our service works with our <span>Free Trial</span></p>
+                <p>Admitted officially launches in October 2023! In the meantime, see how our service works with our <span>Free Trial</span></p>
             </div>
             <h2 className='checkout-2-header'>Select Plan:</h2>
                 <div className="checkout-all-boxes">
@@ -378,6 +383,13 @@ const Checkout2 = () => {
 
             <div className="checkout-disclaimer">
                 <p>*Admitted is not officially affiliated or endorsed by any of the listed universities</p>
+            </div>
+            <div id="checkout-tos-privacy">
+                <p>
+                    <Link to='/terms-of-service' onClick={handleClick}>Terms of Service</Link> 
+                    &nbsp;&#183;&nbsp;
+                    <Link to='/privacy-policy' onClick={handleClick}>Privacy Policy</Link>
+                </p>
             </div>
         </div>
     );

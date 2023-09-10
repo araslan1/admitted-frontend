@@ -1,0 +1,40 @@
+
+.profiles {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+.why-profiles-all {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.why-profile-ind {
+    display: flex;
+}
+.why-profile-img-wrapper {
+    max-width: 250px;
+    margin-right: 20px;
+    box-shadow: black 0px 0px 10px -2px;
+    overflow: hidden;
+}
+.why-profile-img {
+    width: 100%;
+    min-height: 400px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+.why-profile-img:hover {
+    transform: scale(1.05);
+    overflow: hidden;
+}
+.why-profile-text {
+    max-width: 225px;
+}
+.why-profiles-header {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.why-profile-text-meet {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

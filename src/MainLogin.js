@@ -1,3 +1,4 @@
+
 import "./MainLogin.css";
 import { useState } from 'react'; 
 import axios from 'axios';
@@ -72,7 +73,7 @@ const MainLogin = () => {
       <div className="mainlogin">
         {creatingUser && <LoadingMessage title="Your Account Is Being Created!" />}
         <div className="leftside">
-            <img style= {{marginTop: "15px"}}className="mainlogo"src={admitted_logo} alt="admitted logo" /> 
+            <img style= {{marginTop: "15px"}}className="mainlogo"src={admitted_logo} alt="A minimized version of the Admitted logo." /> 
             <div className="checkbox">
                 <div className="label">
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
@@ -85,14 +86,14 @@ const MainLogin = () => {
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
                     <div>
                         <h3>College Match Guarantee</h3>
-                        <p style={{marginLeft:"25px"}}>Your Stanford Essays Reviewed by Stanford Students, USC Essays Reviewed By USC students<br></br>Harvard essays by Harvard students...</p>
+                        <p style={{marginLeft:"25px"}}>Your Stanford Essays Reviewed By Stanford Students, USC Essays Reviewed By USC Students<br></br>Harvard Essays By Harvard Students...</p>
                     </div>
                 </div>
                 <div className="label">
                     <img className="checkmark"src={checkmark} alt="checkmark" /> 
                     <div>
                         <h3>Affordable</h3>
-                        <p style={{marginLeft:"25px"}}>First One's On Us, Then Prices Range From 30-50$</p>
+                        <p style={{marginLeft:"25px"}}>First One Is On Us, Then Prices Start At $45</p>
                     </div>
                 </div>
                 

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import zoomIMG1 from "./images/zoom1.webp";
@@ -5,10 +6,9 @@ import zoomIMG2 from "./images/zoom2.webp";
 import zoomIMG3 from "./images/zoom3.webp";
 import zoomImg4 from "./images/zoom4.webp";
 import './Home.css';
-import admittedStudentReviewer1 from './images/profile1.webp';
-import admittedStudentReviewer2 from './images/IMG_FIONA.jpg';
 import PaymentOptions from "./PaymentOptions";
 import Footer from "./Footer";
+import Profiles from "./Profiles";
 // import ReviewerProfile from "./ReviewerProfile";
 // import reviewerIMG1 from './images/IMG_AdamA.jpeg';
 // import reviewerIMG2 from './images/IMG_6420.jpg';
@@ -16,7 +16,6 @@ import Footer from "./Footer";
 
 const Home = () => {
     const handleClick = () => {
-        // Scroll to the top of the page
         window.scrollTo(0, 0);
       };
 
@@ -60,7 +59,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/inspiration' onClick={handleClick}><img src={zoomIMG2} className='zoom-imgs' alt="Zoom 2" /></Link>
+                        <Link to='/inspiration' onClick={handleClick}><img src={zoomIMG2} className='zoom-imgs' alt="Tulane University student Adam Aldahir and a classmate smile for the camera." /></Link>
                         <h2><Link to='/inspiration' className="top-left">Made By Students<br></br>For Students</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-1'>
@@ -70,7 +69,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/review-policy'><img src={zoomIMG3} className='zoom-imgs' alt="Zoom 3" onClick={handleClick}/></Link>
+                        <Link to='/review-policy'><img src={zoomIMG3} className='zoom-imgs' alt="A Harvard brochure, Brown University hat, Stanford welcome box, and Yale notebook arrayed on a table." onClick={handleClick}/></Link>
                         <h2><Link to='/review-policy' className="top-left" onClick={handleClick}>College Match<br></br>Guarantee</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-2'>
@@ -80,7 +79,7 @@ const Home = () => {
                 </div>
                 <div className='feature-cards'>
                     <div className="image-wrapper">
-                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Zoom 4" onClick={handleClick} /></Link>
+                        <Link to='/why-admitted'><img src={zoomImg4} className='zoom-imgs' alt="Tulane student Dhruv Patel and Stanford student Alastair Deng laugh together." onClick={handleClick} /></Link>
                         <h2><Link to='/why-admitted' className="top-left" onClick={handleClick}>College Counseling<br></br>Made Affordable</Link></h2>
                     </div>
                     <div className="card-info" id='card-info-3'>
@@ -109,45 +108,8 @@ const Home = () => {
                 </div>
             </div> */}
 
-
-            <div className="why-profiles" style ={{marginTop: "300px"}}>
-                <h3 className='why-profiles-header'>Our reviewers have been in your position!</h3>
-                <div className="why-profiles-all">
-                    <div className="why-profile-ind">
-                        <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={admittedStudentReviewer1} alt="Odessa Deng, an alumni from Harvard University, poses in front of Widener Library." />
-                        </div>
-                        <div className="why-profile-text">
-                            <p className='why-profile-text-meet'>Meet Odessa</p>
-                            <p>
-                                Odessa graduated from Harvard University in 2023 with a double major in Chemistry and Neuroscience. 
-                                When Odessa 
-                                She knows what it takes to get into Harvard and wants to help you get there too!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="why-profile-ind">
-                        <div className="why-profile-img-wrapper">
-                            <img className='why-profile-img' src={admittedStudentReviewer2} alt="..." />
-                        </div>
-                        <div className="why-profile-text">
-                            <p className='why-profile-text-meet'>Meet Fiona</p>
-                            <p>
-                                Fiona is a sophomore majoring in Psychology at USC. 
-                                When Fiona was applying to USC she was lucky to get application advice from a friend already attending the university. 
-                                Now, she is excited to pass on that advice to help you improve your application!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="admitted-next-btn-wrap">
-                <Link to='/about-us' className='admitted-next-btn' onClick={handleClick}>More Reviewers</Link>
-            </div>
-
-
             <div className="home-pay-options">
+                <Profiles />
                 <PaymentOptions />
             </div>
         </div>

@@ -37,7 +37,7 @@ const Colleges = () => {
             <div className="college-unlisted">
                 <h2 id='college-unlisted-header'>Your dream school isn't listed?</h2>
                 <p>
-                    We are doing our best to find reviewers at every elite instition. If there is one school in particular that you want reviewed by a current student, email the address listed below to let us know. If we find reviewers, we'll email you back!
+                    We are doing our best to find reviewers at every elite institution. If there is one school in particular that you want reviewed by a current student, email the address listed below to let us know. If we find reviewers, we'll email you back!
                 </p>
                 <p className='colleges-email'>admitted.team@gmail.com</p>
             </div>

@@ -22,11 +22,19 @@
     height: 100px;
     margin-top: 50px;
 }
-.footer-col a {
+.footer-col a, .footer-logo-links {
     color: black;
     border-radius: 4px;
     padding: 4px;
 }
-.footer-col a:hover {
+.footer-col a:hover, .footer-logo-links:hover {
     background-color: #FFF7F9;
+}
+.footer-logo-links {
+    text-decoration: none;
+    font-size: 12px;
+}
+.footer-logo-box p {
+    width: max-content;
+    margin: 15px auto;
 }

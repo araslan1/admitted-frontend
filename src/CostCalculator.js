@@ -94,7 +94,7 @@ const CostCalculator = () => {
         <Navbar />
         <div className="cost-calculator">
             <h1 className='cost-header'>How much will our service <span className='cost-header-underline'>cost</span>?</h1>
-            <p className='cost-main-text'>Admitted is here to improve your chances at getting into your dream school at an affordable price. To help you choose which plan fits your budget, we made a cost calulcator!</p>
+            <p className='cost-main-text'>Admitted is here to improve your chances of getting into your dream school at an affordable price. To help you find which plan fits your budget, we made a cost calculator!</p>
 
             <div className="calc-questions-all">
                 <h2 className='calc-header'>Cost Calculator</h2>

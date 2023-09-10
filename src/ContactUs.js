@@ -1,9 +1,16 @@
+//window scroll to links
+
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import './ContactUs.css';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
 const ContactUs = () => {
+
+    const handleClick = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <>
         <Navbar />
@@ -30,23 +37,23 @@ const ContactUs = () => {
                         <p className='faq-question'>How will feedback be given?</p>
                         <p className='faq-answer'>Advice is provided in a Live Review session & documented using Admitted's Editing Tool.
                         <br></br>
-                        Visit our <Link to='/review-policy'>Review Policy</Link> page for more details!</p>
+                        Visit our <Link to='/review-policy' onClick={handleClick}>Review Policy</Link> page for more details!</p>
                     </div>
                     <div className="ind-faq">
                         <p className='faq-question'>What colleges does Admitted offer reviews for?</p>
-                        <p className='faq-answer'>Visit our <Link to='/colleges'>Colleges</Link> page to the entire list of offered universities.</p>
+                        <p className='faq-answer'>Visit our <Link to='/colleges' onClick={handleClick}>Colleges</Link> page for the entire list of offered universities.</p>
                     </div>
                 </div>
                 <div className="faq-col">
                     <div className="ind-faq">
                         <p className='faq-question'>When will Admitted officially launch?</p>
-                        <p className='faq-answer'>The Essentials, Premium, & Premium+ plans offically open in October 2023.
+                        <p className='faq-answer'>The Essentials, Premium, & Premium+ plans open in October 2023.
                         <br></br>
-                        For now, see how our service works with our <Link to='/review-policy'>Free Trial</Link>!</p>
+                        For now, see how our service works with our <Link to='/review-policy' onClick={handleClick}>Free Trial</Link>!</p>
                     </div>
                     <div className="ind-faq">
                         <p className='faq-question'>How much will it cost for me to get my application reviewed?</p>
-                        <p className='faq-answer'>Use our <Link to='/cost-calculator'>Cost Calculator</Link> to see the exact price of Admitted's services.</p>
+                        <p className='faq-answer'>Use our <Link to='/cost-calculator' onClick={handleClick}>Cost Calculator</Link> to see the exact price of Admitted's services.</p>
                     </div>
                 </div>
             </div>

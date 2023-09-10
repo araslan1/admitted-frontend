@@ -4,13 +4,19 @@ import './Footer.css';
 
 const Footer = () => {
     const handleClick = () => {
-        // Scroll to the top of the page
         window.scrollTo(0, 0);
-      };
+    };
 
     return (
         <div className="footer">
-            <Link to='/' onClick={handleClick}><img src={logo} alt="An enlarged logo for the company Admitted. Admitted provides a college application review service."/></Link>
+            <div className="footer-logo-box">
+                <Link to='/' onClick={handleClick}><img src={logo} alt="An enlarged logo for the company Admitted. Admitted provides a college application review service."/></Link>
+                <p>
+                    <Link to='/terms-of-service' onClick={handleClick} className='footer-logo-links'>Terms of Service</Link> 
+                    &nbsp;&#183;&nbsp;
+                    <Link to='/privacy-policy' onClick={handleClick} className='footer-logo-links'>Privacy Policy</Link>
+                </p>
+            </div>
             <div className="footer-col-box">
                 <div className="footer-col">
                     <p className='footer-col-title'>Company</p>

@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import Cookies from "universal-cookie"; 
 import axios from 'axios'; 
 import { useHistory } from "react-router-dom";
-import new_document_icon from "./images/new_document.png";
+import logo_a from "./images/admittedALogo-enlarged.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const cookies = new Cookies(); 
 
@@ -97,6 +97,14 @@ const Dashboard = () => {
                         <Link to='/contact-us'>Contact Us</Link>
                         <Link to='/logout'>Log Out</Link>
                     </div>
+                    <div className="sidenav-logo">
+                        <img src={logo_a} alt="" />
+                        <p>
+                            <Link to='/terms-of-service' className='sidenav-tos-links'>Terms of Service</Link> 
+                            &nbsp;&#183;&nbsp;
+                            <Link to='/privacy-policy' className='sidenav-tos-links'>Privacy Policy</Link>
+                        </p>
+                    </div>
                 </div>
 
                 <span onClick={openNav} id="openNavBtn">
@@ -138,14 +146,14 @@ const Dashboard = () => {
                             </div>
                         ))
                         }
-                        <img onClick = {() => {history.push("/checkout")}} src={new_document_icon} alt="document"style={{width: "100px", marginTop: "50px", marginLeft: "15px", cursor: "pointer"}}></img>
+                        <button id='new-application-btn' onClick = {() => {history.push("/checkout")}}>New Application!</button>
                     </div>
     
                     <div id="checklist-container">
                         <h3 className="right-side-header" style={{textAlign: 'center'}}>Application Checklist</h3>
                         <div className="checklist-items">
                             <ul id='app-checklist'>
-                            <li>
+                                <li>
                                     <span>Choose the colleges that you want to apply to</span>
                                     <ul>
                                         <li>Find the specific application requirements each college asks for (Number of recommendation letters, essays, etc.)</li>
@@ -153,8 +161,15 @@ const Dashboard = () => {
                                     </ul>
                                 </li>
                                 <li>
+                                    <span>Do your research</span>
+                                    <ul>
+                                        <li>Find out what you love about each school you're applying to! This will be incredibly important when you write your college-specific supplementals</li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <span>Fill out your Common Application and College-Specific Supplementals</span>
                                     <ul>
+                                        <li>Ensure test scores, transcripts, recommendation letters, resumes, etc. are all submitted by yourself or your school on time</li>
                                         <li>If you plan on having an Admitted student review your application, we recommend going through multiple revisions before using our service</li>
                                         <li>Don’t wait until the last minute to answer any questions!</li>
                                     </ul>
@@ -163,6 +178,7 @@ const Dashboard = () => {
                                     <span>Contact teachers and other mentors for recommendations</span>
                                     <ul>
                                         <li>You should do this at least one month before your earliest deadline</li>
+                                        <li>When deciding on recommenders: ask recent teachers (optimally from 11th grade), include recommendations from a humanities & STEM teacher, and ask teachers/mentors with whom you have a strong connection with</li>
                                     </ul>
                                 </li>
                                 <li>
