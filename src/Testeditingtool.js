@@ -8,11 +8,13 @@ import return_icon from "./images/return_icon.png";
 import person_icon from "./images/person_icon.png";
 import checkmark from "./images/checkmark.png"; 
 import Confirm from './Confirm';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
 
 const Editingtool = () => {
+    const history = useHistory(); 
     const [triggerLoadComments, setTriggerLoadComments] = useState(false); 
     let span_tracker = null;
     let span_tracker_comment = null;
@@ -153,7 +155,7 @@ Again, warm welcome to Admitted!`
         
             <div id ="sidenav">
                 <div className = "editing_tool_buttons" onClick = {() => {
-                  
+                         history.push('/dashboard');
                     }}>
                     Return Dashboard
                     <img style={{width: "20px", marginLeft: "auto"}} src={return_icon} alt="return"></img>

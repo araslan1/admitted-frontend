@@ -25,7 +25,7 @@ const Editingtool = () => {
     const [triggerLoadComments, setTriggerLoadComments] = useState(false); 
     const [documentHasLoaded, setDocumentHasLoaded] = useState(false); 
     const [savingCommentsInProgress, setSavingCommentsInProgress] = useState(false); 
-    const [userHasSubmitted, setUserHasSubmitted] = useState(null); 
+    const [userHasSubmitted, setUserHasSubmitted] = useState(false); 
     const [isReviewer, setIsReviewer] = useState(false);
     const [essaysReviewed, setEssaysReviewed] = useState(false); 
     const [confirmationOpen, setConfirmationOpen] = useState(false); 
@@ -105,14 +105,24 @@ const Editingtool = () => {
     
         axios(configuration)
             .then((response) => {
+                console.log("entered!"); 
                 // setIsReviewer(response.data.isReviewer)
-                setUserHasSubmitted(response.data.userHasSubmitted); 
-                setIsReviewer(response.data.isReviewer);
+                console.log("This is userHasSubmitted field: " + response.data.userHasSubmitted);
+                if (response.data.userHasSubmitted === true ||response.data.userHasSubmitted ===false){
+                    setUserHasSubmitted(response.data.userHasSubmitted); 
+                }
+                if (response.data.isReviewer === true || response.data.isReviewer === false){
+                    setIsReviewer(response.data.isReviewer);
+                }
+              
                 if (response.data.userHasSubmitted){
                     console.log("cleared set to")
                     // setCleared(true); 
                 }
-                setEssaysReviewed(response.data.essaysReviewed);
+                if (response.data.essaysReviewed === true ||response.data.essaysReviewed === false ){
+                    setEssaysReviewed(response.data.essaysReviewed);
+                }
+            
                 console.log("hurray, given access to editing tool!")
             })
             .catch((error) => {
@@ -543,10 +553,9 @@ const Editingtool = () => {
                     <img style={{width: "20px", marginLeft: "auto"}} src={support_icon} alt="support"></img>
                 </div>
         
-                {!isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
+                {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={add_comment}>Add comment</div>}
                         
                 {isReviewer && <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={save_comments}>Save comments</div>}
-                <div className="editing_tool_buttons" style = {{marginTop: "40px"}} onClick={loadComments}>Load comments</div>
             </div>   
             {confirmationOpen && <Confirm closeModal={setConfirmationOpen} submitEssays={submitEssays} title="Are you sure you want to submit your essays?"/>}    
             {triggerLoadComments && <Confirm closeModal={setTriggerLoadComments} submitEssays={loadComments} title="Hey there! Click below to view your comments"/>}    
